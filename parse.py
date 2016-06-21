@@ -11,6 +11,12 @@ from urllib.parse import urlencode
 import re
 
 
+restaurantName = "restaurantName"
+restaurantKitchens = "restaurantKitchens"
+kitchenName = "kitchenName"
+kitchenItems = "kitchenItems"
+
+
 def parseHTML(html):
 	"""Parse the 'html' passed in."""
 
@@ -22,7 +28,6 @@ def parseHTML(html):
 	if len(tds) % 3 == 0:
 		count = 0
 		data = [[], [], []]
-		menu = [[], [], []]
 
 		for td in tds:
 			if count == 0:
@@ -36,8 +41,9 @@ def parseHTML(html):
 			if count > 2:
 				count = 0
 
-
+		restaurants = []
 		for index, values in enumerate(data):
+			restaurant = { restaurantName: "", restaurantKitchens: [] }
 			for d in values:
 				# separate the "restaurant name" from the "kitchens"
 				for child in d.children:
@@ -46,23 +52,32 @@ def parseHTML(html):
 						if (childclass != None and len(childclass) != 0 and childclass[0] == 'menuloclink'):
 							line = child.text.replace(u'\xa0', u'')
 							line = line.replace('*', '')
-							print()
-							print('RESTAURANT: ' + line)
+							# print()
+							# print('RESTAURANT: ' + line)
+							restaurant[restaurantName] = line
 						else:
 							# separate the kitchen name from the entrees
+							kitchen = { kitchenName: "", kitchenItems: [] }
 							for item in child:
 								if type(item) is bs4.element.Tag:
 									itemclass = item.get('class')
 									if itemclass != None and len(itemclass) != 0 and ('category' in itemclass[0]):
 										line = item.text.replace(u'\xa0', u'')
 										line = line.replace('*', '')
-										print()
-										print('Kitchen: ' + line)
+										# print()
+										# print('Kitchen: ' + line)
+										kitchen[kitchenName] = line
 									elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
 										line = item.text.replace(u'\xa0', u'')
 										line = line.replace('*', '')
-										print('e: ' + line)
-
+										#print('e: ' + line)
+										kitchen[kitchenItems].append(line)
+							#print(kitchen)
+							if kitchen[kitchenName] != "" and len(kitchen[kitchenItems]) != 0:
+								restaurant[restaurantKitchens].append(kitchen)
+			if restaurant[restaurantName] != "" and len(restaurant[restaurantKitchens]) != 0:
+				restaurants.append(restaurant)
+		#print(restaurants)
 
 					# print(type(child))
 					# print(child)
@@ -96,7 +111,7 @@ def parseHTML(html):
 	elif len(tds) % 2 == 0:
 		print("not handled")
 
-	return menu
+	return restaurants
 
 from datetime import date
 
@@ -106,7 +121,7 @@ def buildURL(date, meal):
 	base = "http://menu.ha.ucla.edu/foodpro/default.asp?"
 	meal = meal
 	dateString = date.strftime('%m/%d/%Y')
-	print(dateString)
+	#print(dateString)
 	params = {'date': dateString, 'meal': meal.value, 'threshold': "2"}
 	url = base + urlencode(params)
 	return url
@@ -121,6 +136,6 @@ import urllib.request
 with urllib.request.urlopen(url) as response:
 	html = response.read()
 	# parseHTML(html)
-	menu = parseHTML(html)
-	# print(json.dumps(menu, indent=4))
+	restaurants = parseHTML(html)
+	print(json.dumps(restaurants, indent=2))
 
