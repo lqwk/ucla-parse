@@ -501,7 +501,43 @@ htmldoc = """
 
 soup = BeautifulSoup(htmldoc, 'html.parser')
 
-for link in soup.find_all('td'):
-	print(link.attrs)
+tds = soup.findAll('td', { "class": lambda x: 
+	x and (x == "menugridcell" or x == "menugridcell_last") })
 
-# print(soup.get_text())
+count = 0
+m0 = []
+m1 = []
+m2 = []
+
+for td in tds:
+	# print(td.attrs)
+	# print()
+
+	if count == 0:
+		m0.append(td)
+	elif count == 1:
+		m1.append(td)
+	elif count == 2:
+		m2.append(td)
+
+	count = count + 1
+	if count > 2:
+		count = 0
+
+menu = []
+
+for m in m0:
+	text = m.text
+	if text.strip() != "":
+		lines = []
+		for line in text.split('\n'):
+			if line.strip() != "":
+				lines.append(line)
+				print(line)
+		print()
+		menu.append(lines)
+
+# print(menu)
+
+
+
