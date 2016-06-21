@@ -1,3 +1,4 @@
+import sys
 import bs4
 import re
 import json
@@ -15,16 +16,34 @@ restaurantKitchens = "restaurantKitchens"
 kitchenName = "kitchenName"
 kitchenItems = "kitchenItems"
 
-# Meal enumeration
 class Meal(Enum):
+  """
+  Meal enumeration class used for passing in data to 'MenuParser'
+  """
+
   breakfast = 1
   lunch = 2
   dinner = 3
 
+  @classmethod
+  def getMeal(meal, m):
+    """
+    Class method for parsing strings and returning corresponding Meal class
+    """
+
+    if m == 'b':
+      return meal.breakfast
+    elif m == 'l':
+      return meal.lunch
+    elif m == 'd':
+      return meal.dinner
+
 
 class MenuParser:
   """
-  Menu parser class
+  Menu parser class which holds 'date', 'meal', and 'url'
+
+  Used to fetch html data from the web and parse it to build JSON data
   """
 
   def __init__(self, date, meal):
@@ -44,7 +63,7 @@ class MenuParser:
     response = urllib.request.urlopen(self.url)
     html = response.read()
     restaurants = self.parseRestaurantHTML(html)
-    print(json.dumps(restaurants, indent=2))
+    return restaurants
 
   def getRestaurantCount(self, tds):
     """
@@ -179,7 +198,7 @@ class MenuParser:
                   elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
                     line = item.text.replace(u'\xa0', u'')
                     line = line.replace('*', '')
-                    #print('e: ' + line)
+                    # print('e: ' + line)
                     kitchen[kitchenItems].append(line)
               # print(kitchen)
               if kitchen[kitchenName] != "" and len(kitchen[kitchenItems]) != 0:
@@ -208,6 +227,25 @@ class MenuParser:
 
 
 if __name__ == "__main__":
-  dateTime = datetime.date(2016, 6, 26)
-  parser = MenuParser(dateTime, Meal.dinner)
-  parser.getMenus()
+  if len(sys.argv) != 5:
+    print("Error: wrong number of arguments, please specify YEAR MONTH DAY MEAL (b/l/d).")
+    sys.exit(1)
+  
+  year, month, day, m = sys.argv[1:]
+
+  if not (year.isdigit() and month.isdigit() and day.isdigit()):
+    print("Error: wrong input format, YEAR MONTH DAY all have to be digits.")
+    sys.exit(1)
+
+  if m != 'b' and m != 'l' and m != 'd':
+    print("Error: MEAL has to be one of b/l/d.")
+    sys.exit(1)
+
+  dateTime = datetime.date(int(float(year)), int(float(month)), int(float(day)))
+  meal = Meal.getMeal(m)
+  parser = MenuParser(dateTime, meal)
+  menus = parser.getMenus()
+  if len(menus) != 0:
+    print(json.dumps(menus, indent=2))
+  else:
+    print("Empty menu.")
