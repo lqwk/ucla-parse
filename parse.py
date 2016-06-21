@@ -504,40 +504,37 @@ soup = BeautifulSoup(htmldoc, 'html.parser')
 tds = soup.findAll('td', { "class": lambda x: 
 	x and (x == "menugridcell" or x == "menugridcell_last") })
 
-count = 0
-m0 = []
-m1 = []
-m2 = []
+if len(tds) % 3 == 0:
+	count = 0
+	m0 = []
+	m1 = []
+	m2 = []
 
-for td in tds:
-	# print(td.attrs)
-	# print()
+	for td in tds:
+		if count == 0:
+			m0.append(td)
+		elif count == 1:
+			m1.append(td)
+		elif count == 2:
+			m2.append(td)
 
-	if count == 0:
-		m0.append(td)
-	elif count == 1:
-		m1.append(td)
-	elif count == 2:
-		m2.append(td)
+		count = count + 1
+		if count > 2:
+			count = 0
 
-	count = count + 1
-	if count > 2:
-		count = 0
+	menu = []
 
-menu = []
+	for m in m0:
+		text = m.text
+		if text.strip() != "":
+			lines = []
+			for line in text.split('\n'):
+				if line.strip() != "":
+					lines.append(line)
+					print(line)
+			print()
+			menu.append(lines)
 
-for m in m0:
-	text = m.text
-	if text.strip() != "":
-		lines = []
-		for line in text.split('\n'):
-			if line.strip() != "":
-				lines.append(line)
-				print(line)
-		print()
-		menu.append(lines)
-
-# print(menu)
 
 
 
