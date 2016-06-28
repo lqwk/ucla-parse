@@ -1,6 +1,5 @@
 import sys
 import bs4
-import re
 import json
 import datetime
 import urllib.request
@@ -198,6 +197,8 @@ class MenuParser:
                   elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
                     line = item.text.replace(u'\xa0', u'')
                     line = line.replace('*', '')
+                    if line.startswith(("w/", "&")):
+                      continue
                     # print('e: ' + line)
                     kitchen[kitchenItems].append(line)
               # print(kitchen)
