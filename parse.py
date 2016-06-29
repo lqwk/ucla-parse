@@ -225,14 +225,3 @@ class MenuParser:
     params = {'date': dateString, 'meal': meal.value, 'threshold': "2"}
     url = base + urlencode(params)
     return url
-
-
-dateTime = datetime.date(2016, 6, 28)
-meal = Meal.lunch
-parser = MenuParser(dateTime, meal)
-menus = parser.getMenus()
-print("Content-Type: text/plain\n\n")
-if len(menus) != 0:
-  print(json.dumps(menus, indent=2))
-else:
-  print("Empty menu.")
