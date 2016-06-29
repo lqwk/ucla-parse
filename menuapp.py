@@ -7,6 +7,7 @@ from flask import render_template
 from flask import request
 from parse import Meal
 from parse import MenuParser
+from key import APIKey
 
 app = Flask(__name__)
 
@@ -19,7 +20,9 @@ def showIndexPage():
 
 @app.route('/menu', methods=['GET'])
 def getMenus():
-  error = None
+  if 'key' not in request.args or request.args['key'] != APIKey.key:
+    return "Wrong API key"
+
   if ('year' in request.args) and ('month' in request.args) and ('day' in request.args):
     year = request.args['year']
     month = request.args['month']
