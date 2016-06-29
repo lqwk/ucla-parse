@@ -10,10 +10,10 @@ from enum import Enum
 
 
 # constants
-restaurantName = "restaurantName"
-restaurantKitchens = "restaurantKitchens"
-kitchenName = "kitchenName"
-kitchenItems = "kitchenItems"
+restaurantName = "rName"
+restaurantKitchens = "kitchens"
+kitchenName = "kName"
+kitchenItems = "items"
 
 class Meal(Enum):
   """
