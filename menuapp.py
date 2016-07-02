@@ -32,6 +32,20 @@ def getHours():
     hoursJSON = json.dumps(hours, separators=(',',':'))
     return hoursJSON
 
+@app.route('/quick')
+def getQuickService():
+  if 'key' not in request.args or request.args['key'] != APIKey.key:
+    return "Wrong API key"
+
+  quickFile = "./data/quick.json"
+  if os.path.exists(quickFile) and os.path.isfile(quickFile):
+    file = open(quickFile, "r")
+    quickString = file.read()
+    file.close()
+    quick = json.loads(quickString)
+    quickJSON = json.dumps(quick, separators=(',',':'))
+    return quickJSON
+
 @app.route('/menu', methods=['GET'])
 def getMenus():
   if 'key' not in request.args or request.args['key'] != APIKey.key:
