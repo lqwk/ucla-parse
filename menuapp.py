@@ -18,6 +18,20 @@ app = Flask(__name__)
 def showIndexPage():
   return render_template('index.html')
 
+@app.route('/hours')
+def getHours():
+  if 'key' not in request.args or request.args['key'] != APIKey.key:
+    return "Wrong API key"
+
+  hoursFile = "./data/hours.json"
+  if os.path.exists(hoursFile) and os.path.isfile(hoursFile):
+    file = open(hoursFile, "r")
+    hoursString = file.read()
+    file.close()
+    hours = json.loads(hoursString)
+    hoursJSON = json.dumps(hours, separators=(',',':'))
+    return hoursJSON
+
 @app.route('/menu', methods=['GET'])
 def getMenus():
   if 'key' not in request.args or request.args['key'] != APIKey.key:
@@ -93,7 +107,7 @@ def fetchMenu(year, month, day, dateNamePath):
   if menu != None:
     menus["d"] = menu
 
-  menuJSON = json.dumps(menus)
+  menuJSON = json.dumps(menus, separators=(',',':'))
 
   # create file to save to
   file = open(dateNamePath, "w")
