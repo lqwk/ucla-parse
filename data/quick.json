@@ -1,0 +1,1158 @@
+{
+  "Bruin Cafe" : 
+  [
+    ["Breakfast", 
+      [
+        "One Swipe Combo",
+        "Entree + Whole Fruit + Beverage"
+      ],
+
+      [
+        "Breakfast Combos",
+        "",
+        ["Cold Cereal", "$2.50"],
+        ["Ham & Cheese Croissant", "$4.00"],
+        ["Spinach & Cheese Croissant", "$4.00"],
+        ["Steel-Cut Oatmeal Cup", "$2.50"],
+        ["Yogurt Cup", "$1.75"],
+        ["Berry Yogurt Bowl", "$4.00"],
+        ["Fresh Fruit Cup", "$4.00"],
+        ["Strawberry Raspberry Parfait", "$4.00"],
+        ["Yogurt Bowl w/ Banana, Pistachio & Pomagranate Seeds", "$4.00"],
+        ["Yogurt Parfait Cup", "$4.00"]
+      ],
+
+      [
+        "Beverages",
+        "",
+        ["Apple Juice", "$1.00"],
+        ["Chocolate Milk", "$1.00"],
+        ["Fat-Free Milk", "$1.00"],
+        ["Low-Fat Milk", "$1.00"],
+        ["Orange Juice", "$1.00"],
+        ["Vanilla Soy Milk", "$1.50"]
+      ]
+
+    ],
+
+    ["Lunch & Dinner",
+      [
+        "One Swipe Combo",
+        "1 ($) Sandwich or Soup + 1 Side (Assorted Chips, Whole Fruit, or Side Salad) + 1 Fountain Drink"
+      ],
+
+      [
+        "B-Cafe Combo (One Swipe)",
+        "1/2 Cold Classic Sandwich or 1/2 Wrap + Cup of Soup + Small Salad (Caesar or Mixed Green)"
+      ],
+
+      [
+        "Two Swipe Combo",
+        "1 ($$) Sandwich + 2 Sides (Assortd Chips, Whole Fruit, or Side Salad) + 1 Fountain Drink"
+      ],
+
+      [
+        "Classic Sandwiches",
+        "",
+        ["$ BBQ Beef Brisket (Hot)", "$7.00"],
+        ["$ Ham & Swiss (Hot or Cold)", "$6.50"],
+        ["$ Roast Beef & Cheddar (Hot or Cold)", "$7.00"],
+        ["$ Roasted Turkey & Provolone (Hot or Cold)", "$6.50"],
+        ["$ Tuna (Cold)", "$6.50"],
+        ["$ Vegan BBQ (Hot)", "$7.00"]
+      ],
+
+      [
+        "Premium Toasted Sandwiches",
+        "",
+        ["$ Chicken Ranch & Swiss", "$7.50"],
+        ["$ Chipotle BBQ Turkey", "$7.50"],
+        ["$ Cuban Ham", "$7.50"],
+        ["$$ Honey Mustard Chicken Bacon", "$10.00"],
+        ["$$ Pastrami & Cheese", "$9.75"]
+      ],
+
+      [
+        "Premium Cold Sandwiches",
+        "",
+        ["$ Chunky Chicken Salad", "$7.25"],
+        ["$ Greek Chicken", "$7.50"],
+        ["$ Roasted Vegetable & Hummus", "$7.25"],
+        ["$ The Greek Vegetable", "$7.25"],
+        ["$$ California Turkey Club", "$9.75"],
+        ["$$ Salmon Salad", "$9.75"]
+      ],
+
+      [
+        "Entree Soups",
+        "Served in a freshly-baked Bread Bowl, Bread Bowls are available on the side upon request.",
+        ["Chicken Noodle", "$5.25"],
+        ["Tomato & Wild Rice", "$5.25"],
+        ["Ground Beef Chili (Sunday)", "$5.25"],
+        ["Beef & Bok Choy (Monday)", "$5.25"],
+        ["Arborio Spinach (Tuesday)", "$5.25"],
+        ["Tuscan Bean (Wednesday)", "$5.25"],
+        ["Turkey & Lentil (Thursday)", "$5.25"],
+        ["Seafood, Leek, & Tomato Chowder (Friday)", "$5.25"],
+        ["Chicken, Kale & Mushroom (Saturday)", "$5.25"]
+      ],
+
+      [
+        "Sides & Sweets",
+        "",
+        ["Fresh Fruit Cup", "$4.00"],
+        ["Strawberry Raspberry Parfait", "$4.00"],
+        ["Yogurt Parfait Cup", "$4.00"],
+        ["Banana", "$1.00"],
+        ["Fuji Apple", "$1.00"],
+        ["Granny Smith Apple", "$1.00"],
+        ["Orange", "$1.00"],
+        ["Boulder Canyon™ Totally Natural Kettle Chips", "$1.25"],
+        ["French Onion SunChips®", "$1.25"],
+        ["Garden Salsa™ SunChips®", "$1.25"],
+        ["Harvest Cheddar® SunChips®", "$1.25"],
+        ["Poore Brothers® Jalapeño Kettle Chips", "$1.25"]
+      ]
+    ],
+
+    ["On the Go",
+      [
+        "Lunch on the Go",
+        "1 Swipe: Sandwich, Wrap, or Entree Salad + 2 Cookies + 1 Bottled Water"
+      ],
+
+      [
+        "Sandwiches",
+        "",
+        ["Ham & Swiss Sandwich", "$6.50"],
+        ["Roast Beef & Cheddar Sandwich", "$7.00"],
+        ["Roasted Turkey & Provolone Sandwich", "$6.50"]
+      ],
+
+      [
+        "Wraps",
+        "",
+        ["Chicken Caesar Wrap", "$6.50"],
+        ["Southwest Black Bean & Corn Wrap", "$6.00"],
+        ["Southwest Chicken Wrap", "$6.50"]
+      ],
+
+      [
+        "Entree Salads",
+        "",
+        ["Caesar Salad", "$6.00"],
+        ["Chinese Chicken Salad", "$6.50"],
+        ["Chinese Wonton Salad", "$6.00"],
+        ["Mixed Field Greens w/ Apples & Berries", "$6.00"],
+        ["Pollo Caesar Salad", "$6.50"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Asian Quinoa Salad", "$2.00"],
+        ["California Pasta Salad", "$2.00"],
+        ["Cranberry Relish", "$2.00"],
+        ["Israeli Cous Cous Salad", "$2.00"],
+        ["Mediterranean Chopped Salad", "$2.00"],
+        ["Sesame & Orange Noodle Salad", "$2.00"],
+        ["Banana", "$1.00"],
+        ["Fuji Apple", "$1.00"],
+        ["Granny Smith Apple", "$1.00"],
+        ["Orange", "$1.00"]
+      ],
+
+      [
+        "Grab n' Go",
+        "1 Swipe: 1 Entree (Salad, Wrap, Soup, or Mediterranean Nachos) + 1 Side (Assorted Chips, Whole Fruit, or Side Salad) + 1 Fountain Drink"
+      ],
+
+      [
+        "Specialty Wraps",
+        "Served in a flour tortilla.",
+        ["BBQ Chicken", "$6.50"],
+        ["Chicken Caesar", "$6.50"],
+        ["Southwest Black Bean & Corn", "$6.00"],
+        ["Southwest Chicken", "$6.50"]
+      ],
+
+      [
+        "Salads & More",
+        "",
+        ["Caesar Salad", "$6.00"],
+        ["Chinese Chicken Salad", "$6.50"],
+        ["Chinese Wonton Salad", "$6.00"],
+        ["Mediterranean Nachos", "$6.00"],
+        ["Mixed Field Greens w/ Apples & Berries", "$6.00"],
+        ["Pollo Caesar Salad", "$6.50"],
+        ["Chicken Caesar Salad", "$6.50"],
+        ["Pollo Gorgonzola Salad", "$7.00"],
+        ["Grilled Chicken, Bacon, & Gorgonzola", "$7.00"],
+        ["Roasted Vegetable Plate", "$6.00"],
+        ["Seafood Cobb Salad", "$7.00"],
+        ["Tuna Salad", "$6.50"]
+      ],
+
+      [
+        "Sides & Sweets",
+        "",
+        ["Fresh Fruit Cup", "$4.00"],
+        ["Strawberry Raspberry Parfait", "$4.00"],
+        ["Yogurt Parfait Cup", "$4.00"],
+        ["Banana", "$1.00"],
+        ["Fuji Apple", "$1.00"],
+        ["Granny Smith Apple", "$1.00"],
+        ["Orange", "$1.00"],
+        ["Boulder Canyon™ Totally Natural Kettle Chips", "$1.25"],
+        ["French Onion SunChips®", "$1.25"],
+        ["Garden Salsa™ SunChips®", "$1.25"],
+        ["Harvest Cheddar® SunChips®", "$1.25"],
+        ["Poore Brothers® Jalapeño Kettle Chips", "$1.25"]
+      ]
+    ],
+
+    ["Drinks & Pastries",
+      [
+        "Coffee & Tea",
+        "1 Swipe: Coffee or Tea + Pastry",
+        ["Brewed Coffee", "$1.95"],
+        ["Café Mocha", "$3.75"],
+        ["Café Vanilla", "$3.75"],
+        ["Café Caramel", "$3.75"],
+        ["Café Latte", "$3.75"],
+        ["Mocha Latte", "$4.50"],
+        ["Vanilla Latte", "$4.50"],
+        ["Caramel Latte", "$4.50"],
+        ["White Chocolate Latte", "$4.50"],
+        ["Cappuccino", "$3.75"],
+        ["Hot Chocolate (Hot only)", "$3.25"],
+        ["Hot Vanilla (Hot only)", "$3.25"],
+        ["Brewed Tea(Hot only)", "$2.25"], 
+        ["Tea Latte (Hot only)", "$4.50"],
+        ["Chai Tea Latte", "$4.50"],
+        ["Americano", "$3.10"],
+        ["Espresso", "$1.75"]
+      ],
+
+      [
+        "Pastries",
+        "",
+        ["Apple Turnover", "$2.75"],
+        ["Assorted Bagels", "$2.75"],
+        ["Banana Walnut Muffin", "$2.50"],
+        ["Blueberry Muffin", "$2.50"],
+        ["Bran Muffin", "$2.50"],
+        ["Butter Croissant", "$2.75"],
+        ["Cheese Croissant", "$2.75"],
+        ["Cherry Turnover", "$2.75"],
+        ["Chocolate Chip Cookie", "$2.00"],
+        ["Chocolate Croissant", "$2.75"],
+        ["Chocolate White Chip Cookie", "$2.00"],
+        ["Cinnamon Roll", "$2.75"],
+        ["German Chocolate Cupcake", "$3.75"],
+        ["Kouign Amann", "$2.75"],
+        ["Large Maple Bar", "$2.00"],
+        ["Lemon Poppy Seed Bundt Cake", "$3.75"],
+        ["Low Fat Blueberry Bran Muffin", "$2.50"],
+        ["Mocha Chocolate Chip Muffin", "$2.50"],
+        ["Oatmeal Raisin Cookie", "$2.00"],
+        ["Pretzel Croissant", "$2.75"],
+        ["Pumpkin Muffin", "$2.50"],
+        ["Pumpkin Scones", "$2.75"],
+        ["Raspberry Danish", "$2.75"],
+        ["Sticky Chocolate Pecan Muffin", "$2.75"],
+        ["Strawberry Cream Cheese Croissant", "$2.75"],
+        ["Vegan Chocolate Chip & Walnut Cookie", "$2.00"],
+        ["Whole Wheat Croissant", "$2.75"]
+      ],
+
+      [
+        "Fresh Fruit Smoothies",
+        "1 Swipe each",
+        ["50/50", "$4.50"],
+        ["Strawberry Sensation", "$4.50"],
+        ["Strawberry Orange", "$4.50"],
+        ["Red Raspberry", "$4.50"],
+        ["Very Raspberry", "$4.50"],
+        ["Caribbean Island", "$4.50"],
+        ["Mango Madness", "$4.50"],
+        ["Bruin Fresh", "$4.50"],
+        ["Orange Angel", "$4.50"],
+        ["Alooooha", "$4.50"],
+        ["Pina Brisa", "$4.50"],
+        ["Perfectly Peach", "$4.50"],
+        ["Green Lemonade", "$4.50"]
+      ],
+
+      [
+        "Ice Blended Drinks",
+        "Available decaffeinated and/or sugar-free",
+        ["Mocha", "$4.50"],
+        ["Vanilla", "$4.50"],
+        ["Caramel", "$4.50"],
+        ["Pure Chocolate", "$4.50"],
+        ["Pure Vanilla", "$4.50"],
+        ["Green Tea", "$4.50"],
+        ["Pomegranate Blueberry", "$4.50"],
+        ["Chai", "$4.50"]
+      ],
+
+      [
+        "Bottled Drinks",
+        "1 Swipe: 2 Bottled Beverages (Only 1 may be a ($) Beverage)",
+        ["Barq's® Root Beer", "$1.93"],
+        ["Coca-Cola®", "$1.93"],
+        ["Coca-Cola® Cherry", "$1.93"],
+        ["Coke Zero", "$1.93"],
+        ["DASANI® Purified Water", "$1.85"],
+        ["Diet Coke®", "$1.93"],
+        ["Dr Pepper®", "$1.93"],
+        ["Fanta® Orange", "$1.93"],
+        ["Fanta® Pineapple", "$1.93"],
+        ["Fresca® Original Citrus", "$1.93"],
+        ["$ Gold Peak® Iced Green Tea", "$2.25"],
+        ["$ Gold Peak® Lemon Iced Tea", "$2.25"],
+        ["$ Gold Peak® Lemonade Iced Tea", "$2.25"],
+        ["$ Gold Peak® Sweet Tea", "$2.25"],
+        ["Mello Yello®", "$1.93"],
+        ["$ Minute Maid® 100% Apple Juice", "$2.25"],
+        ["$ Minute Maid® 100% Orange Juice", "$2.25"],
+        ["$ Minute Maid® Cranberry Grape", "$2.25"],
+        ["Minute Maid® Lemonade", "$1.93"],
+        ["$ Minute Maid® Pineapple Orange", "$2.25"],
+        ["$ POWERADE® Berry Blast", "$2.25"],
+        ["$ POWERADE® Fruit Punch", "$2.25"],
+        ["$ POWERADE® Grape", "$2.25"],
+        ["$ POWERADE® Orange", "$2.25"],
+        ["Sprite Zero™", "$1.93"],
+        ["Sprite®", "$1.93"]
+      ]
+    ]
+  ],
+
+  "Cafe 1919" :
+  [
+    ["Pizzette",
+      [
+        "One Swipe Combo",
+        "Pizzette + Side (Kettle Chips, Side Salad, or Whole Fruit) + Fountain Drink"
+      ],
+
+      [
+        "Pizzette",
+        "",
+        ["Bolognese (Tomato-Meat Sauce)", "$6.25"],
+        ["Carciofo (Artichoke & Cheese)", "$6.25"],
+        ["Genova (Pesto Chicken)", "$6.25"],
+        ["Pepato Piatto (Pepperoni & Turkey Pastrami)", "$6.25"],
+        ["Pepperoni", "$6.25"],
+        ["Tre Formaggi (Three-Cheese)", "$6.25"],
+        ["Tre Pomodori (Three-Tomato)", "$6.25"],
+        ["Vegan Tre Pomodori (Three-Tomato)", "$6.25"],
+        ["Vegetarian Genova (Pesto Alfredo)", "$6.25"],
+        ["Verdura Arrosto (Roasted Vegetable)", "$6.25"]
+      ]
+    ],
+
+    ["Panini",
+      [
+        "One Swipe Combo",
+        "Panini + Side (Kettle Chips, Side Salad, or Whole Fruit) + Fountain Drink"
+      ],
+
+      [
+        "Panini",
+        "",
+        ["Campania (Grilled Vegetables)", "$6.75"],
+        ["Florentino (Chicken with Spinach & Pesto)", "$6.75"],
+        ["Italiano (Italian Cold Cuts & Cheeses)", "$6.75"],
+        ["Melanzana (Eggplant Parmesan)", "$6.75"],
+        ["Pollo Parma (Chicken & Marinara)", "$6.75"],
+        ["Polpetta Italiano (Meatball Sub)", "$6.50"],
+        ["Tacchino (Smoked Turkey & Cheese)", "$6.75"],
+        ["Tuscano (Roast Beef, Ham, & Salami)", "$6.75"],
+        ["Vegan Campania (Grilled Vegetables)", "$6.75"]
+      ]
+    ],
+
+    ["Insalate",
+      [
+        "One Swipe Combo",
+        "Insalate + Side (Kettle Chips, Side Salad, or Whole Fruit) + Fountain Drink"
+      ],
+
+      [
+        "Insalate",
+        "",
+        ["Gamberetti (Shrimp Caesar Salad)", "$7.00"],
+        ["Insalata Di Salmone (Salmon Salad)", "$7.00"],
+        ["Tagliata (Antipasto Chopped Salad with Salami)", "$6.50"],
+        ["Vegan Tagliata (Antipasto Chopped Salad)", "$6.00"],
+        ["Vegetarian Tagliata (Antipasto Chopped Salad)", "$6.00"]
+      ]
+    ],
+
+    ["Lasagna",
+      [
+        "One Swipe Combo",
+        "Lasagna + Fountain Drink"
+      ],
+
+      [
+        "Lasagna",
+        "",
+        ["Lasagna Bolognese", "$7.75"],
+        ["Lasagna Marinara", "$7.75"]
+      ]
+    ],
+
+    ["Sides",
+      [
+        "Sides",
+        "",
+        ["Caprese (Tomato & Fresh Mozzarella Salad)", "$2.00"],
+        ["Piccola Tagliata (Antipasto Chopped Salad with Salami)", "$2.00"],
+        ["Vegan Piccola Tagliata (Antipasto Chopped Salad)", "$2.00"],
+        ["Vegetarian Piccola Tagliata (Antipasto Chopped Side Salad)", "$2.00"],
+        ["Boulder Canyon™ Totally Natural Kettle Chips", "$1.25"],
+        ["Focaccia Bread", "$1.00"],
+        ["Sea Salt & Cracked Pepper Kettle Chips", "$1.25"],
+        ["Banana", "$1.00"],
+        ["Fuji Apple", "$1.00"],
+        ["Granny Smith Apple", "$1.00"],
+        ["Orange", "$1.00"]
+      ]
+    ],
+
+    ["Bibite",
+      [
+        "One Swipe Combo",
+        "[Bibite (Excluding ($) Beverages) + Pastry] or [2 Bottled Beverages (Only 1 may be a ($) Beverage)]"
+      ],
+
+      [
+        "Coffee & Tea",
+        "",
+        ["Italian Brewed Roast Coffee", "$1.95"],
+        ["Cappuccino (Hot Only)", "$3.75"],
+        ["Cafe Latte", "$3.75"],
+        ["Mocha Latte", "$4.50"],
+        ["Vanilla Latte", "$4.50"],
+        ["Caramel Latte", "$4.50"],
+        ["Cafe Mocha", "$3.75"],
+        ["Cafe Vanilla", "$3.75"],
+        ["Cafe Caramel", "$3.75"],
+        ["Flavored Coffee (Chocolate, Vanilla, Hazelnut, Caramel, Creme de Banana)", "$2.50"],
+        ["Americano", "$2.75"],
+        ["Hot Chocolate", "$3.25"],
+        ["Hot Vanilla", "$3.25"],
+        ["Brewed Tea (Hot Only)", "$2.45"],
+        ["Caramella Salato Latte", "$4.50"],
+        ["Milano Mint Latte", "$3.95"],
+        ["White Chocolate Latte", "$4.50"],
+        ["Cafe White Chocolate", "$3.75"],
+        ["Italian Brewed Espresso (Hot Only)", "$1.75"],
+        ["Macchiato", "$1.75"],
+        ["Mochaccino (Hot Only)", "$3.75"]
+      ],
+
+      [
+        "Italian Sodas",
+        "",
+        ["Blackberry Cream", "$4.00"],
+        ["Blackberry", "$4.00"],
+        ["Blood Orange Cream", "$4.00"],
+        ["Blood Orange", "$4.00"],
+        ["Lemon Cream", "$4.00"],
+        ["Lemon", "$4.00"],
+        ["Pomegranate Cream", "$4.00"],
+        ["Pomegranate", "$4.00"],
+        ["Strawberry Cream", "$4.00"],
+        ["Strawberry", "$4.00"]
+      ],
+
+      [
+        "Bottled & Premium Beverages",
+        "",
+        ["Fountain Beverage", "$1.75"],
+        ["Barq's® Root Beer", "$1.93"],
+        ["Coca-Cola®", "$1.93"],
+        ["Coca-Cola® Cherry", "$1.93"],
+        ["Coke Zero", "$1.93"],
+        ["DASANI® Purified Water", "$1.85"],
+        ["Diet Coke®", "$1.93"],
+        ["Diet Dr Pepper®", "$1.93"],
+        ["Dr Pepper®", "$1.93"],
+        ["$ Gold Peak® Diet Iced Tea", "$2.25"],
+        ["$ Gold Peak® Iced Green Tea", "$2.25"],
+        ["$ Gold Peak® Lemon Iced Tea", "$2.25"],
+        ["$ Gold Peak® Lemonade Iced Tea", "$2.25"],
+        ["$ Gold Peak® Sweet Tea", "$2.25"],
+        ["$ Gold Peak® Unsweetened Iced Tea", "$2.25"],
+        ["Illy Issimo Latte Macchiato Bottled Coffee Drink", "$2.50"],
+        ["$ Illy® Issimo™ Cappuccino Coffee Drink", "$2.50"],
+        ["$ Izze® Sparkling Apple", "$2.50"],
+        ["$ Izze® Sparkling Blackberry", "$2.50"],
+        ["$ Izze® Sparkling Blueberry", "$2.50"],
+        ["$ Izze® Sparkling Clementine", "$2.50"],
+        ["$ Izze® Sparkling Ginger", "$2.50"],
+        ["$ Izze® Sparkling Grapefruit", "$2.50"],
+        ["$ Izze® Sparkling Peach", "$2.50"],
+        ["$ Izze® Sparkling Pomegranate", "$2.50"],
+        ["Mello Yello®", "$1.93"],
+        ["$ Minute Maid® 100% Apple Juice", "$2.25"],
+        ["$ Minute Maid® 100% Orange Juice", "$2.25"],
+        ["$ Minute Maid® Cranberry Grape", "$2.25"],
+        ["Minute Maid® Fruit Punch", "$2.25"],
+        ["Minute Maid® Lemonade", "$1.93"],
+        ["$ Minute Maid® Pineapple Orange", "$2.25"],
+        ["$ Minute Maid® Strawberry Passion", "$2.25"],
+        ["$ Minute Maid® Tropical Blend", "$2.25"],
+        ["$ Orangina®", "$2.50"],
+        ["$ San Pellegrino® Limonata", "$2.50"],
+        ["San Pellegrino® Sparkling Natural Mineral Water", "$2.50"],
+        ["Sprite®", "$1.93"],
+        ["Starbucks Caramel Frappuccino Bottled Coffee Drink", "$2.50"],
+        ["Starbucks Mocha Frappuccino Bottled Coffee Drink", "$2.50"],
+        ["$ Starbucks® Vanilla Frappuccino® Bottled Coffee Drink", "$2.50"]
+      ]
+    ],
+
+    ["Dolci",
+      [
+        "Dolci",
+        "",
+        ["Gelato & Sorbet", "$4.50"],
+        ["Affogato Italiano", "$6.00"],
+        ["Bacca Parfait", "$4.75"],
+        ["Bacca Parfait w/ Nutella", "$4.75"],
+        ["Biscotto Col Gelato", "$6.00"],
+        ["Coconut Fruit Torta", "$6.00"],
+        ["Mount Vesuvius", "$6.00"],
+        ["Tiramisu", "$6.00"]
+      ],
+
+      [
+        "Daily Pastry Selection",
+        "",
+        ["Banana Walnut Muffin", "$2.50"],
+        ["Blueberry Muffin", "$2.50"],
+        ["Cherry Marzipan Crumble Coffee Cake", "$2.75"],
+        ["Chocolate Chip Scone", "$2.75"],
+        ["Chocolate Espresso Cookie", "$2.00"],
+        ["Maccherones Italiani", "$2.75"],
+        ["Maple Pecan Danish", "$2.75"],
+        ["Mocha Chocolate Chip Muffin", "$2.50"],
+        ["Pignolis", "$2.00"],
+        ["Pizza Bagel", "$2.75"],
+        ["Vegan Cappucino Cookies", "$2.75"],
+        ["Walnut Rosemary Biscotti", "$2.00"]
+      ]
+    ]
+  ],
+
+  "De Neve Late Night" :
+  [
+    ["Entrees",
+      [
+        "One Swipe Combo",
+        "Entree + Side + Fountain Drink"
+      ],
+
+      [
+        "Entrees",
+        "",
+        ["Classic Burger", "$6.50"],
+        ["Classic Cheeseburger", "$7.00"],
+        ["Chili Cheddar Burger", "$7.50"],
+        ["Turkey Burger", "$6.50"],
+        ["Veggie Burger", "$6.00"],
+        ["Portobello 'Burger'", "$6.50"],
+        ["Chicken Tenders", "$6.50"],
+        ["Chicken Tenders, 1-lb.", "$8.75"],
+        ["Vegan Chick'n Fingers", "$6.50"],
+        ["Vegan Chick'n Fingers, 1-lb.", "$8.75"],
+        ["Vegan Chili", "$5.25"],
+        ["Chili Cheese Fries", "$4.75"],
+        ["Chili Cheese Curly Fries", "$4.75"],
+        ["Onion Rings, 12-oz.", "$6.00"],
+        ["Onion Rings, 6-oz.", "$4.00"],
+        ["Mozzarella Sticks", "$6.00"]
+      ]
+    ],
+
+    ["Sides & Beverages",
+      [
+        "One Swipe Combo",
+        "Ice-Cream Shake"
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Curly Fries", "$2.00"],
+        ["French Fries", "$2.00"]
+      ],
+
+      [
+        "Drinks",
+        "",
+        ["Fountain Beverage", "$1.25"]
+      ],
+
+      [
+        "Shakes",
+        "",
+        ["Chocolate Shake", "$4.00"],
+        ["Neopolitan Shake", "$4.00"],
+        ["Strawberry Shake", "$4.00"],
+        ["Vanilla Shake", "$4.00"]
+      ]
+    ],
+
+    ["MyPizza & Wings",
+      [
+        "4 Swipe Combo",
+        "Large 3 Topping Pizza + 6-Pack Soda. Premier Meal Plan Required."
+      ],
+
+      [
+        "2 Swipe Combo",
+        "Full Order of Chicken Wings (1 lb.). Premier Meal Plan Required."
+      ],
+
+      [
+        "1 Swipe Combo",
+        "Half Order of Chicken Wings (1/2 lb.)"
+      ],
+
+      [
+        "MyPizza",
+        "",
+        ["Large Pizza", "$10.00"],
+        ["Soda Six-Pack", "$5.00"]
+      ],
+
+      [
+        "Wings",
+        "",
+        ["BBQ Chicken Wings", "$7.00"],
+        ["BBQ Chicken Wings 1/2 Order", "$6.00"],
+        ["Buffalo Chicken Wings", "$7.00"],
+        ["Buffalo Chicken Wings 1/2 Order", "$6.00"],
+        ["Chipotle Chicken Wings", "$7.00"],
+        ["Chipotle Chicken Wings 1/2 Order", "$6.00"],
+        ["Plain Chicken Wings", "$7.00"],
+        ["Plain Chicken Wings 1/2 Order", "$6.00"]
+      ]
+    ]
+  ],
+
+  "De Neve Grab n' Go":
+  [
+    ["Breakfast",
+      [
+        "One Swipe Combo",
+        "Muffin, Pastry, Yogurt, Cereal, or Oatmeal + Apple, Orange, or Banana + Beverage"
+      ],
+
+      [
+        "Cereal & Yogurt",
+        "",
+        ["Cold Cereal", "$2.50"],
+        ["Fresh Fruit Cup", "$4.00"],
+        ["Quaker® Instant Oatmeal Cups", "$2.50"],
+        ["Strawberry Raspberry Parfait", "$4.00"],
+        ["Yogurt Cup", "$1.75"],
+        ["Yogurt Parfait Cup", "$4.00"]
+      ],
+
+      [
+        "Muffins & Pastries",
+        "",
+        ["Assorted Bagels", "$2.75"],
+        ["Banana Walnut Muffin", "$2.50"],
+        ["Blueberry Muffin", "$2.50"],
+        ["Butter Croissant", "$2.75"],
+        ["Cheese Croissant", "$2.75"],
+        ["Chocolate Chip Cookie", "$2.00"],
+        ["Chocolate Croissant", "$2.75"],
+        ["Cinnamon Roll", "$2.75"],
+        ["Low Fat Blueberry Bran Muffin", "$2.50"],
+        ["Mocha Chocolate Chip Muffin", "$2.50"],
+        ["Oatmeal Raisin Cookie", "$2.00"],
+        ["Strawberry Cream Cheese Croissant", "$2.75"],
+        ["Whole Wheat Croissant", "$2.75"]
+      ],
+
+      [
+        "Beverages",
+        "",
+        ["Dasani® Purified Water", "$1.85"],
+        ["Apple Juice", "$1.00"],
+        ["Chocolate Milk", "$1.00"],
+        ["Fat-Free Milk", "$1.00"],
+        ["Low-Fat Milk", "$1.00"],
+        ["Orange Juice", "$1.00"],
+        ["Vanilla Soy Milk", "$1.50"],
+        ["Café Latte", "$3.75"],
+        ["Coffee", "$1.75"],
+        ["Decaffeinated Coffee", "$1.75"]
+      ],
+
+      [
+        "Fruit",
+        "",
+        ["Banana", "$1.00"],
+        ["Fuji Apple", "$1.00"],
+        ["Orange", "$1.00"]
+      ]
+    ],
+
+    ["Lunch",
+      [
+        "One Swipe Combo",
+        "Salad, Wrap, or Entree Salad + Side (Chips, Fruit, or Side Salad) + 2 Cookies + Beverage"
+      ],
+
+      [
+        "Sandwiches",
+        "",
+        ["Greek Chicken Sandwich", "$7.50"],
+        ["Ham & Swiss Sandwich", "$6.50"],
+        ["Ham & Swiss Sandwich on Whole Grain", "$6.50"],
+        ["Roast Beef & Cheddar Sandwich", "$7.00"],
+        ["Roast Beef Sandwich on Whole Grain", "$7.00"],
+        ["Roasted Turkey & Provolone Sandwich on Whole Grain", "$6.50"],
+        ["Salmon BLT", "$7.00"],
+        ["Smoked Turkey Club w/ Cheese", "$6.50"],
+        ["The Greek Vegetable Sandwich", "$7.25"],
+        ["Turkey & Provolone Sandwich", "$6.50"]
+      ],
+
+      [
+        "Wraps",
+        "",
+        ["Caesar Wrap", "$6.00"],
+        ["Chicken Caesar Wrap", "$6.50"],
+        ["Roasted Vegetable Plate", "$6.00"],
+        ["Roasted Vegetable Wrap", "$6.00"],
+        ["Southwest Black Bean & Corn Wrap", "$6.00"],
+        ["Southwest Chicken Wrap", "$6.50"]
+      ],
+
+      [
+        "Entree Salads",
+        "",
+        ["Caesar Salad", "$6.00"],
+        ["Chinese Chicken Salad", "$6.50"],
+        ["Chinese Wonton Salad", "$6.00"],
+        ["Grilled Chicken Walnut Apple Salad", "$6.50"],
+        ["Pollo Caesar Salad", "$6.50"],
+        ["Tritata Salad", "$6.50"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Asian Quinoa Salad", "$2.00"],
+        ["California Pasta Salad", "$2.00"],
+        ["Israeli Cous Cous Salad", "$2.00"],
+        ["Mediterranean Chopped Salad", "$2.00"],
+        ["Sesame & Orange Noodle Salad", "$2.00"],
+        ["Boulder Canyon™ Totally Natural Kettle Chips", "$1.25"],
+        ["French Onion SunChips®", "$1.25"],
+        ["Garden Salsa™ SunChips®", "$1.25"],
+        ["Harvest Cheddar® SunChips®", "$1.25"],
+        ["Poore Brothers® Jalapeño Kettle Chips", "$1.25"],
+        ["Banana", "$1.00"],
+        ["Fuji Apple", "$1.00"],
+        ["Orange", "$1.00"]
+      ],
+
+      [
+        "Cookies",
+        "",
+        ["Chocolate Chip Cookies", "$1.00"],
+        ["Oatmeal Raisin Cookies", "$1.00"]
+      ],
+
+      [
+        "Beverages",
+        "",
+        ["Dasani® Purified Water", "$1.85"],
+        ["Apple Juice", "$1.00"],
+        ["Chocolate Milk", "$1.00"],
+        ["Fat-Free Milk", "$1.00"],
+        ["Low-Fat Milk", "$1.00"],
+        ["Orange Juice", "$1.00"],
+        ["Vanilla Soy Milk", "$1.50"],
+        ["Café Latte", "$3.75"],
+        ["Coffee", "$1.75"],
+        ["Decaffeinated Coffee", "$1.75"]
+      ]
+    ],
+
+    ["Sushi",
+      [
+        "One Swipe Combo",
+        "8-Piece Sushi Roll + Bottled Water, Milk, or Juice Carton"
+      ],
+
+      [
+        "Monday",
+        "",
+        ["California Roll", "$5.50"],
+        ["Cucumber & Avocado Roll", "$5.50"]
+      ],
+
+      [
+        "Tuesday",
+        "",
+        ["Spicy Tuna Roll", "$7.00"],
+        ["Cucumber & Avocado Roll", "$5.50"]
+      ],
+
+      [
+        "Wednesday",
+        "",
+        ["California Roll", "$5.50"],
+        ["Cucumber & Avocado Roll", "$5.50"]
+      ],
+
+      [
+        "Thursday",
+        "",
+        ["Spicy Shrimp Roll", "$7.00"],
+        ["Cucumber & Avocado Roll", "$5.50"]
+      ],
+
+      [
+        "Friday",
+        "",
+        ["California Roll", "$5.50"],
+        ["Cucumber & Avocado Roll", "$5.50"]
+      ],
+
+      [
+        "Beverages",
+        "",
+        ["Dasani® Purified Water", "$1.85"],
+        ["Apple Juice", "$1.00"],
+        ["Chocolate Milk", "$1.00"],
+        ["Fat-Free Milk", "$1.00"],
+        ["Low-Fat Milk", "$1.00"],
+        ["Orange Juice", "$1.00"],
+        ["Vanilla Soy Milk", "$1.50"]
+      ]
+    ]
+  ],
+
+  "Rendezvous" :
+  [
+    ["Breakfast",
+      [
+        "One Swipe Combo",
+        "Entree + Tator Tots + Whole Fruit + Drink"
+      ],
+
+      [
+        "One Swipe Combo",
+        "Potstickers or Bao Bun + Whole Fruit + Drink"
+      ],
+
+      [
+        "One Swipe Combo",
+        "[Oatmeal Cup & Tater Tots] or [Bagel & Tater Tots] or [Cereal with Milk] or [Yogurt Parfait Cup, Fresh Fruit Cup, or Pastry] + Whole Fruit + Drink"
+      ],
+
+      [
+        "Latin Specialties",
+        "",
+        ["Machaca Breakfast Burrito (Mon)", "$4.50"],
+        ["Sausage, Egg, & Tator Tot Burrito (Mon & Wed)", "$4.50"],
+        ["Bacon, Egg, & Tator Tot Burrito (Tue & Thu)", "$4.50"],
+        ["Chorizo & Egg Burrito (Thu)", "$4.50"],
+        ["Ham, Egg, & Cheese Burrito (Fri)", "$4.50"],
+        ["Egg & Cheese Burrito", "$4.00"],
+        ["Vegetable & Egg Breakfast Burrito", "$4.00"],
+        ["English Muffin Sandwich w/ Bacon (Tue & Thu)", "$4.50"],
+        ["English Muffin Sandwich w/ Canadian Bacon (Tue)", "$4.50"],
+        ["English Muffin Sandwich w/ Pork Sausage (Thu)", "$4.50"],
+        ["Egg & Cheese Burrito", "$4.00"],
+        ["Vegetable & Egg Breakfast Burrito", "$4.00"],
+        ["Vegetarian English Muffin Sandwich (Tue & Thu)", "$4.00"],
+        ["Bagel Sandwich w/ Bacon (Mon & Wed & Fri)", "$4.50"],
+        ["Bagel Sandwich w/ Egg & Cheese", "$4.00"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Tator Tots", "$1.50"],
+        ["Banana", "$1.00"],
+        ["Gala Apple", "$1.00"],
+        ["Orange", "$1.00"]
+      ],
+
+      [
+        "Asian Entrees",
+        "",
+        ["Chicken Potstickers", "$4.50"],
+        ["Pork Potstickers", "$4.50"],
+        ["Vegetable Potstickers", "$4.50"],
+        ["BBQ Pork Bao Bun", "$4.50"],
+        ["Vegetable Bao Bun", "$4.50"]
+      ],
+
+      [
+        "Sweets & Treats",
+        "",
+        ["Oatmeal", "$2.50"],
+        ["Bagel w/ Cream Cheese", "$2.50"],
+        ["Fruit Cup", "$4.00"],
+        ["Yogurt Parfait", "$4.00"],
+        ["Cold Cereal", "$2.50"]
+      ],
+
+      [
+        "Pastries",
+        "",
+        ["Blueberry Muffin", "$2.50"],
+        ["Chocolate Croissant", "$2.75"],
+        ["Cinnamon Roll", "$2.75"],
+        ["Low Fat Blueberry Bran Muffin", "$2.50"]
+      ],
+
+      [
+        "Drinks",
+        "",
+        ["Apple Juice", "$1.00"],
+        ["Chocolate Milk", "$1.00"],
+        ["Fat-Free Milk", "$1.00"],
+        ["Low-Fat Milk", "$1.00"],
+        ["Orange Juice", "$1.00"],
+        ["Vanilla Soy Milk", "$1.50"],
+        ["Coffee", "$1.75"],
+        ["Decaffeinated Coffee", "$1.75"],
+        ["Hot Green Tea", "$2.25"],
+        ["Fountain Beverage", "$1.75"]
+      ]
+    ],
+
+    ["Latin",
+      [
+        "One Swipe Combo",
+        "Entree + Drink (Tacos & Quesadillas include Refried Beans & Rice), (Burritos include fresh Tortilla Chips)"
+      ],
+
+      [
+        "One Swipe Combo",
+        "Daily Special + Drink"
+      ],
+
+      [
+        "Latin Entrees",
+        "",
+        ["Beef Taco Salad", "$6.50"],
+        ["Chicken Taco Salad", "$6.25"],
+        ["Vegetarian Taco Salad", "$6.00"],
+        ["Beef Tacos", "$6.50"],
+        ["Chicken Tacos", "$6.25"],
+        ["Fish Tacos", "$7.00"],
+        ["Bean & Cheese Burrito", "$6.00"],
+        ["Beef Burrito", "$6.50"],
+        ["Beef Burrito (Classic Style)", "$6.50"],
+        ["Chicken Burrito", "$6.25"],
+        ["Chicken Burrito (Classic Style)", "$6.25"],
+        ["Fish Burrito", "$7.00"],
+        ["Vegetable Burrito", "$6.00"],
+        ["Beef Burrito Bowl", "$6.50"],
+        ["Chicken Burrito Bowl", "$6.25"],
+        ["Vegetarian Burrito Bowl", "$6.00"],
+        ["Beef Quesadilla", "$6.50"],
+        ["Cheese Quesadilla", "$6.00"],
+        ["Chicken Quesadilla", "$6.25"],
+        ["Spinach & Mushroom Quesadilla", "$6.00"],
+        ["Vegan Quesadilla", "$6.50"],
+        ["Vegan Spinach Quesadilla", "$6.50"],
+        ["Beef Nachos", "$6.50"],
+        ["Chicken Nachos", "$6.25"],
+        ["Guacamole & Chips", "$4.75"],
+        ["Vegetarian Nachos", "$6.00"]
+      ],
+
+      [
+        "Latin Daily Specials",
+        "",
+        ["Chipotle Chicken Burrito (Mon)", "$6.25"],
+        ["Vegetarian BBQ Chicken Quesadilla (Mon)", "$6.50"],
+        ["Potato Enchiladas (Tue)", "$6.00"],
+        ["Three Taco Combination (Tue)", "$6.50"],
+        ["BBQ Chicken Quesadilla (Wed)", "$6.25"],
+        ["Vegetarian BBQ Chicken Quesadilla (Wed)", "$6.50"],
+        ["California Beef Burrito (Thu)", "$6.50"],
+        ["California Veggie Burrito (Thu)", "$6.00"],
+        ["Chicken Enchiladas (Fri)", "$6.25"],
+        ["Potato Enchiladas (Fri)", "$6.00"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Black Beans", "$2.00"],
+        ["Mexican Rice", "$2.00"],
+        ["Refried Beans", "$2.00"],
+        ["Tortilla Chips", "$1.50"]
+      ],
+
+      [
+        "Drinks",
+        "",
+        ["Fountain Beverage", "$1.75"],
+        ["Apple Juice", "$1.00"],
+        ["Chocolate Milk", "$1.00"],
+        ["Fat-Free Milk", "$1.00"],
+        ["Low-Fat Milk", "$1.00"],
+        ["Orange Juice", "$1.00"],
+        ["Vanilla Soy Milk", "$1.50"],
+        ["Hot Chocolate", "$1.00"],
+        ["Hot Vanilla", "$1.00"],
+        ["Hot Green Tea", "$2.25"]
+      ]
+    ],
+
+    ["Asian",
+      [
+        "One Swipe Combo",
+        "[Noodle Bowl] or [Daily Special] + Drink"
+      ],
+
+      [
+        "One Swipe Combo",
+        "2 Entree + 2 Sides + Drink"
+      ],
+
+      [
+        "One Swipe Combo",
+        "Salad + Drink"
+      ],
+
+      [
+        "Asian Entrees",
+        "",
+        ["Beef & Broccoli", "$6.50"],
+        ["Orange Chicken", "$6.25"],
+        ["Vegetable Stir Fry", "$6.00"],
+        ["Baby Bok Choy & Tofu (Tue & Thu)", "$6.00"],
+        ["Chicken & Mushroom (Fri)", "$6.25"],
+        ["Eggplant & Tofu w/ Spicy Garlic (Mon & Wed & Fri)", "$6.00"],
+        ["Kung Pao Chicken (Mon & Wed)", "$6.25"],
+        ["Sweet and Spicy Sesame Wings (Tue & Thu)", "$6.50"]
+      ],
+
+      [
+        "Asian Daily Specials",
+        "",
+        ["Pork Tonkatsu (Mon)", "$7.00"],
+        ["Vegetarian Chicken Teriyaki Bento Box (Mon)", "$6.50"],
+        ["Chicken Teriyaki Bento Box (Tue)", "$6.50"],
+        ["Vegetarian Chicken Teriyaki Bento Box (Tue)", "$6.50"],
+        ["BBQ Korean Pork Spare Ribs (Wed)", "$7.00"],
+        ["Korean Vegetable Bowl (Wed)", "$6.00"],
+        ["Teriyaki Chicken Bowl (Thu)", "$6.25"],
+        ["Vegan Teriyaki Chicken Bowl (Thu)", "$6.50"],
+        ["Shrimp Sushi Bowl (Fri)", "$7.00"],
+        ["Vegetable Sushi Bowl (Fri)", "$6.00"]
+      ],
+
+      [
+        "Noodle Bowls",
+        "",
+        ["Tan Tan Ramen Noodle Soup (Mon)", "$6.50"],
+        ["Vegetable Ramen Soup (Mon)", "$6.00"],
+        ["Mandoo Ramen (Tue)", "$6.50"],
+        ["Vegetable Ramen Soup (Tue)", "$6.00"],
+        ["Mapo Tofu Ramen (Wed)", "$6.25"],
+        ["Vegetable Ramen Soup (Wed)", "$6.00"],
+        ["Beef Pho (Thu)", "$6.50"],
+        ["Vegetable Ramen Soup (Thu)", "$6.00"],
+        ["Ramen Daeji Bulgogi (Fri)", "$6.50"],
+        ["Vegetarian Miso Ramen Soup (Fri)", "$6.00"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Chow Mein Noodles", "$2.00"],
+        ["Sticky Calrose Brown Rice", "$2.00"],
+        ["Sticky Rice", "$1.50"],
+        ["Young Chow Vegetable Fried Rice", "$2.00"]
+      ],
+
+      [
+        "Salads",
+        "",
+        ["Chinese Chicken Salad", "$6.50"],
+        ["Steak Salad", "$6.50"]
+      ],
+
+      [
+        "Drinks",
+        "",
+        ["Fountain Beverage", "$1.75"],
+        ["Hot Green Tea", "$2.25"],
+        ["Apple Juice", "$1.00"],
+        ["Chocolate Milk", "$1.00"],
+        ["Fat-Free Milk", "$1.00"],
+        ["Low-Fat Milk", "$1.00"],
+        ["Orange Juice", "$1.00"],
+        ["Vanilla Soy Milk", "$1.50"],
+        ["Hot Chocolate", "$1.00"],
+        ["Hot Vanilla", "$1.00"]
+      ]
+    ],
+
+    ["Sweets",
+      [
+        "One Swipe Combo",
+        "[Two 16-oz Boba Drinks] or [One 32-oz Boba Drink]"
+      ],
+
+      [
+        "One Swipe Combo",
+        "One Dessert"
+      ],
+
+      [
+        "16-oz Boba Drinks",
+        "",
+        ["Green Milk Tea Boba", "$3.75"],
+        ["Horchata Boba", "$3.75"],
+        ["Milk Tea Boba", "$3.75"],
+        ["Taro Boba Drink", "$3.75"],
+        ["Thai Tea Boba", "$3.75"],
+        ["Vietnamese Coffee Boba", "$3.75"]
+      ],
+
+      [
+        "32-oz Boba Drinks",
+        "",
+        ["Green Milk Tea Boba", "$5.50"],
+        ["Horchata Boba", "$5.50"],
+        ["Milk Tea Boba", "$5.50"],
+        ["Taro Boba Drink", "$5.50"],
+        ["Thai Tea Boba", "$5.50"],
+        ["Vietnamese Coffee Boba", "$5.50"]
+      ],
+
+      [
+        "Desserts",
+        "Available 9pm to Midnight",
+        ["Churros", "$5.00"],
+        ["Dessert Nachos w/ Ice Cream & Mango Sauce", "$5.00"],
+        ["Green Tea Waffle w/ Ice Cream", "$6.00"]
+      ]
+    ]
+  ]
+}
