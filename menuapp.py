@@ -26,10 +26,8 @@ def getHours():
   hoursFile = "./data/hours.json"
   if os.path.exists(hoursFile) and os.path.isfile(hoursFile):
     file = open(hoursFile, "r")
-    hoursString = file.read()
+    hoursJSON = file.read()
     file.close()
-    hours = json.loads(hoursString)
-    hoursJSON = json.dumps(hours, separators=(',',':'))
     return hoursJSON
 
 @app.route('/quick')
@@ -40,10 +38,8 @@ def getQuickService():
   quickFile = "./data/quick.json"
   if os.path.exists(quickFile) and os.path.isfile(quickFile):
     file = open(quickFile, "r")
-    quickString = file.read()
+    quickJSON = file.read()
     file.close()
-    quick = json.loads(quickString)
-    quickJSON = json.dumps(quick, separators=(',',':'))
     return quickJSON
 
 @app.route('/menu', methods=['GET'])
