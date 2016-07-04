@@ -10,10 +10,10 @@ from enum import Enum
 
 
 # constants
-restaurantName = "restaurantName"
-restaurantKitchens = "restaurantKitchens"
-kitchenName = "kitchenName"
-kitchenItems = "kitchenItems"
+restaurantName = "rName"
+restaurantKitchens = "kitchens"
+kitchenName = "kName"
+kitchenItems = "items"
 
 class Meal(Enum):
   """
@@ -228,25 +228,43 @@ class MenuParser:
 
 
 if __name__ == "__main__":
-  if len(sys.argv) != 5:
-    print("Error: wrong number of arguments, please specify YEAR MONTH DAY MEAL (b/l/d).")
-    sys.exit(1)
-  
-  year, month, day, m = sys.argv[1:]
 
-  if not (year.isdigit() and month.isdigit() and day.isdigit()):
-    print("Error: wrong input format, YEAR MONTH DAY all have to be digits.")
-    sys.exit(1)
+  dateTime = datetime.datetime.today()
 
-  if m != 'b' and m != 'l' and m != 'd':
-    print("Error: MEAL has to be one of b/l/d.")
-    sys.exit(1)
+  for i in range(-1, 7):
 
-  dateTime = datetime.date(int(float(year)), int(float(month)), int(float(day)))
-  meal = Meal.getMeal(m)
-  parser = MenuParser(dateTime, meal)
-  menus = parser.getMenus()
-  if len(menus) != 0:
-    print(json.dumps(menus, indent=2))
-  else:
-    print("Empty menu.")
+    currentDate = dateTime + datetime.timedelta(days=i)
+    dateString = currentDate.strftime('./menus/%Y-%m-%d')
+    print(dateString)
+
+    menus = {"b":[],"l":[],"d":[]}
+
+    # breakfast
+    meal = Meal.breakfast
+    parser = MenuParser(dateTime, meal)
+    menu = parser.getMenus()
+    if menu != None:
+      menus["b"] = menu
+
+    # lunch
+    meal = Meal.lunch
+    parser = MenuParser(dateTime, meal)
+    menu = parser.getMenus()
+    if menu != None:
+      menus["l"] = menu
+
+    # dinner
+    meal = Meal.dinner
+    parser = MenuParser(dateTime, meal)
+    menu = parser.getMenus()
+    if menu != None:
+      menus["d"] = menu
+
+    menuJSON = json.dumps(menus, separators=(',',':'))
+
+    # create file to save to
+    file = open(dateString, "w")
+    file.write(menuJSON)
+    file.close()
+
+    print(menuJSON)
