@@ -10,10 +10,10 @@ from enum import Enum
 
 
 # constants
-restaurantName = "restaurantName"
-restaurantKitchens = "restaurantKitchens"
-kitchenName = "kitchenName"
-kitchenItems = "kitchenItems"
+restaurantName = "rName"
+restaurantKitchens = "kitchens"
+kitchenName = "kName"
+kitchenItems = "items"
 
 class Meal(Enum):
   """
@@ -225,28 +225,3 @@ class MenuParser:
     params = {'date': dateString, 'meal': meal.value, 'threshold': "2"}
     url = base + urlencode(params)
     return url
-
-
-if __name__ == "__main__":
-  if len(sys.argv) != 5:
-    print("Error: wrong number of arguments, please specify YEAR MONTH DAY MEAL (b/l/d).")
-    sys.exit(1)
-  
-  year, month, day, m = sys.argv[1:]
-
-  if not (year.isdigit() and month.isdigit() and day.isdigit()):
-    print("Error: wrong input format, YEAR MONTH DAY all have to be digits.")
-    sys.exit(1)
-
-  if m != 'b' and m != 'l' and m != 'd':
-    print("Error: MEAL has to be one of b/l/d.")
-    sys.exit(1)
-
-  dateTime = datetime.date(int(float(year)), int(float(month)), int(float(day)))
-  meal = Meal.getMeal(m)
-  parser = MenuParser(dateTime, meal)
-  menus = parser.getMenus()
-  if len(menus) != 0:
-    print(json.dumps(menus, indent=2))
-  else:
-    print("Empty menu.")
