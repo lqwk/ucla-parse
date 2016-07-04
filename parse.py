@@ -225,3 +225,45 @@ class MenuParser:
     params = {'date': dateString, 'meal': meal.value, 'threshold': "2"}
     url = base + urlencode(params)
     return url
+
+if __name__ == "__main__":
+
+  dateTime = datetime.datetime.today()
+
+  for i in range(-1, 7):
+
+    currentDate = dateTime + datetime.timedelta(days=i)
+    dateString = currentDate.strftime('./menus/%Y-%m-%d')
+    print(dateString)
+
+    menus = {"b":[],"l":[],"d":[]}
+
+    # breakfast
+    meal = Meal.breakfast
+    parser = MenuParser(dateTime, meal)
+    menu = parser.getMenus()
+    if menu != None:
+      menus["b"] = menu
+
+    # lunch
+    meal = Meal.lunch
+    parser = MenuParser(dateTime, meal)
+    menu = parser.getMenus()
+    if menu != None:
+      menus["l"] = menu
+
+    # dinner
+    meal = Meal.dinner
+    parser = MenuParser(dateTime, meal)
+    menu = parser.getMenus()
+    if menu != None:
+      menus["d"] = menu
+
+    menuJSON = json.dumps(menus, separators=(',',':'))
+
+    # create file to save to
+    file = open(dateString, "w")
+    file.write(menuJSON)
+    file.close()
+
+    print(menuJSON)
