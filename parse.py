@@ -230,7 +230,7 @@ if __name__ == "__main__":
 
   dateTime = datetime.datetime.today()
 
-  for i in range(-1, 7):
+  for i in range(0, 7):
 
     currentDate = dateTime + datetime.timedelta(days=i)
     dateString = currentDate.strftime('./menus/%Y-%m-%d')
@@ -240,21 +240,21 @@ if __name__ == "__main__":
 
     # breakfast
     meal = Meal.breakfast
-    parser = MenuParser(dateTime, meal)
+    parser = MenuParser(currentDate, meal)
     menu = parser.getMenus()
     if menu != None:
       menus["b"] = menu
 
     # lunch
     meal = Meal.lunch
-    parser = MenuParser(dateTime, meal)
+    parser = MenuParser(currentDate, meal)
     menu = parser.getMenus()
     if menu != None:
       menus["l"] = menu
 
     # dinner
     meal = Meal.dinner
-    parser = MenuParser(dateTime, meal)
+    parser = MenuParser(currentDate, meal)
     menu = parser.getMenus()
     if menu != None:
       menus["d"] = menu
@@ -264,6 +264,7 @@ if __name__ == "__main__":
     # create file to save to
     file = open(dateString, "w")
     file.write(menuJSON)
+    file.write("\n")
     file.close()
 
     print(menuJSON)
