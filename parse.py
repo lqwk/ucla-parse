@@ -230,7 +230,7 @@ if __name__ == "__main__":
 
   dateTime = datetime.datetime.today()
 
-  for i in range(-1, 7):
+  for i in range(0, 7):
 
     currentDate = dateTime + datetime.timedelta(days=i)
     dateString = currentDate.strftime('./menus/%Y-%m-%d')
