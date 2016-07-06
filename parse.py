@@ -10,10 +10,12 @@ from enum import Enum
 
 
 # constants
-restaurantName = "rName"
-restaurantKitchens = "kitchens"
-kitchenName = "kName"
-kitchenItems = "items"
+kRestaurantName = "r"
+kRestaurantKitchens = "rk"
+kKitchenName = "k"
+kKitchenItems = "i"
+kEntreeName = "e"
+kNutritionData = "n"
 
 class Meal(Enum):
   """
@@ -49,7 +51,7 @@ class MenuParser:
     self.date = date
     self.meal = meal
     self.url = self.buildURL(date, meal)
-    # print(self.url)
+
 
   def getMenus(self):
     """
@@ -63,6 +65,7 @@ class MenuParser:
     html = response.read()
     restaurants = self.parseRestaurantHTML(html)
     return restaurants
+
 
   def getRestaurantCount(self, tds):
     """
@@ -81,6 +84,7 @@ class MenuParser:
         break
 
     return count
+
 
   def separateRestaurants(self, tds):
     """
@@ -149,6 +153,7 @@ class MenuParser:
 
     return data
 
+
   def parseRestaurantHTML(self, html):
     """
     Parse the 'html' passed in.
@@ -170,7 +175,7 @@ class MenuParser:
 
     restaurants = []
     for index, values in enumerate(data):
-      restaurant = { restaurantName: "", restaurantKitchens: [] }
+      restaurant = { kRestaurantName: "", kRestaurantKitchens: [] }
       for d in values:
         # separate the "restaurant name" from the "kitchens"
         for child in d.children:
@@ -181,11 +186,13 @@ class MenuParser:
               line = line.replace('*', '')
               # print()
               # print('RESTAURANT: ' + line)
-              restaurant[restaurantName] = line
+              restaurant[kRestaurantName] = line
             else:
               # separate the kitchen name from the entrees
-              kitchen = { kitchenName: "", kitchenItems: [] }
+              kitchen = { kKitchenName: "", kKitchenItems: [] }
               for item in child:
+                # print(item)
+                # print()
                 if type(item) is bs4.element.Tag:
                   itemclass = item.get('class')
                   if itemclass != None and len(itemclass) != 0 and ('category' in itemclass[0]):
@@ -193,22 +200,52 @@ class MenuParser:
                     line = line.replace('*', '')
                     # print()
                     # print('Kitchen: ' + line)
-                    kitchen[kitchenName] = line
+                    kitchen[kKitchenName] = line
                   elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
+                    # get the link to nutrition data & the nutrition data
+                    baseURL = "http://menu.ha.ucla.edu/foodpro/"
+                    nutritionURL = baseURL + item.find('a').get('href')
+                    nutritionResponse = urllib.request.urlopen(nutritionURL)
+                    nutritionHTML = nutritionResponse.read()
+                    nutrition = self.parseNutritionHTML(nutritionHTML)
+                    # get the entree name
                     line = item.text.replace(u'\xa0', u'')
                     line = line.replace('*', '')
                     if line.startswith(("w/", "&")):
                       continue
                     # print('e: ' + line)
-                    kitchen[kitchenItems].append(line)
+                    entree = { kEntreeName: line, kNutritionData: nutrition}
+                    # print(entree)
+                    kitchen[kKitchenItems].append(entree)
               # print(kitchen)
-              if kitchen[kitchenName] != "" and len(kitchen[kitchenItems]) != 0:
-                restaurant[restaurantKitchens].append(kitchen)
-      if restaurant[restaurantName] != "" and len(restaurant[restaurantKitchens]) != 0:
+              if kitchen[kKitchenName] != "" and len(kitchen[kKitchenItems]) != 0:
+                restaurant[kRestaurantKitchens].append(kitchen)
+      if restaurant[kRestaurantName] != "" and len(restaurant[kRestaurantKitchens]) != 0:
         restaurants.append(restaurant)
     # print(restaurants)
 
     return restaurants
+
+
+  def parseNutritionHTML(self, html):
+    """
+    Parse the nutrition html passed in.
+
+    Uses the module 'BeautifulSoup' to find the calories data.
+    Returns the nutrition data as a dict.
+    """
+
+    nutrition = { "c" : "" }
+
+    soup = bs4.BeautifulSoup(html, 'html.parser')
+    cals = soup.findAll('p', {"class" : "nfcal"})
+    for cal in cals:
+      for child in cal.children:
+        if type(child) is bs4.element.NavigableString:
+          calories = str(child).strip()
+          nutrition["c"] = calories
+    return nutrition
+
 
   def buildURL(self, date, meal):
     """
@@ -230,7 +267,7 @@ if __name__ == "__main__":
 
   dateTime = datetime.datetime.today()
 
-  for i in range(-1, 7):
+  for i in range(0, 7):
 
     currentDate = dateTime + datetime.timedelta(days=i)
     dateString = currentDate.strftime('./menus/%Y-%m-%d')
