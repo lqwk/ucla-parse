@@ -1,4 +1,4 @@
-import sys
+import os
 import bs4
 import json
 import datetime
@@ -25,12 +25,11 @@ kSugars = "ss"
 kProtein = "p"
 
 
-base = "http://menu.ha.ucla.edu/foodpro/recipedetail.asp?RecipeNumber="
-filebase = "./nutrition/"
+def downloadNutritionData(url):
+  """
+  Downloads the nutrition data for 'url'
+  """
 
-for r in Recipes.recipes:
-
-  url = base + r
   print(url)
 
   nutrition = {
@@ -157,7 +156,31 @@ for r in Recipes.recipes:
   # print(json.dumps(nutrition, indent=2))
 
   # create file to save to
-  filename = filebase + r
   file = open(filename, "w")
   file.write(nutritionJSON)
   file.close()
+
+
+if __name__ == "__main__":
+
+  base = "http://menu.ha.ucla.edu/foodpro/recipedetail.asp?RecipeNumber="
+  filebase = "./nutrition/"
+
+  for r in Recipes.recipes:
+
+    url = base + r
+    filename = filebase + r
+
+    # check if file exists yet
+    if os.path.exists(filename) and os.path.isfile(filename):
+      # if exists, check the time stamp
+      statinfo = os.stat(filename)
+      filetime = datetime.datetime.fromtimestamp(statinfo.st_mtime)
+      servertime = datetime.datetime.now()
+      td = servertime - filetime
+      diffdays = td.days
+      # if the time difference is greater than 7 days, re-download
+      if diffdays >= 7:
+        downloadNutritionData(url)
+    else:
+      downloadNutritionData(url)
