@@ -35,23 +35,23 @@ for r in Recipes.recipes:
 
   nutrition = {
     # calories
-    kCalories:"0",      # calories
-    kFatCalories:"0",     # fat calories
+    kCalories:"0",     # calories
+    kFatCalories:"0",  # fat calories
     # vitamins
     kVitaminA:"0%",    # vitamin A
     kVitaminC:"0%",    # vitamin C
-    kCalcium:"0%",    # calcium
-    kIron:"0%",    # iron
+    kCalcium:"0%",     # calcium
+    kIron:"0%",        # iron
     # other nutrients
-    kTotalFat:["0g","0%"],   # total fat
-    kSaturatedFat:["0g","0%"],  # saturated fat
-    kTransFat:"0g",         # trans fat
-    kCholesterol:["0mg","0%"], # cholesterol
-    kSodium:["0mg","0%"],  # sodium
+    kTotalFat:["0g","0%"],           # total fat
+    kSaturatedFat:["0g","0%"],       # saturated fat
+    kTransFat:"0g",                  # trans fat
+    kCholesterol:["0mg","0%"],       # cholesterol
+    kSodium:["0mg","0%"],            # sodium
     kTotalCarbohydrate:["0g","0%"],  # total carbohydrate
-    kDietaryFiber:["0g","0%"],  # dietary fiber
-    kSugars:"0g",         # sugars
-    kProtein:"0g"           # protein
+    kDietaryFiber:["0g","0%"],       # dietary fiber
+    kSugars:"0g",                    # sugars
+    kProtein:"0g"                    # protein
   }
 
   response = urllib.request.urlopen(url)
