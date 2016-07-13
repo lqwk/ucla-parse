@@ -153,12 +153,13 @@ def downloadNutritionData(url, filename):
 
 
   nutritionJSON = json.dumps(nutrition, separators=(',',':'))
-  # print(json.dumps(nutrition, indent=2))
 
   # create file to save to
   file = open(filename, "w")
   file.write(nutritionJSON)
   file.close()
+
+  return nutritionJSON
 
 def downloadNutritionDataForRecipeNumber(recipe):
   """
@@ -184,9 +185,11 @@ def downloadNutritionDataForRecipeNumber(recipe):
     diffdays = td.days
     # if the time difference is greater than 4 days, re-download
     if diffdays >= 4:
-      downloadNutritionData(url, filename)
+      return downloadNutritionData(url, filename)
   else:
-    downloadNutritionData(url, filename)
+    return downloadNutritionData(url, filename)
+
+  return None
 
 if __name__ == "__main__":
 
