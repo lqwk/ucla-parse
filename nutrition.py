@@ -179,8 +179,8 @@ if __name__ == "__main__":
       servertime = datetime.datetime.now()
       td = servertime - filetime
       diffdays = td.days
-      # if the time difference is greater than 7 days, re-download
-      if diffdays >= 7:
+      # if the time difference is greater than 4 days, re-download
+      if diffdays >= 4:
         downloadNutritionData(url)
     else:
       downloadNutritionData(url)
