@@ -25,9 +25,9 @@ kSugars = "ss"
 kProtein = "p"
 
 
-def downloadNutritionData(url):
+def downloadNutritionData(url, filename):
   """
-  Downloads the nutrition data for 'url'
+  Downloads the nutrition data for 'url' and saves to 'filename'
   """
 
   print(url)
@@ -160,27 +160,35 @@ def downloadNutritionData(url):
   file.write(nutritionJSON)
   file.close()
 
+def downloadNutritionDataForRecipeNumber(recipe):
+  """
+  Downloads the nutrition data for recipe number 'recipe'.
 
-if __name__ == "__main__":
+  First it checks if the nutrition data exists and is up to date.
+  If not, then it downloads the nutrition data from the UCLA site.
+  """
 
   base = "http://menu.ha.ucla.edu/foodpro/recipedetail.asp?RecipeNumber="
   filebase = "./nutrition/"
 
+  url = base + recipe
+  filename = filebase + recipe
+
+  # check if file exists yet
+  if os.path.exists(filename) and os.path.isfile(filename):
+    # if exists, check the time stamp
+    statinfo = os.stat(filename)
+    filetime = datetime.datetime.fromtimestamp(statinfo.st_mtime)
+    servertime = datetime.datetime.now()
+    td = servertime - filetime
+    diffdays = td.days
+    # if the time difference is greater than 4 days, re-download
+    if diffdays >= 4:
+      downloadNutritionData(url, filename)
+  else:
+    downloadNutritionData(url, filename)
+
+if __name__ == "__main__":
+
   for r in Recipes.recipes:
-
-    url = base + r
-    filename = filebase + r
-
-    # check if file exists yet
-    if os.path.exists(filename) and os.path.isfile(filename):
-      # if exists, check the time stamp
-      statinfo = os.stat(filename)
-      filetime = datetime.datetime.fromtimestamp(statinfo.st_mtime)
-      servertime = datetime.datetime.now()
-      td = servertime - filetime
-      diffdays = td.days
-      # if the time difference is greater than 4 days, re-download
-      if diffdays >= 4:
-        downloadNutritionData(url)
-    else:
-      downloadNutritionData(url)
+    downloadNutritionDataForRecipeNumber(r)
