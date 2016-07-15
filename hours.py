@@ -16,7 +16,6 @@ def getStoreHours():
   hours = []
 
   url = "http://asucla.ucla.edu/ucla-store-hours/"
-  # print(url)
 
   response = urllib.request.urlopen(url)
   html = response.read()
@@ -79,7 +78,6 @@ def getRestaurantHours():
   hours = []
 
   url = "http://asucla.ucla.edu/ucla-restaurant-hours/"
-  # print(url)
 
   response = urllib.request.urlopen(url)
   html = response.read()
@@ -134,11 +132,82 @@ def getRestaurantHours():
   return hours
 
 
-if __name__ == "__main__":
+def getLibraryHours():
+  """
+  Fetch UCLA library hours.
+  """
 
-  info = {
-    "kRestaurantHours" : getRestaurantHours(),
-    "kStoreHours" : getStoreHours()
+  hours = []
+
+  url = "https://www.library.ucla.edu/biomed"
+
+  response = urllib.request.urlopen(url)
+  html = response.read()
+  soup = bs4.BeautifulSoup(html, 'html.parser')
+
+  title = soup.find('h1').text
+  lib = {
+    "kName" : title,
+    "kHours" : []
   }
 
-  print(json.dumps(info, indent=2))
+  trs = soup.findAll('tr')
+
+  for tr in trs:
+
+    libinfo = {
+      "kServiceName" : "",
+      "kServiceHours" : []
+    }
+
+    for child in tr.children:
+      if type(child) != bs4.element.NavigableString:
+        childclass = child.get("class")
+        if childclass == None or childclass[0] == 'current-day':
+          libinfo["kServiceHours"].append(child.text)
+        elif childclass[0] == 'title':
+          libinfo["kServiceName"] = child.text
+
+    for i in range(len(libinfo["kServiceHours"])):
+      line = libinfo["kServiceHours"][i]
+      if line != "":
+        # print(line)
+        # print("called")
+        line = line.replace('closed', 'Closed')
+        line = line.replace('-', ' - ')
+        line = line.replace('a', ' AM')
+        line = line.replace('p', ' PM')
+        libinfo["kServiceHours"][i] = line
+
+    if libinfo["kServiceName"] != "" and len(libinfo["kServiceHours"]) != 0:
+      lib["kHours"].append(libinfo)
+
+  print(json.dumps(lib, indent=2))
+
+
+
+def getRecreationHours():
+  """
+  Fetch UCLA recreation hours.
+  """
+
+  hours = []
+
+  url = "http://asucla.ucla.edu/ucla-store-hours/"
+
+  response = urllib.request.urlopen(url)
+  html = response.read()
+  soup = bs4.BeautifulSoup(html, 'html.parser')
+
+
+
+if __name__ == "__main__":
+
+  # info = {
+  #   "kRestaurantHours" : getRestaurantHours(),
+  #   "kStoreHours" : getStoreHours()
+  # }
+
+  # print(json.dumps(info, indent=2))
+
+  getLibraryHours()
