@@ -45,30 +45,6 @@ def getQuickService():
     file.close()
     return quickJSON
 
-@app.route('/nutrition', methods=['GET'])
-def getNutrition():
-  if 'key' not in request.args or request.args['key'] != APIKey.key:
-    return "Wrong API key"
-
-  if 'recipe' in request.args:
-    recipe = request.args['recipe']
-
-    filename = "./nutrition/" + recipe
-    if os.path.exists(filename) and os.path.isfile(filename):
-      file = open(filename, "r")
-      nutritionJSON = file.read()
-      file.close()
-      return nutritionJSON
-    else:
-      nutritionJSON = nutrition.downloadNutritionDataForRecipeNumber(recipe)
-      if nutritionJSON != None:
-        return nutritionJSON
-
-  else:
-    return "Bad parameters"
-
-  return "{}"
-
 @app.route('/menu-nutrition', methods=['GET'])
 def getMenuWithNutrition():
   if 'key' not in request.args or request.args['key'] != APIKey.keynu:
