@@ -91,6 +91,7 @@ ENV/
 # Personal
 menus/
 nutrition/
+menus-nutrition/
 key.py
 
 # Testing purposes
