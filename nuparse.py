@@ -19,6 +19,7 @@ kKitchenName = "k"
 kKitchenItems = "i"
 kEntreeName = "e"
 kNutritionData = "n"
+kType = "t"
 
 class NutritionMeal(Enum):
   """
@@ -192,6 +193,15 @@ class NutritionMenuParser:
                     # print('Kitchen: ' + line)
                     kitchen[kKitchenName] = line
                   elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
+                    # determine whether is 'vegetarian' or 'vegan'
+                    itemType = "o"
+                    img = item.find('img')
+                    if img != None:
+                      line = img.get('alt')
+                      if "Vegetarian" in line:
+                        itemType = 'v'
+                      elif "Vegan" in line:
+                        itemType = 'g'
                     # get the link to nutrition data & the nutrition data
                     nutrition = {}
                     nutritionURL = item.find('a').get('href')
@@ -218,7 +228,7 @@ class NutritionMenuParser:
                     if line.startswith(("w/", "&")):
                       continue
                     # print('e: ' + line)
-                    entree = { kEntreeName: line, kNutritionData: nutrition}
+                    entree = { kEntreeName: line, kNutritionData: nutrition, kType: itemType}
                     # print(entree)
                     kitchen[kKitchenItems].append(entree)
               # print(kitchen)
