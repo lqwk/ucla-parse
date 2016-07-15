@@ -202,21 +202,13 @@ class MenuParser:
                     # print('Kitchen: ' + line)
                     kitchen[kKitchenName] = line
                   elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
-                    # get the link to nutrition data & the nutrition data
-                    baseURL = "http://menu.ha.ucla.edu/foodpro/"
-                    nutritionURL = baseURL + item.find('a').get('href')
-                    nutritionResponse = urllib.request.urlopen(nutritionURL)
-                    nutritionHTML = nutritionResponse.read()
-                    nutrition = self.parseNutritionHTML(nutritionHTML)
                     # get the entree name
                     line = item.text.replace(u'\xa0', u'')
                     line = line.replace('*', '')
                     if line.startswith(("w/", "&")):
                       continue
                     # print('e: ' + line)
-                    entree = { kEntreeName: line, kNutritionData: nutrition}
-                    # print(entree)
-                    kitchen[kKitchenItems].append(entree)
+                    kitchen[kKitchenItems].append(line)
               # print(kitchen)
               if kitchen[kKitchenName] != "" and len(kitchen[kKitchenItems]) != 0:
                 restaurant[kRestaurantKitchens].append(kitchen)
@@ -225,27 +217,6 @@ class MenuParser:
     # print(restaurants)
 
     return restaurants
-
-
-  def parseNutritionHTML(self, html):
-    """
-    Parse the nutrition html passed in.
-
-    Uses the module 'BeautifulSoup' to find the calories data.
-    Returns the nutrition data as a dict.
-    """
-
-    nutrition = { "c" : "" }
-
-    soup = bs4.BeautifulSoup(html, 'html.parser')
-    cals = soup.findAll('p', {"class" : "nfcal"})
-    for cal in cals:
-      for child in cal.children:
-        if type(child) is bs4.element.NavigableString:
-          calories = str(child).strip()
-          nutrition["c"] = calories
-    return nutrition
-
 
   def buildURL(self, date, meal):
     """
