@@ -67,6 +67,13 @@ def getNutrition():
 
   return "{}"
 
+@app.route('/menu-nutrition', methods=['GET'])
+def getMenuWithNutrition():
+  if 'key' not in request.args or request.args['key'] != APIKey.keynu:
+    return "Wrong API key"
+
+  return "Hello"
+
 @app.route('/menu', methods=['GET'])
 def getMenus():
   if 'key' not in request.args or request.args['key'] != APIKey.key:
