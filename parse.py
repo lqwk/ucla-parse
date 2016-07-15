@@ -248,21 +248,21 @@ if __name__ == "__main__":
 
     # breakfast
     meal = Meal.breakfast
-    parser = MenuParser(dateTime, meal)
+    parser = MenuParser(currentDate, meal)
     menu = parser.getMenus()
     if menu != None:
       menus["b"] = menu
 
     # lunch
     meal = Meal.lunch
-    parser = MenuParser(dateTime, meal)
+    parser = MenuParser(currentDate, meal)
     menu = parser.getMenus()
     if menu != None:
       menus["l"] = menu
 
     # dinner
     meal = Meal.dinner
-    parser = MenuParser(dateTime, meal)
+    parser = MenuParser(currentDate, meal)
     menu = parser.getMenus()
     if menu != None:
       menus["d"] = menu
