@@ -1,3 +1,5 @@
+import re
+import os
 import sys
 import bs4
 import json
@@ -7,6 +9,7 @@ import urllib.request
 from urllib.parse import urlparse
 from urllib.parse import urlencode
 from enum import Enum
+from nutrition import NutritionParser
 
 
 # constants
@@ -17,7 +20,7 @@ kKitchenItems = "i"
 kEntreeName = "e"
 kNutritionData = "n"
 
-class Meal(Enum):
+class NutritionMeal(Enum):
   """
   Meal enumeration class used for passing in data to 'MenuParser'
   """
@@ -26,21 +29,8 @@ class Meal(Enum):
   lunch = 2
   dinner = 3
 
-  @classmethod
-  def getMeal(meal, m):
-    """
-    Class method for parsing strings and returning corresponding Meal class
-    """
 
-    if m == 'b':
-      return meal.breakfast
-    elif m == 'l':
-      return meal.lunch
-    elif m == 'd':
-      return meal.dinner
-
-
-class MenuParser:
+class NutritionMenuParser:
   """
   Menu parser class which holds 'date', 'meal', and 'url'
 
@@ -202,13 +192,35 @@ class MenuParser:
                     # print('Kitchen: ' + line)
                     kitchen[kKitchenName] = line
                   elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
+                    # get the link to nutrition data & the nutrition data
+                    nutrition = {}
+                    nutritionURL = item.find('a').get('href')
+                    nutritionURL = re.findall(r'RecipeNumber=\d+', nutritionURL)
+                    if nutritionURL != None and len(nutritionURL) != 0:
+                      nutritionURL = nutritionURL[0]
+                      nutritionURL = nutritionURL[-6:]
+                    if nutritionURL != None and len(nutritionURL) == 6:
+                      # print(nutritionURL)
+                      nutritionPath = './nutrition/' + nutritionURL
+                      if os.path.exists(nutritionPath) and os.path.isfile(nutritionPath):
+                        file = open(nutritionPath, 'r')
+                        nutritionJSON = file.read()
+                        file.close()
+                        nutrition = json.loads(nutritionJSON)
+                      else:
+                        parser = NutritionParser(nutritionURL)
+                        nutritionJSON = parser.downloadNutritionData()
+                        nutrition = json.loads(nutritionJSON)
+                    # print(json.dumps(nutrition, indent=2))
                     # get the entree name
                     line = item.text.replace(u'\xa0', u'')
                     line = line.replace('*', '')
                     if line.startswith(("w/", "&")):
                       continue
                     # print('e: ' + line)
-                    kitchen[kKitchenItems].append(line)
+                    entree = { kEntreeName: line, kNutritionData: nutrition}
+                    # print(entree)
+                    kitchen[kKitchenItems].append(entree)
               # print(kitchen)
               if kitchen[kKitchenName] != "" and len(kitchen[kKitchenItems]) != 0:
                 restaurant[kRestaurantKitchens].append(kitchen)
@@ -217,6 +229,27 @@ class MenuParser:
     # print(restaurants)
 
     return restaurants
+
+
+  def parseNutritionHTML(self, html):
+    """
+    Parse the nutrition html passed in.
+
+    Uses the module 'BeautifulSoup' to find the calories data.
+    Returns the nutrition data as a dict.
+    """
+
+    nutrition = { "c" : "" }
+
+    soup = bs4.BeautifulSoup(html, 'html.parser')
+    cals = soup.findAll('p', {"class" : "nfcal"})
+    for cal in cals:
+      for child in cal.children:
+        if type(child) is bs4.element.NavigableString:
+          calories = str(child).strip()
+          nutrition["c"] = calories
+    return nutrition
+
 
   def buildURL(self, date, meal):
     """
@@ -241,28 +274,28 @@ if __name__ == "__main__":
   for i in range(0, 7):
 
     currentDate = dateTime + datetime.timedelta(days=i)
-    dateString = currentDate.strftime('./menus/%Y-%m-%d')
+    dateString = currentDate.strftime('./menus-nutrition/%Y-%m-%d')
     print(dateString)
 
     menus = {"b":[],"l":[],"d":[]}
 
     # breakfast
-    meal = Meal.breakfast
-    parser = MenuParser(currentDate, meal)
+    meal = NutritionMeal.breakfast
+    parser = NutritionMenuParser(currentDate, meal)
     menu = parser.getMenus()
     if menu != None:
       menus["b"] = menu
 
     # lunch
-    meal = Meal.lunch
-    parser = MenuParser(currentDate, meal)
+    meal = NutritionMeal.lunch
+    parser = NutritionMenuParser(currentDate, meal)
     menu = parser.getMenus()
     if menu != None:
       menus["l"] = menu
 
     # dinner
-    meal = Meal.dinner
-    parser = MenuParser(currentDate, meal)
+    meal = NutritionMeal.dinner
+    parser = NutritionMenuParser(currentDate, meal)
     menu = parser.getMenus()
     if menu != None:
       menus["d"] = menu
@@ -272,7 +305,6 @@ if __name__ == "__main__":
     # create file to save to
     file = open(dateString, "w")
     file.write(menuJSON)
-    file.write("\n")
     file.close()
 
     print(menuJSON)
