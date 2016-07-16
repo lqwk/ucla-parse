@@ -8,21 +8,32 @@ from urllib.parse import urlparse
 from urllib.parse import urlencode
 from recipes import Recipes
 
-kCalories = "c"
-kFatCalories = "fc"
-kVitaminA = "va"
-kVitaminC = "vc"
-kCalcium = "ca"
-kIron = "fe"
-kTotalFat = "f"
-kSaturatedFat = "sf"
-kTransFat = "tf"
-kCholesterol = "ch"
-kSodium = "s"
-kTotalCarbohydrate = "tc"
-kDietaryFiber = "df"
-kSugars = "ss"
-kProtein = "p"
+kCalories = 0
+kFatCalories = 1
+
+kVitaminA = 2
+kVitaminC = 3
+kCalcium = 4
+kIron = 5
+
+kTotalFat = 6
+kTotalFatPCT = 7
+kSaturatedFat = 8
+kSaturatedFatPCT = 9
+kTransFat = 10
+
+kCholesterol = 11
+kCholesterolPCT = 12
+kSodium = 13
+kSodiumPCT = 14
+
+kTotalCarbohydrate = 15
+kTotalCarbohydratePCT = 16
+kDietaryFiber = 17
+kDietaryFiberPCT = 18
+
+kSugars = 19
+kProtein = 20
 
 class NutritionParser:
 
@@ -36,26 +47,27 @@ class NutritionParser:
 
     print(url)
 
-    nutrition = {
-      # calories
-      kCalories:"0",     # calories
-      kFatCalories:"0",  # fat calories
-      # vitamins
-      kVitaminA:"0%",    # vitamin A
-      kVitaminC:"0%",    # vitamin C
-      kCalcium:"0%",     # calcium
-      kIron:"0%",        # iron
-      # other nutrients
-      kTotalFat:["0g","0%"],           # total fat
-      kSaturatedFat:["0g","0%"],       # saturated fat
-      kTransFat:"0g",                  # trans fat
-      kCholesterol:["0mg","0%"],       # cholesterol
-      kSodium:["0mg","0%"],            # sodium
-      kTotalCarbohydrate:["0g","0%"],  # total carbohydrate
-      kDietaryFiber:["0g","0%"],       # dietary fiber
-      kSugars:"0g",                    # sugars
-      kProtein:"0g"                    # protein
-    }
+    nutrition = ["0"] * (kProtein+1)
+
+    nutrition[kVitaminA] = "0%"
+    nutrition[kVitaminC] = "0%"
+    nutrition[kCalcium] = "0%"
+    nutrition[kIron] = "0%"
+    nutrition[kTotalFat] = "0g"
+    nutrition[kTotalFatPCT] = "0%"
+    nutrition[kSaturatedFat] = "0g"
+    nutrition[kSaturatedFatPCT] = "0%"
+    nutrition[kTransFat] = "0g"
+    nutrition[kCholesterol] = "0mg"
+    nutrition[kCholesterolPCT] = "0%"
+    nutrition[kSodium] = "0mg"
+    nutrition[kSodiumPCT] = "0%"
+    nutrition[kTotalCarbohydrate] = "0g"
+    nutrition[kTotalCarbohydratePCT] = "0%"
+    nutrition[kDietaryFiber] = "0g"
+    nutrition[kDietaryFiberPCT] = "0%"
+    nutrition[kSugars] = "0g"
+    nutrition[kProtein] = "0g"
 
     response = urllib.request.urlopen(url)
     html = response.read()
@@ -123,31 +135,31 @@ class NutritionParser:
 
         if "Total Fat " in line:
           line = line.replace("Total Fat ", "")
-          nutrition[kTotalFat][0] = line
-          nutrition[kTotalFat][1] = pct
+          nutrition[kTotalFat] = line
+          nutrition[kTotalFatPCT] = pct
         elif "Saturated Fat " in line:
           line = line.replace("Saturated Fat ", "")
-          nutrition[kSaturatedFat][0] = line
-          nutrition[kSaturatedFat][1] = pct
+          nutrition[kSaturatedFat] = line
+          nutrition[kSaturatedFatPCT] = pct
         elif "Trans Fat " in line:
           line = line.replace("Trans Fat ", "")
           nutrition[kTransFat] = line
         elif "Cholesterol " in line:
           line = line.replace("Cholesterol ", "")
-          nutrition[kCholesterol][0] = line
-          nutrition[kCholesterol][1] = pct
+          nutrition[kCholesterol] = line
+          nutrition[kCholesterolPCT] = pct
         elif "Sodium " in line:
           line = line.replace("Sodium ", "")
-          nutrition[kSodium][0] = line
-          nutrition[kSodium][1] = pct
+          nutrition[kSodium] = line
+          nutrition[kSodiumPCT] = pct
         elif "Total Carbohydrate " in line:
           line = line.replace("Total Carbohydrate ", "")
-          nutrition[kTotalCarbohydrate][0] = line
-          nutrition[kTotalCarbohydrate][1] = pct
+          nutrition[kTotalCarbohydrate] = line
+          nutrition[kTotalCarbohydratePCT] = pct
         elif "Dietary Fiber " in line:
           line = line.replace("Dietary Fiber ", "")
-          nutrition[kDietaryFiber][0] = line
-          nutrition[kDietaryFiber][1] = pct
+          nutrition[kDietaryFiber] = line
+          nutrition[kDietaryFiberPCT] = pct
         elif "Sugars " in line:
           line = line.replace("Sugars ", "")
           nutrition[kSugars] = line
@@ -157,6 +169,8 @@ class NutritionParser:
 
 
     nutritionJSON = json.dumps(nutrition, separators=(',',':'))
+
+    # print(nutritionJSON)
 
     # create file to save to
     file = open(filename, "w")
