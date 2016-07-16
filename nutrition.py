@@ -218,7 +218,3 @@ if __name__ == "__main__":
   for r in rs:
     parser = NutritionParser(r)
     parser.downloadNutritionData()
-
-  for r in Recipes.recipes:
-    parser = NutritionParser(r)
-    parser.downloadNutritionData()
