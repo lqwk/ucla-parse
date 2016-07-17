@@ -167,6 +167,8 @@ class NutritionParser:
           line = line.replace("Protein ", "")
           nutrition[kProtein] = line
 
+    for i in range(0, len(nutrition)):
+      nutrition[i] = nutrition[i].replace('--', '0')
 
     nutritionJSON = json.dumps(nutrition, separators=(',',':'))
 
