@@ -23,20 +23,8 @@ def showIndexPage():
 
 @app.route('/hours')
 def getHours():
-  logfile = open("./logfile", "a")
-  currentTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-  route = 'hours'
-  header = '[{0}] [{1}]: '.format(currentTime, route)
-
   if 'key' not in request.args or request.args['key'] != APIKey.key:
-    log = header + "wrong API key, access denied\n"
-    logfile.write(log)
-    logfile.close()
     return "Wrong API key"
-
-  log = header + "GET hours\n"
-  logfile.write(log)
-  logfile.close()
 
   hoursFile = "./data/hours.json"
   if os.path.exists(hoursFile) and os.path.isfile(hoursFile):
@@ -47,20 +35,8 @@ def getHours():
 
 @app.route('/quick')
 def getQuickService():
-  logfile = open("./logfile", "a")
-  currentTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-  route = 'quick'
-  header = '[{0}] [{1}]: '.format(currentTime, route)
-
   if 'key' not in request.args or request.args['key'] != APIKey.key:
-    log = header + "wrong API key, access denied\n"
-    logfile.write(log)
-    logfile.close()
     return "Wrong API key"
-
-  log = header + "GET quick\n"
-  logfile.write(log)
-  logfile.close()
 
   quickFile = "./data/quick.json"
   if os.path.exists(quickFile) and os.path.isfile(quickFile):
@@ -71,26 +47,13 @@ def getQuickService():
 
 @app.route('/menu-nutrition', methods=['GET'])
 def getMenuWithNutrition():
-  logfile = open("./logfile", "a")
-  currentTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-  route = 'menu-nutrition'
-  header = '[{0}] [{1}]: '.format(currentTime, route)
-
   if 'key' not in request.args or request.args['key'] != APIKey.keynu:
-    log = header + "wrong API key, access denied\n"
-    logfile.write(log)
-    logfile.close()
     return "Wrong API key"
 
   if ('year' in request.args) and ('month' in request.args) and ('day' in request.args):
     year = request.args['year']
     month = request.args['month']
     day = request.args['day']
-
-    param = "{0}-{1}-{2}".format(year, month, day)
-    log = header + "GET menu-nutrition: " + param + "\n"
-    logfile.write(log)
-    logfile.close()
 
     currentPath = "./menus-nutrition/"
     dateNamePath = currentPath + year + "-" + month + "-" + day
@@ -122,33 +85,17 @@ def getMenuWithNutrition():
       return menuJSON
   # bad parameters
   else:
-    log = header + "GET menu-nutrition: bad parameters\n"
-    logfile.write(log)
-    logfile.close()
     return "Bad parameters"
 
 @app.route('/menu', methods=['GET'])
 def getMenus():
-  logfile = open("./logfile", "a")
-  currentTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-  route = 'menu'
-  header = '[{0}] [{1}]: '.format(currentTime, route)
-
   if 'key' not in request.args or request.args['key'] != APIKey.key:
-    log = header + "wrong API key, access denied\n"
-    logfile.write(log)
-    logfile.close()
     return "Wrong API key"
 
   if ('year' in request.args) and ('month' in request.args) and ('day' in request.args):
     year = request.args['year']
     month = request.args['month']
     day = request.args['day']
-
-    param = "{0}-{1}-{2}".format(year, month, day)
-    log = header + "GET menu: " + param + "\n"
-    logfile.write(log)
-    logfile.close()
 
     currentPath = "./menus/"
     dateNamePath = currentPath + year + "-" + month + "-" + day
@@ -180,9 +127,6 @@ def getMenus():
       return menuJSON
   # bad parameters
   else:
-    log = header + "GET menu: bad parameters\n"
-    logfile.write(log)
-    logfile.close()
     return "Bad parameters"
 
 def fetchMenu(year, month, day, dateNamePath):
