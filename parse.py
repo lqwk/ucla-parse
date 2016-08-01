@@ -4,6 +4,7 @@ import sys
 import bs4
 import json
 import datetime
+import argparse
 import urllib.request
 
 from urllib.parse import urlparse
@@ -260,45 +261,67 @@ class MenuParser:
     url = base + urlencode(params)
     return url
 
+
+def downloadMenu(date, dateString, meal, shouldGetNutrition):
+  """
+  Downloads menu for 'date' for 'meal'
+  """
+
+  if shouldGetNutrition:
+    if meal == Meal.breakfast:
+      print("Downloading menus with nutrition for: " + dateString + " [BREAKFAST]")
+    elif meal == Meal.lunch:
+      print("Downloading menus with nutrition for: " + dateString + " [LUNCH]")
+    elif meal == Meal.dinner:
+      print("Downloading menus with nutrition for: " + dateString + " [DINNER]")
+  else:
+    if meal == Meal.breakfast:
+      print("Downloading menus for: " + dateString + " [BREAKFAST]")
+    elif meal == Meal.lunch:
+      print("Downloading menus for: " + dateString + " [LUNCH]")
+    elif meal == Meal.dinner:
+      print("Downloading menus for: " + dateString + " [DINNER]")
+
+  parser = MenuParser(date, meal)
+  menu = parser.getMenus(shouldGetNutrition)
+  if not menu:
+    return []
+  return menu
+
+
 if __name__ == "__main__":
 
-  dateTime = datetime.datetime.today()
-  shouldGetNutrition = True
+  parser = argparse.ArgumentParser()
+  parser.add_argument("year", help="year of the menu data you wish to download", type=int)
+  parser.add_argument("month", help="month of the menu data you wish to download", type=int)
+  parser.add_argument("day", help="month of the menu data you wish to download", type=int)
+  parser.add_argument("-n", "--nutrition", help="determine whether to download nutrition data", action="store_true")
+  parser.add_argument("-b", "--breakfast", help="download breakfast menus", action="store_true")
+  parser.add_argument("-l", "--lunch", help="download lunch menus", action="store_true")
+  parser.add_argument("-d", "--dinner", help="download dinner menus", action="store_true")
 
-  for i in range(0, 7):
+  args = parser.parse_args()
 
-    currentDate = dateTime + datetime.timedelta(days=i)
-    dateString = currentDate.strftime('./menus-nutrition/%Y-%m-%d')
-    print(dateString)
+  shouldGetNutrition = False
+  if args.nutrition:
+    shouldGetNutrition = True
 
-    menus = {"b":[],"l":[],"d":[]}
+  menus = {"b":[],"l":[],"d":[]}
 
-    # breakfast
-    meal = Meal.breakfast
-    parser = MenuParser(currentDate, meal)
-    menu = parser.getMenus(shouldGetNutrition)
-    if menu != None:
-      menus["b"] = menu
+  date = datetime.date(args.year, args.month, args.day)
+  dateString = str(args.year)+'-'+str(args.month)+'-'+str(args.day)
 
-    # lunch
-    meal = Meal.lunch
-    parser = MenuParser(currentDate, meal)
-    menu = parser.getMenus(shouldGetNutrition)
-    if menu != None:
-      menus["l"] = menu
+  if (not args.breakfast) and (not args.lunch) and (not args.dinner):
+    menus["b"] = downloadMenu(date, dateString, Meal.breakfast, shouldGetNutrition)
+    menus["l"] = downloadMenu(date, dateString, Meal.lunch, shouldGetNutrition)
+    menus["d"] = downloadMenu(date, dateString, Meal.dinner, shouldGetNutrition)
+  else:
+    if args.breakfast:
+      menus["b"] = downloadMenu(date, dateString, Meal.breakfast, shouldGetNutrition)
+    if args.lunch:
+      menus["l"] = downloadMenu(date, dateString, Meal.lunch, shouldGetNutrition)
+    if args.dinner:
+      menus["d"] = downloadMenu(date, dateString, Meal.dinner, shouldGetNutrition)
 
-    # dinner
-    meal = Meal.dinner
-    parser = MenuParser(currentDate, meal)
-    menu = parser.getMenus(shouldGetNutrition)
-    if menu != None:
-      menus["d"] = menu
-
-    menuJSON = json.dumps(menus, separators=(',',':'))
-
-    # create file to save to
-    file = open(dateString, "w")
-    file.write(menuJSON)
-    file.close()
-
-    print(menuJSON)
+  menuJSON = json.dumps(menus, separators=(',',':'))
+  print(menuJSON)
