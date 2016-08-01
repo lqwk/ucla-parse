@@ -4,7 +4,7 @@ Web scrapper built with `BeautifulSoup` used for parsing UCLA data, including UC
 
 This project is used as the backend for my iOS application Bruin Feed ([App Store](https://itunes.apple.com/us/app/bruin-feed/id993075117&mt=8), [Github](https://github.com/QingweiPeterLan/Bruin-Feed)).
 
-**This project has been only tested for Python 3**
+**NOTE: This project has been only tested for Python 3**
 
 ## Features
 
@@ -15,7 +15,9 @@ This project is used as the backend for my iOS application Bruin Feed ([App Stor
 
 Copy the files `parse.py` and `nutrition.py` to your directory.
 
-## Command Line Interface (CLI)
+## Menu Parsing
+
+### Command Line Interface (CLI)
 
 The CLI for parsing dining hall menus is simple, simply run
 
@@ -39,9 +41,9 @@ There are other also options you can specify to custominze your parsing:
   -d, --dinner       download dinner menus
 ```
 
-The printed result will be a minified `JSON` string in the form
+The printed result will be a minified `JSON` string in the format
 
-```json
+```python
 {
     "b": [...],
     "l": [...],
@@ -49,7 +51,7 @@ The printed result will be a minified `JSON` string in the form
 }
 ```
 
-## Using the `MenuParser` Class
+### Using the `MenuParser` Class
 
 A full example can be found in the file `run-menu.py`.
 
@@ -77,7 +79,7 @@ shouldGetNutrition = True
 menu = parser.getMenus(shouldGetNutrition)
 ```
 
-This will return an array of dictionaries, each dictionary of the form
+This will return an array of dictionaries, each dictionary of the format
 
 ```python
 kEntreeName = "e"
@@ -90,6 +92,97 @@ kNutritionData = "n"
     kNutritionData: [...]
 }
 ```
+
+Note that `kNutritionData` consists of an array of nutrition data, elements of which will be explained below in the **Nutrition Parsing** section.
+
+## Nutrition Parsing
+
+### Command Line Interface (CLI)
+
+To download the nutrition data for an entree with nutrition data of `ID` (**this `ID` can be found on the UCLA dining hall website, but you will have to look into the URL to locate it**) You would use it like this:
+
+```bash
+$ python3 nutrition.py [ID]
+```
+
+Suppose you want to download the nutrition data for an entree called **[Hungarian Beef Goulash](http://menu.ha.ucla.edu/foodpro/recipedetail.asp?RecipeNumber=075008)** (which has an `ID=075008`), we can use the CLI:
+
+```bash
+$ python3 nutrition.py 075008
+```
+
+The results will be an array of the format below (comments show which nutrition data each array element represents)
+
+```python
+[
+  "0",   # total calories
+  "0",   # calories from fat
+
+  "0%",  # vitamin A
+  "0%",  # vitamin C
+  "0%",  # calcium
+  "0%",  # iron
+
+  "0g",  # total fat
+  "0%",  # total fat percentage
+  "0g",  # saturated fat
+  "0%",  # saturated fat percentage
+  "0g",  # trans fat
+
+  "0mg", # cholesterol
+  "0%",  # cholesterol percentage
+  "0mg", # sodium
+  "0%",  # sodium percentage
+
+  "0g",  # total carbohydrate
+  "0%",  # total carbohydrate percentage
+  "0g",  # dietary fiber
+  "0%",  # dietary fiber percentage
+  "0g",  # sugars
+
+  "0g"   # protein
+]
+```
+
+### Using the `NutritionParser` Class
+
+A full example can be found in the file `run-nutrition.py`.
+
+To use the `NutritionParser` class, we would first include the following line
+
+```python
+from nutrition import NutritionParser
+```
+
+Then we create a `NutritionParser` object with the arguments `recipe` (of type `string`). For example, we want to create a `NutritionParser` with the recipe `ID=075008`:
+
+```python
+recipe = "075008"
+parser = NutritionParser(recipe)
+```
+
+Now we can parse the nutrition data by calling `downloadNutritionData(shouldSave, filebase)`. Arguments include a `boolean` `shouldSave` which specifies whether to save the downloaded data as a file, and a `string` `filebase`, which specifies where to save the downloaded data (default is `./nutrition/`). For example, to download the data and not save, we use:
+
+```python
+nutrition = parser.downloadNutritionData()
+```
+
+To save the data in the default path, we use:
+
+```python
+shouldSave = True
+nutrition = parser.downloadNutritionData(shouldSave)
+```
+
+To save to a specified location, such as `/home/user/desktop/nutrition/`, we use:
+
+```python
+shouldSave = True
+filebase = "/home/user/desktop/"
+nutrition = parser.downloadNutritionData(shouldSave, filebase)
+```
+
+The return value is a `JSON` object in the format described above.
 
 # The MIT License (MIT)
 
