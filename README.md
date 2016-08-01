@@ -17,7 +17,19 @@ Copy the files `parse.py` and `nutrition.py` to your directory.
 
 ## Command Line Interface (CLI)
 
-The CLI for parsing dining hall menus is simple, simply run `$ python3 parse.py [year] [month] [day]`, substituting values in the brackets. For example, if we wanted to parse the menus for Aug. 1, 2016, simply run `$ python3 parse.py 2016 8 1`. There are other also options you can specify to custominze your parsing:
+The CLI for parsing dining hall menus is simple, simply run
+
+```bash
+$ python3 parse.py [year] [month] [day]
+```
+
+substituting values in the brackets. For example, if we wanted to parse the menus for Aug. 1, 2016, simply run
+
+```bash
+$ python3 parse.py 2016 8 1
+```
+
+There are other also options you can specify to custominze your parsing:
 
 ```
   -h, --help         shows the help message
@@ -31,8 +43,8 @@ The printed result will be a minified `JSON` string in the form
 
 ```json
 {
-    "b": [...]
-    "l": [...]
+    "b": [...],
+    "l": [...],
     "d": [...]
 }
 ```
@@ -73,8 +85,8 @@ kType = "t"
 kNutritionData = "n"
 
 {
-    kEntreeName: "..."
-    kType: "..."
+    kEntreeName: "...",
+    kType: "...",
     kNutritionData: [...]
 }
 ```
