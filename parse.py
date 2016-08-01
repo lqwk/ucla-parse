@@ -1,3 +1,5 @@
+import re
+import os
 import sys
 import bs4
 import json
@@ -7,6 +9,7 @@ import urllib.request
 from urllib.parse import urlparse
 from urllib.parse import urlencode
 from enum import Enum
+from nutrition import NutritionParser
 
 
 # constants
@@ -16,6 +19,7 @@ kKitchenName = "k"
 kKitchenItems = "i"
 kEntreeName = "e"
 kNutritionData = "n"
+kType = "t"
 
 class Meal(Enum):
   """
@@ -25,19 +29,6 @@ class Meal(Enum):
   breakfast = 1
   lunch = 2
   dinner = 3
-
-  @classmethod
-  def getMeal(meal, m):
-    """
-    Class method for parsing strings and returning corresponding Meal class
-    """
-
-    if m == 'b':
-      return meal.breakfast
-    elif m == 'l':
-      return meal.lunch
-    elif m == 'd':
-      return meal.dinner
 
 
 class MenuParser:
@@ -53,7 +44,7 @@ class MenuParser:
     self.url = self.buildURL(date, meal)
 
 
-  def getMenus(self):
+  def getMenus(self, shouldGetNutrition):
     """
     Executes the menu fetch.
 
@@ -63,7 +54,7 @@ class MenuParser:
 
     response = urllib.request.urlopen(self.url)
     html = response.read()
-    restaurants = self.parseRestaurantHTML(html)
+    restaurants = self.parseRestaurantHTML(html, shouldGetNutrition)
     return restaurants
 
 
@@ -154,7 +145,7 @@ class MenuParser:
     return data
 
 
-  def parseRestaurantHTML(self, html):
+  def parseRestaurantHTML(self, html, shouldGetNutrition):
     """
     Parse the 'html' passed in.
 
@@ -202,13 +193,47 @@ class MenuParser:
                     # print('Kitchen: ' + line)
                     kitchen[kKitchenName] = line
                   elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
+                    # determine whether is 'vegetarian' or 'vegan'
+                    itemType = "o"
+                    img = item.find('img')
+                    if img != None:
+                      line = img.get('alt')
+                      if "Vegetarian" in line:
+                        itemType = 'v'
+                      elif "Vegan" in line:
+                        itemType = 'g'
                     # get the entree name
                     line = item.text.replace(u'\xa0', u'')
                     line = line.replace('*', '')
                     if line.startswith(("w/", "&")):
                       continue
-                    # print('e: ' + line)
-                    kitchen[kKitchenItems].append(line)
+                    entree = None
+                    # determine if we should fetch nutrition data
+                    if shouldGetNutrition:
+                      # get the link to nutrition data & the nutrition data
+                      nutrition = {}
+                      nutritionURL = item.find('a').get('href')
+                      nutritionURL = re.findall(r'RecipeNumber=\d+', nutritionURL)
+                      if nutritionURL != None and len(nutritionURL) != 0:
+                        nutritionURL = nutritionURL[0]
+                        nutritionURL = nutritionURL[-6:]
+                      if nutritionURL != None and len(nutritionURL) == 6:
+                        # print(nutritionURL)
+                        nutritionPath = './nutrition/' + nutritionURL
+                        if os.path.exists(nutritionPath) and os.path.isfile(nutritionPath):
+                          file = open(nutritionPath, 'r')
+                          nutritionJSON = file.read()
+                          file.close()
+                          nutrition = json.loads(nutritionJSON)
+                        else:
+                          parser = NutritionParser(nutritionURL)
+                          nutritionJSON = parser.downloadNutritionData(True)
+                          nutrition = json.loads(nutritionJSON)
+                      entree = { kEntreeName: line, kNutritionData: nutrition, kType: itemType}
+                    else:
+                      entree = line
+                    # print(entree)
+                    kitchen[kKitchenItems].append(entree)
               # print(kitchen)
               if kitchen[kKitchenName] != "" and len(kitchen[kKitchenItems]) != 0:
                 restaurant[kRestaurantKitchens].append(kitchen)
@@ -217,6 +242,7 @@ class MenuParser:
     # print(restaurants)
 
     return restaurants
+
 
   def buildURL(self, date, meal):
     """
@@ -237,11 +263,12 @@ class MenuParser:
 if __name__ == "__main__":
 
   dateTime = datetime.datetime.today()
+  shouldGetNutrition = True
 
   for i in range(0, 7):
 
     currentDate = dateTime + datetime.timedelta(days=i)
-    dateString = currentDate.strftime('./menus/%Y-%m-%d')
+    dateString = currentDate.strftime('./menus-nutrition/%Y-%m-%d')
     print(dateString)
 
     menus = {"b":[],"l":[],"d":[]}
@@ -249,21 +276,21 @@ if __name__ == "__main__":
     # breakfast
     meal = Meal.breakfast
     parser = MenuParser(currentDate, meal)
-    menu = parser.getMenus()
+    menu = parser.getMenus(shouldGetNutrition)
     if menu != None:
       menus["b"] = menu
 
     # lunch
     meal = Meal.lunch
     parser = MenuParser(currentDate, meal)
-    menu = parser.getMenus()
+    menu = parser.getMenus(shouldGetNutrition)
     if menu != None:
       menus["l"] = menu
 
     # dinner
     meal = Meal.dinner
     parser = MenuParser(currentDate, meal)
-    menu = parser.getMenus()
+    menu = parser.getMenus(shouldGetNutrition)
     if menu != None:
       menus["d"] = menu
 
@@ -272,7 +299,6 @@ if __name__ == "__main__":
     # create file to save to
     file = open(dateString, "w")
     file.write(menuJSON)
-    file.write("\n")
     file.close()
 
     print(menuJSON)
