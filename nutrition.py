@@ -2,6 +2,7 @@ import os
 import bs4
 import json
 import datetime
+import argparse
 import urllib.request
 
 from urllib.parse import urlparse
@@ -217,9 +218,10 @@ class NutritionParser:
 
 if __name__ == "__main__":
 
-  path = './nutrition/'
-  rs = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+  parser = argparse.ArgumentParser()
+  parser.add_argument("recipe", help="the recipe number you wish to download")
+  args = parser.parse_args()
 
-  for r in rs:
-    parser = NutritionParser(r)
-    parser.downloadNutritionData(True)
+  parser = NutritionParser(args.recipe)
+  nutritionJSON = parser.downloadNutritionData()
+  print(nutritionJSON)
