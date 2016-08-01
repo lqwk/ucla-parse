@@ -9,7 +9,7 @@ import urllib.request
 from urllib.parse import urlparse
 from urllib.parse import urlencode
 from enum import Enum
-from nutrition import NutritionParser
+from 'nutrition-parse' import NutritionParser
 
 
 # constants
@@ -21,7 +21,7 @@ kEntreeName = "e"
 kNutritionData = "n"
 kType = "t"
 
-class NutritionMeal(Enum):
+class Meal(Enum):
   """
   Meal enumeration class used for passing in data to 'MenuParser'
   """
@@ -31,7 +31,7 @@ class NutritionMeal(Enum):
   dinner = 3
 
 
-class NutritionMenuParser:
+class MenuParser:
   """
   Menu parser class which holds 'date', 'meal', and 'url'
 
@@ -44,7 +44,7 @@ class NutritionMenuParser:
     self.url = self.buildURL(date, meal)
 
 
-  def getMenus(self):
+  def getMenus(self, shouldGetNutrition):
     """
     Executes the menu fetch.
 
@@ -54,7 +54,7 @@ class NutritionMenuParser:
 
     response = urllib.request.urlopen(self.url)
     html = response.read()
-    restaurants = self.parseRestaurantHTML(html)
+    restaurants = self.parseRestaurantHTML(html, shouldGetNutrition)
     return restaurants
 
 
@@ -145,7 +145,7 @@ class NutritionMenuParser:
     return data
 
 
-  def parseRestaurantHTML(self, html):
+  def parseRestaurantHTML(self, html, shouldGetNutrition):
     """
     Parse the 'html' passed in.
 
@@ -202,33 +202,36 @@ class NutritionMenuParser:
                         itemType = 'v'
                       elif "Vegan" in line:
                         itemType = 'g'
-                    # get the link to nutrition data & the nutrition data
-                    nutrition = {}
-                    nutritionURL = item.find('a').get('href')
-                    nutritionURL = re.findall(r'RecipeNumber=\d+', nutritionURL)
-                    if nutritionURL != None and len(nutritionURL) != 0:
-                      nutritionURL = nutritionURL[0]
-                      nutritionURL = nutritionURL[-6:]
-                    if nutritionURL != None and len(nutritionURL) == 6:
-                      # print(nutritionURL)
-                      nutritionPath = './nutrition/' + nutritionURL
-                      if os.path.exists(nutritionPath) and os.path.isfile(nutritionPath):
-                        file = open(nutritionPath, 'r')
-                        nutritionJSON = file.read()
-                        file.close()
-                        nutrition = json.loads(nutritionJSON)
-                      else:
-                        parser = NutritionParser(nutritionURL)
-                        nutritionJSON = parser.downloadNutritionData()
-                        nutrition = json.loads(nutritionJSON)
-                    # print(json.dumps(nutrition, indent=2))
                     # get the entree name
                     line = item.text.replace(u'\xa0', u'')
                     line = line.replace('*', '')
                     if line.startswith(("w/", "&")):
                       continue
-                    # print('e: ' + line)
-                    entree = { kEntreeName: line, kNutritionData: nutrition, kType: itemType}
+                    entree = None
+                    # determine if we should fetch nutrition data
+                    if shouldGetNutrition:
+                      # get the link to nutrition data & the nutrition data
+                      nutrition = {}
+                      nutritionURL = item.find('a').get('href')
+                      nutritionURL = re.findall(r'RecipeNumber=\d+', nutritionURL)
+                      if nutritionURL != None and len(nutritionURL) != 0:
+                        nutritionURL = nutritionURL[0]
+                        nutritionURL = nutritionURL[-6:]
+                      if nutritionURL != None and len(nutritionURL) == 6:
+                        # print(nutritionURL)
+                        nutritionPath = './nutrition/' + nutritionURL
+                        if os.path.exists(nutritionPath) and os.path.isfile(nutritionPath):
+                          file = open(nutritionPath, 'r')
+                          nutritionJSON = file.read()
+                          file.close()
+                          nutrition = json.loads(nutritionJSON)
+                        else:
+                          parser = NutritionParser(nutritionURL)
+                          nutritionJSON = parser.downloadNutritionData()
+                          nutrition = json.loads(nutritionJSON)
+                      entree = { kEntreeName: line, kNutritionData: nutrition, kType: itemType}
+                    else:
+                      entree = line
                     # print(entree)
                     kitchen[kKitchenItems].append(entree)
               # print(kitchen)
@@ -239,26 +242,6 @@ class NutritionMenuParser:
     # print(restaurants)
 
     return restaurants
-
-
-  def parseNutritionHTML(self, html):
-    """
-    Parse the nutrition html passed in.
-
-    Uses the module 'BeautifulSoup' to find the calories data.
-    Returns the nutrition data as a dict.
-    """
-
-    nutrition = { "c" : "" }
-
-    soup = bs4.BeautifulSoup(html, 'html.parser')
-    cals = soup.findAll('p', {"class" : "nfcal"})
-    for cal in cals:
-      for child in cal.children:
-        if type(child) is bs4.element.NavigableString:
-          calories = str(child).strip()
-          nutrition["c"] = calories
-    return nutrition
 
 
   def buildURL(self, date, meal):
@@ -280,6 +263,7 @@ class NutritionMenuParser:
 if __name__ == "__main__":
 
   dateTime = datetime.datetime.today()
+  shouldGetNutrition = True
 
   for i in range(0, 7):
 
@@ -292,21 +276,21 @@ if __name__ == "__main__":
     # breakfast
     meal = NutritionMeal.breakfast
     parser = NutritionMenuParser(currentDate, meal)
-    menu = parser.getMenus()
+    menu = parser.getMenus(shouldGetNutrition)
     if menu != None:
       menus["b"] = menu
 
     # lunch
     meal = NutritionMeal.lunch
     parser = NutritionMenuParser(currentDate, meal)
-    menu = parser.getMenus()
+    menu = parser.getMenus(shouldGetNutrition)
     if menu != None:
       menus["l"] = menu
 
     # dinner
     meal = NutritionMeal.dinner
     parser = NutritionMenuParser(currentDate, meal)
-    menu = parser.getMenus()
+    menu = parser.getMenus(shouldGetNutrition)
     if menu != None:
       menus["d"] = menu
 
