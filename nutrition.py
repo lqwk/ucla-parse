@@ -2,6 +2,7 @@ import os
 import bs4
 import json
 import datetime
+import argparse
 import urllib.request
 
 from urllib.parse import urlparse
@@ -40,7 +41,7 @@ class NutritionParser:
   def __init__(self, recipe):
     self.recipe = recipe
 
-  def downloadNutritionDataForURL(self, url, filename):
+  def downloadNutritionDataForURL(self, url, shouldSave, filename):
     """
     Downloads the nutrition data for 'url' and saves to 'filename'
     """
@@ -175,13 +176,14 @@ class NutritionParser:
     # print(nutritionJSON)
 
     # create file to save to
-    file = open(filename, "w")
-    file.write(nutritionJSON)
-    file.close()
+    if shouldSave and filename != None:
+      file = open(filename, "w")
+      file.write(nutritionJSON)
+      file.close()
 
     return nutritionJSON
 
-  def downloadNutritionData(self):
+  def downloadNutritionData(self, shouldSave=False, filebase='./nutrition/'):
     """
     Downloads the nutrition data for recipe number 'recipe'.
 
@@ -190,33 +192,36 @@ class NutritionParser:
     """
 
     base = "http://menu.ha.ucla.edu/foodpro/recipedetail.asp?RecipeNumber="
-    filebase = "./nutrition/"
 
     url = base + self.recipe
-    filename = filebase + self.recipe
+    filename = None
 
-    # check if file exists yet
-    if os.path.exists(filename) and os.path.isfile(filename):
-      # if exists, check the time stamp
-      statinfo = os.stat(filename)
-      filetime = datetime.datetime.fromtimestamp(statinfo.st_mtime)
-      servertime = datetime.datetime.now()
-      td = servertime - filetime
-      diffdays = td.days
-      # if the time difference is greater than 4 days, re-download
-      if diffdays >= 4:
-        return self.downloadNutritionDataForURL(url, filename)
+    if shouldSave:
+      filename = filebase + self.recipe
+      # check if file exists yet
+      if os.path.exists(filename) and os.path.isfile(filename):
+        # if exists, check the time stamp
+        statinfo = os.stat(filename)
+        filetime = datetime.datetime.fromtimestamp(statinfo.st_mtime)
+        servertime = datetime.datetime.now()
+        td = servertime - filetime
+        diffdays = td.days
+        # if the time difference is greater than 4 days, re-download
+        if diffdays >= 4:
+          return self.downloadNutritionDataForURL(url, shouldSave, filename)
+      else:
+        return self.downloadNutritionDataForURL(url, shouldSave, filename)
+
     else:
-      return self.downloadNutritionDataForURL(url, filename)
-
-    return None
+      return self.downloadNutritionDataForURL(url, shouldSave, filename)
 
 
 if __name__ == "__main__":
 
-  path = "./nutrition/"
-  rs = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+  parser = argparse.ArgumentParser()
+  parser.add_argument("recipe", help="the recipe number you wish to download")
+  args = parser.parse_args()
 
-  for r in rs:
-    parser = NutritionParser(r)
-    parser.downloadNutritionData()
+  parser = NutritionParser(args.recipe)
+  nutritionJSON = parser.downloadNutritionData()
+  print(nutritionJSON)

@@ -1,12 +1,16 @@
+import re
+import os
 import sys
 import bs4
 import json
 import datetime
+import argparse
 import urllib.request
 
 from urllib.parse import urlparse
 from urllib.parse import urlencode
 from enum import Enum
+from nutrition import NutritionParser
 
 
 # constants
@@ -16,6 +20,7 @@ kKitchenName = "k"
 kKitchenItems = "i"
 kEntreeName = "e"
 kNutritionData = "n"
+kType = "t"
 
 class Meal(Enum):
   """
@@ -25,19 +30,6 @@ class Meal(Enum):
   breakfast = 1
   lunch = 2
   dinner = 3
-
-  @classmethod
-  def getMeal(meal, m):
-    """
-    Class method for parsing strings and returning corresponding Meal class
-    """
-
-    if m == 'b':
-      return meal.breakfast
-    elif m == 'l':
-      return meal.lunch
-    elif m == 'd':
-      return meal.dinner
 
 
 class MenuParser:
@@ -53,7 +45,7 @@ class MenuParser:
     self.url = self.buildURL(date, meal)
 
 
-  def getMenus(self):
+  def getMenus(self, shouldGetNutrition):
     """
     Executes the menu fetch.
 
@@ -63,7 +55,7 @@ class MenuParser:
 
     response = urllib.request.urlopen(self.url)
     html = response.read()
-    restaurants = self.parseRestaurantHTML(html)
+    restaurants = self.parseRestaurantHTML(html, shouldGetNutrition)
     return restaurants
 
 
@@ -154,7 +146,7 @@ class MenuParser:
     return data
 
 
-  def parseRestaurantHTML(self, html):
+  def parseRestaurantHTML(self, html, shouldGetNutrition):
     """
     Parse the 'html' passed in.
 
@@ -202,13 +194,47 @@ class MenuParser:
                     # print('Kitchen: ' + line)
                     kitchen[kKitchenName] = line
                   elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
+                    # determine whether is 'vegetarian' or 'vegan'
+                    itemType = "o"
+                    img = item.find('img')
+                    if img != None:
+                      line = img.get('alt')
+                      if "Vegetarian" in line:
+                        itemType = 'v'
+                      elif "Vegan" in line:
+                        itemType = 'g'
                     # get the entree name
                     line = item.text.replace(u'\xa0', u'')
                     line = line.replace('*', '')
                     if line.startswith(("w/", "&")):
                       continue
-                    # print('e: ' + line)
-                    kitchen[kKitchenItems].append(line)
+                    entree = None
+                    # determine if we should fetch nutrition data
+                    if shouldGetNutrition:
+                      # get the link to nutrition data & the nutrition data
+                      nutrition = {}
+                      nutritionURL = item.find('a').get('href')
+                      nutritionURL = re.findall(r'RecipeNumber=\d+', nutritionURL)
+                      if nutritionURL != None and len(nutritionURL) != 0:
+                        nutritionURL = nutritionURL[0]
+                        nutritionURL = nutritionURL[-6:]
+                      if nutritionURL != None and len(nutritionURL) == 6:
+                        # print(nutritionURL)
+                        nutritionPath = './nutrition/' + nutritionURL
+                        if os.path.exists(nutritionPath) and os.path.isfile(nutritionPath):
+                          file = open(nutritionPath, 'r')
+                          nutritionJSON = file.read()
+                          file.close()
+                          nutrition = json.loads(nutritionJSON)
+                        else:
+                          parser = NutritionParser(nutritionURL)
+                          nutritionJSON = parser.downloadNutritionData(True)
+                          nutrition = json.loads(nutritionJSON)
+                      entree = { kEntreeName: line, kNutritionData: nutrition, kType: itemType}
+                    else:
+                      entree = line
+                    # print(entree)
+                    kitchen[kKitchenItems].append(entree)
               # print(kitchen)
               if kitchen[kKitchenName] != "" and len(kitchen[kKitchenItems]) != 0:
                 restaurant[kRestaurantKitchens].append(kitchen)
@@ -217,6 +243,7 @@ class MenuParser:
     # print(restaurants)
 
     return restaurants
+
 
   def buildURL(self, date, meal):
     """
@@ -234,45 +261,67 @@ class MenuParser:
     url = base + urlencode(params)
     return url
 
+
+def downloadMenu(date, dateString, meal, shouldGetNutrition):
+  """
+  Downloads menu for 'date' for 'meal'
+  """
+
+  if shouldGetNutrition:
+    if meal == Meal.breakfast:
+      print("Downloading menus with nutrition for: " + dateString + " [BREAKFAST]")
+    elif meal == Meal.lunch:
+      print("Downloading menus with nutrition for: " + dateString + " [LUNCH]")
+    elif meal == Meal.dinner:
+      print("Downloading menus with nutrition for: " + dateString + " [DINNER]")
+  else:
+    if meal == Meal.breakfast:
+      print("Downloading menus for: " + dateString + " [BREAKFAST]")
+    elif meal == Meal.lunch:
+      print("Downloading menus for: " + dateString + " [LUNCH]")
+    elif meal == Meal.dinner:
+      print("Downloading menus for: " + dateString + " [DINNER]")
+
+  parser = MenuParser(date, meal)
+  menu = parser.getMenus(shouldGetNutrition)
+  if not menu:
+    return []
+  return menu
+
+
 if __name__ == "__main__":
 
-  dateTime = datetime.datetime.today()
+  parser = argparse.ArgumentParser()
+  parser.add_argument("year", help="year of the menu data you wish to download", type=int)
+  parser.add_argument("month", help="month of the menu data you wish to download", type=int)
+  parser.add_argument("day", help="month of the menu data you wish to download", type=int)
+  parser.add_argument("-n", "--nutrition", help="determine whether to download nutrition data", action="store_true")
+  parser.add_argument("-b", "--breakfast", help="download breakfast menus", action="store_true")
+  parser.add_argument("-l", "--lunch", help="download lunch menus", action="store_true")
+  parser.add_argument("-d", "--dinner", help="download dinner menus", action="store_true")
 
-  for i in range(0, 7):
+  args = parser.parse_args()
 
-    currentDate = dateTime + datetime.timedelta(days=i)
-    dateString = currentDate.strftime('./menus/%Y-%m-%d')
-    print(dateString)
+  shouldGetNutrition = False
+  if args.nutrition:
+    shouldGetNutrition = True
 
-    menus = {"b":[],"l":[],"d":[]}
+  menus = {"b":[],"l":[],"d":[]}
 
-    # breakfast
-    meal = Meal.breakfast
-    parser = MenuParser(currentDate, meal)
-    menu = parser.getMenus()
-    if menu != None:
-      menus["b"] = menu
+  date = datetime.date(args.year, args.month, args.day)
+  dateString = str(args.year)+'-'+str(args.month)+'-'+str(args.day)
 
-    # lunch
-    meal = Meal.lunch
-    parser = MenuParser(currentDate, meal)
-    menu = parser.getMenus()
-    if menu != None:
-      menus["l"] = menu
+  if (not args.breakfast) and (not args.lunch) and (not args.dinner):
+    menus["b"] = downloadMenu(date, dateString, Meal.breakfast, shouldGetNutrition)
+    menus["l"] = downloadMenu(date, dateString, Meal.lunch, shouldGetNutrition)
+    menus["d"] = downloadMenu(date, dateString, Meal.dinner, shouldGetNutrition)
+  else:
+    if args.breakfast:
+      menus["b"] = downloadMenu(date, dateString, Meal.breakfast, shouldGetNutrition)
+    if args.lunch:
+      menus["l"] = downloadMenu(date, dateString, Meal.lunch, shouldGetNutrition)
+    if args.dinner:
+      menus["d"] = downloadMenu(date, dateString, Meal.dinner, shouldGetNutrition)
 
-    # dinner
-    meal = Meal.dinner
-    parser = MenuParser(currentDate, meal)
-    menu = parser.getMenus()
-    if menu != None:
-      menus["d"] = menu
-
-    menuJSON = json.dumps(menus, separators=(',',':'))
-
-    # create file to save to
-    file = open(dateString, "w")
-    file.write(menuJSON)
-    file.write("\n")
-    file.close()
-
-    print(menuJSON)
+  menuJSON = json.dumps(menus, separators=(',',':'))
+  print(menuJSON)
