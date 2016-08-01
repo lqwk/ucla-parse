@@ -40,7 +40,7 @@ class NutritionParser:
   def __init__(self, recipe):
     self.recipe = recipe
 
-  def downloadNutritionDataForURL(self, url, filename):
+  def downloadNutritionDataForURL(self, url, filename, shouldSave):
     """
     Downloads the nutrition data for 'url' and saves to 'filename'
     """
@@ -175,13 +175,14 @@ class NutritionParser:
     # print(nutritionJSON)
 
     # create file to save to
-    file = open(filename, "w")
-    file.write(nutritionJSON)
-    file.close()
+    if shouldSave:
+      file = open(filename, "w")
+      file.write(nutritionJSON)
+      file.close()
 
     return nutritionJSON
 
-  def downloadNutritionData(self):
+  def downloadNutritionData(self, filebase, shouldSave):
     """
     Downloads the nutrition data for recipe number 'recipe'.
 
@@ -190,7 +191,6 @@ class NutritionParser:
     """
 
     base = "http://menu.ha.ucla.edu/foodpro/recipedetail.asp?RecipeNumber="
-    filebase = "./nutrition/"
 
     url = base + self.recipe
     filename = filebase + self.recipe
@@ -205,9 +205,9 @@ class NutritionParser:
       diffdays = td.days
       # if the time difference is greater than 4 days, re-download
       if diffdays >= 4:
-        return self.downloadNutritionDataForURL(url, filename)
+        return self.downloadNutritionDataForURL(url, filename, shouldSave)
     else:
-      return self.downloadNutritionDataForURL(url, filename)
+      return self.downloadNutritionDataForURL(url, filename, shouldSave)
 
     return None
 
@@ -219,4 +219,4 @@ if __name__ == "__main__":
 
   for r in rs:
     parser = NutritionParser(r)
-    parser.downloadNutritionData()
+    parser.downloadNutritionData(path, True)
