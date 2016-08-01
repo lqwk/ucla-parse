@@ -9,7 +9,7 @@ import urllib.request
 from urllib.parse import urlparse
 from urllib.parse import urlencode
 from enum import Enum
-from 'nutrition-parse' import NutritionParser
+from nutrition import NutritionParser
 
 
 # constants
@@ -227,7 +227,7 @@ class MenuParser:
                           nutrition = json.loads(nutritionJSON)
                         else:
                           parser = NutritionParser(nutritionURL)
-                          nutritionJSON = parser.downloadNutritionData()
+                          nutritionJSON = parser.downloadNutritionData(True)
                           nutrition = json.loads(nutritionJSON)
                       entree = { kEntreeName: line, kNutritionData: nutrition, kType: itemType}
                     else:
@@ -274,22 +274,22 @@ if __name__ == "__main__":
     menus = {"b":[],"l":[],"d":[]}
 
     # breakfast
-    meal = NutritionMeal.breakfast
-    parser = NutritionMenuParser(currentDate, meal)
+    meal = Meal.breakfast
+    parser = MenuParser(currentDate, meal)
     menu = parser.getMenus(shouldGetNutrition)
     if menu != None:
       menus["b"] = menu
 
     # lunch
-    meal = NutritionMeal.lunch
-    parser = NutritionMenuParser(currentDate, meal)
+    meal = Meal.lunch
+    parser = MenuParser(currentDate, meal)
     menu = parser.getMenus(shouldGetNutrition)
     if menu != None:
       menus["l"] = menu
 
     # dinner
-    meal = NutritionMeal.dinner
-    parser = NutritionMenuParser(currentDate, meal)
+    meal = Meal.dinner
+    parser = MenuParser(currentDate, meal)
     menu = parser.getMenus(shouldGetNutrition)
     if menu != None:
       menus["d"] = menu
