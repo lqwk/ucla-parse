@@ -1,15 +1,10 @@
 import json
 import datetime
 import os
-import nutrition
 
 from flask import Flask
 from flask import render_template
 from flask import request
-from parse import Meal
-from parse import MenuParser
-from nuparse import NutritionMeal
-from nuparse import NutritionMenuParser
 from key import APIKey
 
 app = Flask(__name__)
@@ -58,34 +53,19 @@ def getMenuWithNutrition():
     currentPath = "./menus-nutrition/"
     dateNamePath = currentPath + year + "-" + month + "-" + day
 
-    # create directory to hold menus
-    os.makedirs(currentPath,exist_ok=True)
-
     # check if file exists yet
     if os.path.exists(dateNamePath) and os.path.isfile(dateNamePath):
-      # if exists, check the time stamp
-      statinfo = os.stat(dateNamePath)
-      filetime = datetime.datetime.fromtimestamp(statinfo.st_mtime)
-      servertime = datetime.datetime.now()
-      td = servertime - filetime
-      diffhours = td.days*24 + td.seconds/3600
-      # if the time difference is less than 2 hours, return the stored data
-      if diffhours <= 2.0:
-        file = open(dateNamePath, "r")
-        menuJSON = file.read()
-        file.close()
-        return menuJSON
-      # otherwise, re-download and save the data
-      else:
-        menuJSON = fetchMenuNutrition(year, month, day, dateNamePath)
-        return menuJSON
-    # file does not exist
-    else:
-      menuJSON = fetchMenuNutrition(year, month, day, dateNamePath)
+      file = open(dateNamePath, "r")
+      menuJSON = file.read()
+      file.close()
       return menuJSON
+    else:
+      empty = {"b":[],"l":[],"d":[]}
+      return json.dumps(empty, separators=(',',':'))
   # bad parameters
   else:
-    return "Bad parameters"
+    empty = {"b":[],"l":[],"d":[]}
+    return json.dumps(empty, separators=(',',':'))
 
 @app.route('/menu', methods=['GET'])
 def getMenus():
@@ -100,115 +80,16 @@ def getMenus():
     currentPath = "./menus/"
     dateNamePath = currentPath + year + "-" + month + "-" + day
 
-    # create directory to hold menus
-    os.makedirs(currentPath,exist_ok=True)
-
     # check if file exists yet
     if os.path.exists(dateNamePath) and os.path.isfile(dateNamePath):
-      # if exists, check the time stamp
-      statinfo = os.stat(dateNamePath)
-      filetime = datetime.datetime.fromtimestamp(statinfo.st_mtime)
-      servertime = datetime.datetime.now()
-      td = servertime - filetime
-      diffhours = td.days*24 + td.seconds/3600
-      # if the time difference is less than 2 hours, return the stored data
-      if diffhours <= 2.0:
-        file = open(dateNamePath, "r")
-        menuJSON = file.read()
-        file.close()
-        return menuJSON
-      # otherwise, re-download and save the data
-      else:
-        menuJSON = fetchMenu(year, month, day, dateNamePath)
-        return menuJSON
-    # file does not exist
-    else:
-      menuJSON = fetchMenu(year, month, day, dateNamePath)
+      file = open(dateNamePath, "r")
+      menuJSON = file.read()
+      file.close()
       return menuJSON
+    else:
+      empty = {"b":[],"l":[],"d":[]}
+      return json.dumps(empty, separators=(',',':'))
   # bad parameters
   else:
-    return "Bad parameters"
-
-def fetchMenu(year, month, day, dateNamePath):
-  """
-  Routine used to fetch and save menu data.
-  """
-
-  try:
-    dateTime = datetime.date(int(float(year)), int(float(month)), int(float(day)))
-  except:
-    return "Bad date"
-
-  menus = {"b":[],"l":[],"d":[]}
-
-  # breakfast
-  meal = Meal.breakfast
-  parser = MenuParser(dateTime, meal)
-  menu = parser.getMenus()
-  if menu != None:
-    menus["b"] = menu
-
-  # lunch
-  meal = Meal.lunch
-  parser = MenuParser(dateTime, meal)
-  menu = parser.getMenus()
-  if menu != None:
-    menus["l"] = menu
-
-  # dinner
-  meal = Meal.dinner
-  parser = MenuParser(dateTime, meal)
-  menu = parser.getMenus()
-  if menu != None:
-    menus["d"] = menu
-
-  menuJSON = json.dumps(menus, separators=(',',':'))
-
-  # create file to save to
-  file = open(dateNamePath, "w")
-  file.write(menuJSON)
-  file.close()
-
-  return menuJSON
-
-def fetchMenuNutrition(year, month, day, dateNamePath):
-  """
-  Routine used to fetch and save menu data (with nutrition data).
-  """
-
-  try:
-    dateTime = datetime.date(int(float(year)), int(float(month)), int(float(day)))
-  except:
-    return "Bad date"
-
-  menus = {"b":[],"l":[],"d":[]}
-
-  # breakfast
-  meal = NutritionMeal.breakfast
-  parser = NutritionMenuParser(dateTime, meal)
-  menu = parser.getMenus()
-  if menu != None:
-    menus["b"] = menu
-
-  # lunch
-  meal = NutritionMeal.lunch
-  parser = NutritionMenuParser(dateTime, meal)
-  menu = parser.getMenus()
-  if menu != None:
-    menus["l"] = menu
-
-  # dinner
-  meal = NutritionMeal.dinner
-  parser = NutritionMenuParser(dateTime, meal)
-  menu = parser.getMenus()
-  if menu != None:
-    menus["d"] = menu
-
-  menuJSON = json.dumps(menus, separators=(',',':'))
-
-  # create file to save to
-  file = open(dateNamePath, "w")
-  file.write(menuJSON)
-  file.close()
-
-  return menuJSON
+    empty = {"b":[],"l":[],"d":[]}
+    return json.dumps(empty, separators=(',',':'))
