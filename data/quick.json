@@ -10,14 +10,19 @@
       [
         "Pizzette",
         "",
-        ["Bolognese (Tomato-Meat Sauce)", "$6.25", "o", "141044"],
-        ["Carciofo (Artichoke & Cheese)", "$6.25", "v", "141020"],
-        ["Genova (Pesto Chicken)", "$6.25", "o", "141033"],
-        ["Margherita (Tomato & Basil)", "$6.25", "v", "141227"],
-        ["Pepato Piatto (Pepperoni & Turkey Pastrami)", "$6.25", "o", "141022"],
-        ["Pepperoni Pepperoni & Cheese)", "$6.25", "o", "141218"],
-        ["Tre Formaggi (Three-Cheese)", "$6.25", "v", "141216"],
-        ["Vegetarian Genova (Pesto Alfredo)", "$6.25", "v", "141055"]
+        ["Bolognese (Tomato-Meat Sauce)", "$7.25", "o", "141044"],
+        ["Breakfast Calzone w/ Bacon", "$7.25", "o", "141233"],
+        ["Breakfast Calzone w/ Ham", "$7.25", "o", "141234"],
+        ["Carciofo (Artichoke & Cheese)", "$7.25", "o", "141020"],
+        ["Genova (Pesto Chicken)", "$7.25", "o", "141033"],
+        ["Margherita (Tomato & Basil)", "$7.25", "o", "141227"],
+        ["Pepato Piatto (Pepperoni & Turkey Pastrami)", "$7.25", "o", "141022"],
+        ["Pepperoni (Pepperoni & Cheese)", "$7.25", "o", "141218"],
+        ["Salsiccia (Sausage & Mushroom)", "$7.25", "o", "141225"],
+        ["Tre Formaggi (Three-Cheese)", "$7.25", "o", "141216"],
+        ["Vegetarian Breakfast Calzone", "$7.25", "o", "141198"],
+        ["Vegetarian Genova (Pesto Alfredo)", "$7.25", "o", "141055"],
+        ["Verdura Arrosto (Roasted Vegetable)", "$7.25", "o", "141079"]
       ]
     ],
 
@@ -30,12 +35,16 @@
       [
         "Panini",
         "",
-        ["Campania (Grilled Vegetables)", "$6.75", "v", "140439"],
-        ["Florentino (Chicken with Spinach & Pesto)", "$6.75", "o", "117013"],
-        ["Italiano (Italian Cold Cuts & Cheeses)", "$6.75", "o", "087079"],
-        ["Pollo Parma (Grilled Chicken Parmesan)", "$6.75", "o", "117004"],
-        ["Tacchino (Smoked Turkey & Cheese)", "$6.75", "o", "117114"],
-        ["Vegan Campania (Grilled Vegetables)", "$6.75", "g", "140443"]
+        ["Campania (Grilled Vegetables)", "$7.75", "o", "140439"],
+        ["Caprese (Heirloom Tomato & Fresh Mozzarella)", "$7.75", "o", "140720"],
+        ["Florentino (Chicken with Spinach & Pesto)", "$7.75", "o", "117013"],
+        ["Italiano (Italian Cold Cuts & Cheeses)", "$7.75", "o", "087079"],
+        ["Melanzana (Eggplant Parmesan)", "$7.75", "o", "140048"],
+        ["Pollo Parma Grilled Chicken Parmesan)", "$7.75", "o", "117004"],
+        ["Polpetta Italiano (Meatball Sub)", "$7.50", "o", "074107"],
+        ["Tacchino (Smoked Turkey & Cheese)", "$7.75", "o", "117114"],
+        ["Tuscano (Roast Beef, Ham & Salami)", "$7.75", "o", "087008"],
+        ["Vegan Campania (Grilled Vegetables)", "$7.75", "o", "140443"]
       ]
     ],
 
@@ -48,12 +57,33 @@
       [
         "Insalate",
         "",
-        ["Gamberetti (Shrimp Caesar Salad)", "$7.00", "o", "041027"],
-        ["Insalata di Salmone (Salmon Salad)", "$7.00", "o", "041125"],
-        ["Pollo Caesar (Chicken Caesar Salad)", "$6.50", "o", "041111"],
-        ["Pollo Gorgonzola (Grilled Chicken, Bacon, & Gorgonzola)", "$7.00", "o", "041163"],
-        ["Tagliata (Antipasto Chopped Salad with Salami)", "$6.50", "o", "041022"],
-        ["Vegetarian Tagliata (Antipasto Chopped Salad)", "$6.25", "v", "041140"]
+        ["Gamberetti (Shrimp Caesar Salad)", "$8.00", "o", "041027"],
+        ["Insalata di Salmone (Salmon Salad)", "$8.00", "o", "041125"],
+        ["Pollo Verdura (Chopped Chicken & Vegetable Salad)", "$8.00", "o", "041127"],
+        ["Tagliata (Antipasto Chopped Salad with Salami)", "$7.25", "o", "041022"],
+        ["Vegan Tagliata Antipasto Chopped Salad)", "$7.25", "o", "041135"],
+        ["Vegetarian Tagliata Antipasto Chopped Salad)", "$7.25", "o", "041140"]
+      ]
+    ],
+
+    ["Lasagna",
+      [
+        "One Swipe Combo",
+        "Lasagna + Side + Fountain Drink"
+      ],
+
+      [
+        "Lasagna",
+        "",
+        ["Lasagna Bolognese", "$8.00", "o", "165132"],
+        ["Lasagna Marinara", "$8.00", "o", "165133"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Caesar Salad", "", "o", "041144"],
+        ["Parmesan-Herb Roll", "", "v", "212037"]
       ]
     ],
 
@@ -61,106 +91,20 @@
       [
         "Sides",
         "",
-        ["Caesar (Parmesan & Croutons)", "$2.00", "o", "041126"],
-        ["Caprese (Tomato & Fresh Mozzarella Salad)", "$2.00", "v", "041038"],
-        ["Piccola Tagliata (Antipasto Chopped Salad with Salami)", "$2.00", "o", "041118"],
-        ["Vegetarian Piccola Tagliata (Antipasto Chopped Side Salad)", "$1.75", "v", "041141"],
-        ["Boulder Canyon Hickory BBQ Kettle Chips", "$1.25", "g", "973859"],
-        ["Boulder Canyon Malt Vinegar Kettle Chips", "$1.25", "g", "973860"],
-        ["Boulder Canyon Totally Natural Kettle Chips", "$1.25", "g", "160018"],
-        ["Banana", "$1.00", "g", "970032"],
-        ["Fuji Apple", "$1.00", "g", "971325"],
-        ["Orange", "$1.00", "g", "970375"]
-      ]
-    ],
-
-    ["Bibite",
-      [
-        "One Swipe Combo",
-        "[Bibite (Excluding ($) Beverages) + Pastry] or [2 Bottled Beverages (Only 1 may be a ($) Beverage)]"
-      ],
-
-      [
-        "Coffee & Tea",
-        "",
-        ["Italian Brewed Roast Coffee", "$1.95", "g", "234012"],
-        ["Cappuccino (Hot Only)", "$3.75", "v", "234014"],
-        ["Cafe Latte", "$3.75", "v", "234015"],
-        ["Mocha Latte", "$4.50", "v", "234016"],
-        ["Vanilla Latte", "$4.50", "v", "234017"],
-        ["Caramel Latte", "$4.50", "v", "234018"],
-        ["Cafe Mocha", "$3.75", "v", "234019"],
-        ["Cafe Vanilla", "$3.75", "g", "234020"],
-        ["Cafe Caramel", "$3.75", "v", "234021"],
-        ["Flavored Coffee (Chocolate, Vanilla, Hazelnut, Caramel, Creme de Banana)", "$2.50", "g", "234022"],
-        ["Americano", "$2.75", "g", "234023"],
-        ["Hot Chocolate", "$3.25", "v", "234026"],
-        ["Hot Vanilla", "$3.25", "v", "234027"],
-        ["Brewed Tea (Hot Only)", "$2.45", "g", "234028"],
-        ["Caramella Salato Latte", "$4.50", "v", "234029"],
-        ["Milano Mint Latte", "$4.50", "v", "234055"],
-        ["White Chocolate Latte", "$4.50", "v", "234056"],
-        ["Cafe White Chocolate", "$3.75", "v", "234057"],
-        ["Italian Brewed Espresso (Hot Only)", "$1.75", "g", "234013"],
-        ["Macchiato", "$1.75", "v", "234024"],
-        ["Mochaccino (Hot Only)", "$3.75", "v", "234025"]
-      ],
-
-      [
-        "Italian Sodas",
-        "",
-        ["Blackberry Cream", "$4.00", "v", "232015"],
-        ["Blackberry", "$4.00", "g", "232016"],
-        ["Blood Orange Cream", "$4.00", "v", "232017"],
-        ["Blood Orange", "$4.00", "g", "232018"],
-        ["Grapefruit Cream", "$4.00", "v", "232029"],
-        ["Grapefruit", "$4.00", "g", "232030"],
-        ["Green Apple Cream", "$4.00", "v", "232031"],
-        ["Green Apple", "$4.00", "g", "232032"],
-        ["Lemon Cream", "$4.00", "v", "232019"],
-        ["Lemon", "$4.00", "g", "232020"],
-        ["Pomegranate Cream", "$4.00", "v", "232021"],
-        ["Pomegranate", "$4.00", "g", "232022"],
-        ["Strawberry Cream", "$4.00", "v", "232023"],
-        ["Strawberry", "$4.00", "g", "232024"]
-      ],
-
-      [
-        "Bottled & Premium Beverages",
-        "",
-        ["Fountain Beverage", "$1.75", "o", "232000"],
-        ["Coca-Cola", "$1.93", "o", "970978"],
-        ["Coke Zero", "$1.93", "o", "970979"],
-        ["DASANI Purified Water", "$1.85", "o", "976538"],
-        ["Dr Pepper", "$1.93", "o", "970983"],
-        ["$ Gold Peak Iced Green Tea", "$2.25", "o", "970262"],
-        ["$ Gold Peak Lemon Iced Tea", "$2.25", "o", "973956"],
-        ["$ Gold Peak Lemonade Iced Tea", "$2.25", "o", "971825"],
-        ["$ Gold Peak Sweet Tea", "$2.25", "o", "973955"],
-        ["$ Gold Peak Unsweetened Iced Tea", "$2.25", "o", "973957"],
-        ["$ Illy Issimo Cappuccino Bottled Coffee Drink", "$2.50", "o", "976536"],
-        ["$ Illy Issimo Mochaccino Coffee Drink", "$2.25", "o", "976543"],
-        ["$ Izze Sparkling Apple", "$2.25", "o", "973919"],
-        ["$ Izze Sparkling Blackberry", "$2.50", "o", "973916"],
-        ["$ Izze Sparkling Blueberry", "$2.50", "o", "973920"],
-        ["$ Izze Sparkling Clementine", "$2.50", "o", "973918"],
-        ["$ Izze Sparkling Ginger", "$2.50", "o", "973921"],
-        ["$ Izze Sparkling Grapefruit", "$2.50", "o", "973922"],
-        ["$ Izze Sparkling Peach", "$2.50", "o", "973923"],
-        ["$ Izze Sparkling Pomegranate", "$2.50", "o", "973924"],
-        ["Mello Yello", "$1.93", "o", "974342"],
-        ["$ Minute Maid 100% Apple Juice", "$2.25", "o", "970927"],
-        ["$ Minute Maid 100% Orange Juice", "$2.25", "o", "970926"],
-        ["$ Minute Maid Cranberry Grape", "$2.25", "o", "970928"],
-        ["Minute Maid Lemonade", "$1.93", "o", "970585"],
-        ["$ Minute Maid Pineapple Orange", "$2.25", "o", "970924"],
-        ["$ Minute Maid Tropical Blend", "$2.25", "o", "970929"],
-        ["$ Orangina", "$2.50", "o", "973914"],
-        ["$ San Pellegrino Limonata", "$2.50", "o", "973927"],
-        ["San Pellegrino Sparkling Natural Mineral Water", "$2.50", "o", "973913"],
-        ["Sprite", "$1.93", "o", "970903"],
-        ["$ Starbucks Mocha Frappuccino Bottled Coffee Drink", "$2.50", "o", "976534"],
-        ["$ Starbucks Vanilla Frappuccino Bottled Coffee Drink", "$2.50", "o", "976535"]
+        ["Caesar (Parmesan & Croutons)", "$2.50", "o", "041126"],
+        ["Caprese (Tomato & Fresh Mozzarella Salad)", "$3.50", "o", "041038"],
+        ["Piccola Tagliata (Antipasto Chopped Salad with Salami)", "$2.50", "o", "041118"],
+        ["Vegan Piccola Tagliata (Antipasto Chopped Salad)", "$2.50", "o", "041132"],
+        ["Vegetarian Piccola Tagliata (Antipasto Chopped Side Salad)", "$2.50", "o", "041141"],
+        ["Boulder Canyon Hickory BBQ Kettle Chips", "$1.50", "g", "973859"],
+        ["Boulder Canyon Malt Vinegar Kettle Chips", "$1.50", "g", "973860"],
+        ["Boulder Canyon Totally Natural Kettle Chips", "$1.50", "g", "160018"],
+        ["Focaccia Bread", "$1.00", "v", "979563"],
+        ["Sea Salt & Cracked Pepper Kettle Chips", "$1.50", "g", "160029"],
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Granny Smith Apple", "$1.25", "g", "975507"],
+        ["Orange", "$1.25", "g", "970375"]
       ]
     ],
 
@@ -168,27 +112,30 @@
       [
         "Dolci",
         "",
-        ["Gelato & Sorbet", "$4.50", "g", "184009"],
-        ["Affogato Italiano", "$6.00", "v", "185023"],
-        ["Bacca Parfait", "$4.75", "v", "048018"],
-        ["Fresh Fruit Cup", "$4.00", "g", "201019"]
+        ["Gelato & Sorbet", "$6.00", "o", "184009"],
+        ["Affogato Italiano", "$6.00", "o", "185023"],
+        ["Bacca Parfait", "$5.00", "o", "048018"],
+        ["Bacca Parfait w/ Nutella", "$5.00", "o", "048019"],
+        ["Biscotto Col Gelato", "$6.00", "o", "181211"],
+        ["Mount Vesuvius", "$6.00", "o", "181210"],
+        ["Tiramisu", "$6.00", "o", "979560"]
       ],
 
       [
         "Daily Pastry Selection",
         "",
-        ["Apple Turnover", "$2.75", "v", "979582"],
         ["Banana Walnut Muffin", "$2.50", "v", "979592"],
         ["Blueberry Muffin", "$2.50", "v", "979591"],
-        ["Cherry Marzipan Crumble Coffee Cake", "$2.75", "v", "979550"],
-        ["Chocolate Chip Cookie", "$2.00", "v", "979578"],
+        ["Cherry Marzipan Crumble Coffee Cake", "$3.50", "v", "979550"],
         ["Chocolate Chip Scone", "$2.75", "v", "979421"],
+        ["Chocolate Espresso Cookie", "$2.00", "v", "979551"],
         ["Lemon Poppyseed Scone", "$2.75", "v", "979557"],
-        ["Maple Pecan Danish", "$2.75", "v", "979558"],
+        ["Maccherones Italiani", "$3.50", "o", "971563"],
+        ["Maple Pecan Danish", "$3.50", "v", "979558"],
         ["Mocha Chocolate Chip Muffin", "$2.50", "v", "979556"],
-        ["Oatmeal Raisin Cookie", "$2.00", "v", "979577"],
         ["Pignolis", "$2.00", "v", "979554"],
-        ["Pizza Bagel", "$2.75", "o", "141048"]
+        ["Pizza Bagel", "$2.75", "o", "141048"],
+        ["Vegan Cappucino Cookies", "$3.50", "g", "979555"]
       ]
     ]
   ]
