@@ -8,7 +8,7 @@ import urllib.request
 from urllib.parse import urlparse
 from urllib.parse import urlencode
 
-url = "http://menu.ha.ucla.edu/foodpro/cafe1919_summer.asp"
+url = "http://menu.ha.ucla.edu/foodpro/cafe1919.asp"
 
 response = urllib.request.urlopen(url)
 html = response.read()
