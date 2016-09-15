@@ -1,55 +1,6 @@
 {
   "Cafe 1919" :
   [
-    ["Breakfast",
-      [
-        "Hot Entrees",
-        "",
-        ["Breakfast Calzone w/ Prosciutto", "$4.75", "o", "141057"],
-        ["French Toast w/ Nutella & Fresh Berries", "$4.00", "v", "217045"],
-        ["Ham, Spinach, & Cheese Scone", "$2.75", "o", "979565"],
-        ["Steel-Cut Oatmeal Cup", "$2.50", "g", "031017"],
-        ["Vegetarian Breakfast Calzone", "$4.75", "v", "141198"]
-      ],
-
-      [
-        "Cold Entrees",
-        "",
-        ["Cold Cereal", "$2.50", "v", "035005"],
-        ["Bacca Parfait", "$4.75", "v", "048018"],
-        ["Fresh Fruit Cup", "$4.00", "g", "201019"]
-      ],
-
-      [
-        "Lunch on the Go",
-        "",
-        ["Ham & Swiss Sandwich on Whole Grain", "$6.50", "o", "085056"],
-        ["Peanut Butter & Grape Jelly Sandwich", "$4.50", "v", "140772"],
-        ["Peanut Butter & Strawberry Preserves Sandwich", "$4.50", "v", "140773"],
-        ["Roast Beef Sandwich on Whole Grain", "$7.00", "o", "077118"],
-        ["Roasted Turkey & Provolone Sandwich on Whole Grain", "$6.50", "o", "117054"],
-        ["Roasted Vegetable & Hummus Sandwich", "$7.25", "g", "140699"]
-      ],
-
-      [
-        "Pastry Selection",
-        "",
-        ["Apple Turnover", "$2.75", "v", "979582"],
-        ["Assorted Bagels", "$2.75", "v", "212043"],
-        ["Banana Walnut Muffin", "$2.50", "v", "979592"],
-        ["Blueberry Muffin", "$2.50", "v", "979591"],
-        ["Cherry Marzipan Crumble Coffee Cake", "$2.75", "v", "979550"],
-        ["Chocolate Chip Cookie", "$2.00", "v", "979578"],
-        ["Chocolate Chip Scone", "$2.75", "v", "979421"],
-        ["Lemon Poppyseed Scone", "$2.75", "v", "979557"],
-        ["Maple Pecan Danish", "$2.75", "v", "979558"],
-        ["Mocha Chocolate Chip Muffin", "$2.50", "v", "979556"],
-        ["Oatmeal Raisin Cookie", "$2.00", "v", "979577"],
-        ["Pignolis", "$2.00", "v", "979554"],
-        ["Pizza Bagel", "$2.75", "o", "141048"]
-      ]
-    ],
-
     ["Pizzette",
       [
         "One Swipe Combo",
