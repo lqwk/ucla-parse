@@ -31,6 +31,7 @@ for item in items:
         line = line.replace('®', '')
         line = line.replace('™', '')
         line = line.replace('é', 'e')
+        line = line.strip()
         # print(line)
         info[0] = line
 
