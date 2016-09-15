@@ -16,20 +16,23 @@ for key, menu in quick.items():
       for j in range(2, len(section)):
         entree = section[j]
         recipe = entree[3]
-        
-        nutritionPath = './nutrition/' + recipe
-        nutrition = []
-        if os.path.exists(nutritionPath) and os.path.isfile(nutritionPath):
-          file = open(nutritionPath, 'r')
-          nutritionJSON = file.read()
-          file.close()
-          nutrition = json.loads(nutritionJSON)
+
+        if recipe and len(recipe) == 6:
+          nutritionPath = './nutrition/' + recipe
+          nutrition = []
+          if os.path.exists(nutritionPath) and os.path.isfile(nutritionPath):
+            file = open(nutritionPath, 'r')
+            nutritionJSON = file.read()
+            file.close()
+            nutrition = json.loads(nutritionJSON)
+          else:
+            parser = NutritionParser(recipe)
+            nutritionJSON = parser.downloadNutritionData(shouldSave=True)
+            nutrition = json.loads(nutritionJSON)
+          quick[key][k][i][j][3] = nutrition
+          # print(entree)
         else:
-          parser = NutritionParser(recipe)
-          nutritionJSON = parser.downloadNutritionData()
-          nutrition = json.loads(nutritionJSON)
-        quick[key][k][i][j][3] = nutrition
-        # print(entree)
+          os.exit(1)
 
 print(quick)
 quickJSON = json.dumps(quick, separators=(',',':'))
