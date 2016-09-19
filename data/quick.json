@@ -1,55 +1,6 @@
 {
   "Cafe 1919" :
   [
-    ["Breakfast",
-      [
-        "Hot Entrees",
-        "",
-        ["Breakfast Calzone w/ Prosciutto", "$4.75", "o", "141057"],
-        ["French Toast w/ Nutella & Fresh Berries", "$4.00", "v", "217045"],
-        ["Ham, Spinach, & Cheese Scone", "$2.75", "o", "979565"],
-        ["Steel-Cut Oatmeal Cup", "$2.50", "g", "031017"],
-        ["Vegetarian Breakfast Calzone", "$4.75", "v", "141198"]
-      ],
-
-      [
-        "Cold Entrees",
-        "",
-        ["Cold Cereal", "$2.50", "v", "035005"],
-        ["Bacca Parfait", "$4.75", "v", "048018"],
-        ["Fresh Fruit Cup", "$4.00", "g", "201019"]
-      ],
-
-      [
-        "Lunch on the Go",
-        "",
-        ["Ham & Swiss Sandwich on Whole Grain", "$6.50", "o", "085056"],
-        ["Peanut Butter & Grape Jelly Sandwich", "$4.50", "v", "140772"],
-        ["Peanut Butter & Strawberry Preserves Sandwich", "$4.50", "v", "140773"],
-        ["Roast Beef Sandwich on Whole Grain", "$7.00", "o", "077118"],
-        ["Roasted Turkey & Provolone Sandwich on Whole Grain", "$6.50", "o", "117054"],
-        ["Roasted Vegetable & Hummus Sandwich", "$7.25", "g", "140699"]
-      ],
-
-      [
-        "Pastry Selection",
-        "",
-        ["Apple Turnover", "$2.75", "v", "979582"],
-        ["Assorted Bagels", "$2.75", "v", "212043"],
-        ["Banana Walnut Muffin", "$2.50", "v", "979592"],
-        ["Blueberry Muffin", "$2.50", "v", "979591"],
-        ["Cherry Marzipan Crumble Coffee Cake", "$2.75", "v", "979550"],
-        ["Chocolate Chip Cookie", "$2.00", "v", "979578"],
-        ["Chocolate Chip Scone", "$2.75", "v", "979421"],
-        ["Lemon Poppyseed Scone", "$2.75", "v", "979557"],
-        ["Maple Pecan Danish", "$2.75", "v", "979558"],
-        ["Mocha Chocolate Chip Muffin", "$2.50", "v", "979556"],
-        ["Oatmeal Raisin Cookie", "$2.00", "v", "979577"],
-        ["Pignolis", "$2.00", "v", "979554"],
-        ["Pizza Bagel", "$2.75", "o", "141048"]
-      ]
-    ],
-
     ["Pizzette",
       [
         "One Swipe Combo",
@@ -59,14 +10,19 @@
       [
         "Pizzette",
         "",
-        ["Bolognese (Tomato-Meat Sauce)", "$6.25", "o", "141044"],
-        ["Carciofo (Artichoke & Cheese)", "$6.25", "v", "141020"],
-        ["Genova (Pesto Chicken)", "$6.25", "o", "141033"],
-        ["Margherita (Tomato & Basil)", "$6.25", "v", "141227"],
-        ["Pepato Piatto (Pepperoni & Turkey Pastrami)", "$6.25", "o", "141022"],
-        ["Pepperoni Pepperoni & Cheese)", "$6.25", "o", "141218"],
-        ["Tre Formaggi (Three-Cheese)", "$6.25", "v", "141216"],
-        ["Vegetarian Genova (Pesto Alfredo)", "$6.25", "v", "141055"]
+        ["Bolognese (Tomato-Meat Sauce)", "$7.25", "o", "141044"],
+        ["Breakfast Calzone w/ Bacon", "$7.25", "o", "141233"],
+        ["Breakfast Calzone w/ Ham", "$7.25", "o", "141234"],
+        ["Carciofo (Artichoke & Cheese)", "$7.25", "o", "141020"],
+        ["Genova (Pesto Chicken)", "$7.25", "o", "141033"],
+        ["Margherita (Tomato & Basil)", "$7.25", "o", "141227"],
+        ["Pepato Piatto (Pepperoni & Turkey Pastrami)", "$7.25", "o", "141022"],
+        ["Pepperoni (Pepperoni & Cheese)", "$7.25", "o", "141218"],
+        ["Salsiccia (Sausage & Mushroom)", "$7.25", "o", "141225"],
+        ["Tre Formaggi (Three-Cheese)", "$7.25", "o", "141216"],
+        ["Vegetarian Breakfast Calzone", "$7.25", "o", "141198"],
+        ["Vegetarian Genova (Pesto Alfredo)", "$7.25", "o", "141055"],
+        ["Verdura Arrosto (Roasted Vegetable)", "$7.25", "o", "141079"]
       ]
     ],
 
@@ -79,12 +35,16 @@
       [
         "Panini",
         "",
-        ["Campania (Grilled Vegetables)", "$6.75", "v", "140439"],
-        ["Florentino (Chicken with Spinach & Pesto)", "$6.75", "o", "117013"],
-        ["Italiano (Italian Cold Cuts & Cheeses)", "$6.75", "o", "087079"],
-        ["Pollo Parma (Grilled Chicken Parmesan)", "$6.75", "o", "117004"],
-        ["Tacchino (Smoked Turkey & Cheese)", "$6.75", "o", "117114"],
-        ["Vegan Campania (Grilled Vegetables)", "$6.75", "g", "140443"]
+        ["Campania (Grilled Vegetables)", "$7.75", "o", "140439"],
+        ["Caprese (Heirloom Tomato & Fresh Mozzarella)", "$7.75", "o", "140720"],
+        ["Florentino (Chicken with Spinach & Pesto)", "$7.75", "o", "117013"],
+        ["Italiano (Italian Cold Cuts & Cheeses)", "$7.75", "o", "087079"],
+        ["Melanzana (Eggplant Parmesan)", "$7.75", "o", "140048"],
+        ["Pollo Parma Grilled Chicken Parmesan)", "$7.75", "o", "117004"],
+        ["Polpetta Italiano (Meatball Sub)", "$7.50", "o", "074107"],
+        ["Tacchino (Smoked Turkey & Cheese)", "$7.75", "o", "117114"],
+        ["Tuscano (Roast Beef, Ham & Salami)", "$7.75", "o", "087008"],
+        ["Vegan Campania (Grilled Vegetables)", "$7.75", "o", "140443"]
       ]
     ],
 
@@ -97,12 +57,64 @@
       [
         "Insalate",
         "",
-        ["Gamberetti (Shrimp Caesar Salad)", "$7.00", "o", "041027"],
-        ["Insalata di Salmone (Salmon Salad)", "$7.00", "o", "041125"],
-        ["Pollo Caesar (Chicken Caesar Salad)", "$6.50", "o", "041111"],
-        ["Pollo Gorgonzola (Grilled Chicken, Bacon, & Gorgonzola)", "$7.00", "o", "041163"],
-        ["Tagliata (Antipasto Chopped Salad with Salami)", "$6.50", "o", "041022"],
-        ["Vegetarian Tagliata (Antipasto Chopped Salad)", "$6.25", "v", "041140"]
+        ["Gamberetti (Shrimp Caesar Salad)", "$8.00", "o", "041027"],
+        ["Insalata di Salmone (Salmon Salad)", "$8.00", "o", "041125"],
+        ["Pollo Verdura (Chopped Chicken & Vegetable Salad)", "$8.00", "o", "041127"],
+        ["Tagliata (Antipasto Chopped Salad with Salami)", "$7.25", "o", "041022"],
+        ["Vegan Tagliata Antipasto Chopped Salad)", "$7.25", "o", "041135"],
+        ["Vegetarian Tagliata Antipasto Chopped Salad)", "$7.25", "o", "041140"]
+      ]
+    ],
+
+    ["Lasagna",
+      [
+        "One Swipe Combo",
+        "Lasagna + Side + Fountain Drink"
+      ],
+
+      [
+        "Lasagna",
+        "",
+        ["Lasagna Bolognese", "$8.00", "o", "165132"],
+        ["Lasagna Marinara", "$8.00", "o", "165133"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Caesar Salad", "", "o", "041144"],
+        ["Parmesan-Herb Roll", "", "v", "212037"]
+      ]
+    ],
+
+    ["Sweets",
+      [
+        "Dolci",
+        "",
+        ["Gelato & Sorbet", "$6.00", "o", "184009"],
+        ["Affogato Italiano", "$6.00", "o", "185023"],
+        ["Bacca Parfait", "$5.00", "o", "048018"],
+        ["Bacca Parfait w/ Nutella", "$5.00", "o", "048019"],
+        ["Biscotto Col Gelato", "$6.00", "o", "181211"],
+        ["Mount Vesuvius", "$6.00", "o", "181210"],
+        ["Tiramisu", "$6.00", "o", "979560"]
+      ],
+
+      [
+        "Daily Pastry Selection",
+        "",
+        ["Banana Walnut Muffin", "$2.50", "v", "979592"],
+        ["Blueberry Muffin", "$2.50", "v", "979591"],
+        ["Cherry Marzipan Crumble Coffee Cake", "$3.50", "v", "979550"],
+        ["Chocolate Chip Scone", "$2.75", "v", "979421"],
+        ["Chocolate Espresso Cookie", "$2.00", "v", "979551"],
+        ["Lemon Poppyseed Scone", "$2.75", "v", "979557"],
+        ["Maccherones Italiani", "$3.50", "o", "971563"],
+        ["Maple Pecan Danish", "$3.50", "v", "979558"],
+        ["Mocha Chocolate Chip Muffin", "$2.50", "v", "979556"],
+        ["Pignolis", "$2.00", "v", "979554"],
+        ["Pizza Bagel", "$2.75", "o", "141048"],
+        ["Vegan Cappucino Cookies", "$3.50", "g", "979555"]
       ]
     ],
 
@@ -110,134 +122,942 @@
       [
         "Sides",
         "",
-        ["Caesar (Parmesan & Croutons)", "$2.00", "o", "041126"],
-        ["Caprese (Tomato & Fresh Mozzarella Salad)", "$2.00", "v", "041038"],
-        ["Piccola Tagliata (Antipasto Chopped Salad with Salami)", "$2.00", "o", "041118"],
-        ["Vegetarian Piccola Tagliata (Antipasto Chopped Side Salad)", "$1.75", "v", "041141"],
-        ["Boulder Canyon Hickory BBQ Kettle Chips", "$1.25", "g", "973859"],
-        ["Boulder Canyon Malt Vinegar Kettle Chips", "$1.25", "g", "973860"],
-        ["Boulder Canyon Totally Natural Kettle Chips", "$1.25", "g", "160018"],
-        ["Banana", "$1.00", "g", "970032"],
-        ["Fuji Apple", "$1.00", "g", "971325"],
-        ["Orange", "$1.00", "g", "970375"]
+        ["Caesar (Parmesan & Croutons)", "$2.50", "o", "041126"],
+        ["Caprese (Tomato & Fresh Mozzarella Salad)", "$3.50", "o", "041038"],
+        ["Piccola Tagliata (Antipasto Chopped Salad with Salami)", "$2.50", "o", "041118"],
+        ["Vegan Piccola Tagliata (Antipasto Chopped Salad)", "$2.50", "o", "041132"],
+        ["Vegetarian Piccola Tagliata (Antipasto Chopped Side Salad)", "$2.50", "o", "041141"],
+        ["Boulder Canyon Hickory BBQ Kettle Chips", "$1.50", "g", "973859"],
+        ["Boulder Canyon Malt Vinegar Kettle Chips", "$1.50", "g", "973860"],
+        ["Boulder Canyon Totally Natural Kettle Chips", "$1.50", "g", "160018"],
+        ["Focaccia Bread", "$1.00", "v", "979563"],
+        ["Sea Salt & Cracked Pepper Kettle Chips", "$1.50", "g", "160029"],
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Granny Smith Apple", "$1.25", "g", "975507"],
+        ["Orange", "$1.25", "g", "970375"]
+      ]
+    ]
+  ],
+
+
+
+
+
+  "Bruin Cafe" :
+  [
+    ["Breakfast",
+      [
+        "One Swipe Combo",
+        "Entree + Fruit + Beverage"
+      ],
+
+      [
+        "Entrees",
+        "",
+        ["Cold Cereal", "$2.50", "v", "035005"],
+        ["Ham & Cheese Croissant", "$4.50", "o", "216001"],
+        ["Spinach & Cheese Croissant", "$4.50", "v", "216010"],
+        ["Steel-Cut Oatmeal Cup", "$2.50", "g", "031017"],
+        ["Yogurt Cup", "$1.75", "v", "048010"],
+        ["Berry Yogurt Bowl", "$5.00", "v", "048017"],
+        ["Fresh Fruit Cup", "$4.00", "g", "201018"],
+        ["Strawberry Raspberry Parfait", "$5.00", "v", "048022"],
+        ["Yogurt Bowl w/ Banana, Pistachio & Pomagranate Seeds", "$5.00", "v", "048008"]
+      ],
+
+      [
+        "Sides & Sweets",
+        "",
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Granny Smith Apple", "$1.25", "g", "975507"],
+        ["Orange", "$1.25", "g", "970375"]
+      ],
+
+      [
+        "Beverages",
+        "",
+        ["Apple Juice", "$1.00", "g", "233017"],
+        ["Bigelow Assorted Tea", "$1.75", "o", "234058"],
+        ["Chocolate Milk", "$1.00", "v", "233005"],
+        ["Fat-Free Milk", "$1.00", "v", "233013"],
+        ["Low-Fat Milk", "$1.00", "v", "233012"],
+        ["Orange Juice", "$1.00", "g", "233006"],
+        ["Vanilla Soy Milk", "$1.50", "g", "233015"]
       ]
     ],
 
-    ["Bibite",
+    ["Lunch & Dinner",
       [
         "One Swipe Combo",
-        "[Bibite (Excluding ($) Beverages) + Pastry] or [2 Bottled Beverages (Only 1 may be a ($) Beverage)]"
+        "($) Sandwich + Side + Fountain Drink"
+      ],
+
+      [
+        "Two Swipe Combo",
+        "[($$) Sandwich] OR [($) Sandwich + Avocado/Bacon] + 2 Sides + Fountain Drink"
+      ],
+
+      [
+        "Sandwich Extras",
+        "Add Avocado or Bacon to any sandwich for $1.00"
+      ],
+
+      [
+        "B-Cafe Combo (Choose 2 from the 3 choices below)",
+        "(1) Half Cold Sandwich or Half Wrap  (2) Cup of Soup  (3) Small Salad"
+      ],
+
+      [
+        "Classic Sandwiches",
+        "",
+        ["($) Avocado BLT SANDWICH", "$7.75", "o", "087085"],
+        ["($) BBQ Beef Brisket", "$7.75", "o", "077010"],
+        ["($) Ham & Swiss", "$7.50", "o", "087003"],
+        ["($) Roast Beef & Cheddar", "$7.75", "o", "077005"],
+        ["($) Roasted Turkey & Provolone", "$7.50", "o", "117047"],
+        ["($) Tuna", "$6.50", "o", "125032"],
+        ["($) Vegan BBQ", "$7.75", "g", "140601"]
+      ],
+
+      [
+        "Premium Toasted",
+        "",
+        ["($) Chicken Ranch & Swiss", "$7.75", "o", "117039"],
+        ["($) Chipotle BBQ Turkey", "$7.75", "o", "117030"],
+        ["($) Cuban Ham", "$7.75", "o", "087073"],
+        ["($$) Honey Mustard Chicken Bacon", "$10.00", "o", "087084"],
+        ["($$) Pastrami & Cheese", "$9.75", "o", "077007"]
+      ],
+
+      [
+        "Premium Cold",
+        "",
+        ["($) Chunky Chicken Salad", "$7.50", "o", "115001"],
+        ["($) Roasted Vegetable & Hummus", "$7.50", "g", "140699"],
+        ["($) The Greek Chicken", "$7.75", "o", "117052"],
+        ["($) The Greek Vegetable", "$7.50", "v", "140722"],
+        ["($$) California Turkey Club", "$10.00", "o", "117003"],
+        ["($$) Salmon Salad", "$9.75", "o", "125038"]
+      ],
+
+      [
+        "Soups",
+        "Served in a freshly-baked Bread Bowl upon request",
+        ["Chicken Noodle", "$5.25", "o", "977001"],
+        ["Tomato & Wild Rice", "$5.25", "g", "977067"],
+        ["(SUN) Seafood, Leek, & Tomato Chowder", "$5.25", "o", "977538"],
+        ["(MON) Ground Beef Chili", "$5.25", "o", "977013"],
+        ["(TUE) Arborio Spinach", "$5.25", "g", "977543"],
+        ["(WED) Tuscan Bean", "$5.25", "g", "977021"],
+        ["(THU) Turkey & Lentil", "$5.25", "o", "977519"],
+        ["(FRI) Boston Clam Chowder", "$5.25", "o", "977000"],
+        ["(SAT) Chicken, Kale, & Mushroom", "$5.25", "o", "977431"]
+      ],
+
+      [
+        "Dinner Specials",
+        "One Swipe Combo: Entree + Fountain Drink. Served 5:00 PM to 9:00 PM.",
+        ["(MON) Creole Mustard Crusted Cod", "$10.00", "o", "121219"],
+        ["(MON) Quinoa Brown Rice Bowl w/ Tahini Sauce", "$10.00", "g", "140760"],
+        ["(TUE) Honey Balsamic Roasted Pork Chop", "$10.00", "o", "081153"],
+        ["(TUE) Thai Curry Vegetable Bowl", "$10.00", "g", "140762"],
+        ["(WED) Roasted Chicken", "$10.00", "o", "111321"],
+        ["(WED) Teriyaki Vegetable Bowl", "$10.00", "g", "140761"],
+        ["(THU) BBQ Pork Ribs", "$10.00", "o", "081045"],
+        ["(THU) Pesto Farro Bowl w/ Tomatoes & Chickpeas", "$10.00", "v", "140764"],
+        ["(FRI) Blackened Salmon w/ Cajun Salsa", "$10.00", "o", "121218"],
+        ["(FRI) Caribbean Tofu w/ Coconut Rice Bowl", "$10.00", "o", "140765"]
+      ],
+
+      [
+        "Sides & Sweets",
+        "",
+        ["Asian Quinoa Salad", "$2.50", "g", "977285"],
+        ["California Pasta Salad", "$2.50", "g", "977193"],
+        ["Greek Tomato Salad", "$2.50", "o", "042151"],
+        ["Mediterranean Chopped Salad", "$2.50", "v", "041108"],
+        ["Sesame & Orange Noodle Salad", "$2.50", "g", "977204"],
+        ["Boulder Canyon Totally Natural Kettle Chips", "$1.50", "g", "974244"],
+        ["French Onion SunChips", "$1.50", "v", "972427"],
+        ["Garden Salsa SunChips", "$1.50", "v", "975032"],
+        ["Harvest Cheddar SunChips", "$1.50", "v", "971830"],
+        ["Poore Brothers Jalape&ntildeo; Kettle Chips", "$1.50", "g", "974242"],
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Granny Smith Apple", "$1.25", "g", "975507"],
+        ["Orange", "$1.25", "g", "970375"],
+        ["Fresh Fruit Cup", "$4.00", "g", "201018"],
+        ["Strawberry Raspberry Parfait", "$5.00", "v", "048022"],
+        ["Breyer's Ice Cream", "$5.25", "o", "184007"]
+      ]
+    ],
+
+    ["On the Go",
+      [
+        "Lunch on the Go",
+        "[Sandwich, Wrap, or Entree Salad] + Side + 2 Cookies + Bottled Water"
+      ],
+
+      [
+        "Grab n' Go",
+        "[Sandwich, Wrap, Salad, or Nachos] + Side + Fountain Drink"
+      ],
+
+      [
+        "Sandwiches",
+        "Served on Whole Grain Wheat Bread.",
+        ["Cashew Butter & Grape Jelly", "$5.50", "v", "140770"],
+        ["Cashew Butter & Strawberry Preserves", "$5.50", "v", "140771"],
+        ["Ham & Swiss on Whole Grain", "$7.50", "o", "085056"],
+        ["Peanut Butter & Grape Jelly", "$4.50", "v", "140772"],
+        ["Peanut Butter & Strawberry Preserves", "$4.50", "v", "140773"],
+        ["Roast Beef on Whole Grain", "$7.75", "o", "077118"],
+        ["Roasted Turkey & Provolone on Whole Grain", "$7.50", "o", "117054"]
+      ],
+
+      [
+        "Specialty Wraps",
+        "Served in a Flour Tortilla.",
+        ["BBQ Chicken", "$7.50", "o", "111258"],
+        ["Chicken Caesar", "$7.50", "o", "111259"],
+        ["Southwest Black Bean & Corn", "$6.00", "v", "140034"],
+        ["Southwest Chicken", "$7.50", "o", "111051"]
+      ],
+
+      [
+        "Salads & More",
+        "",
+        ["Baja Shrimp Salad", "$8.00", "o", "041162"],
+        ["Caesar Salad", "$6.00", "o", "041126"],
+        ["Chicken & Bacon Gorgonzola Salad", "$8.00", "o", "041163"],
+        ["Chicken Caesar Salad", "$7.00", "o", "041111"],
+        ["Chinese Chicken Salad", "$7.00", "o", "041110"],
+        ["Chinese Wonton Salad", "$6.00", "v", "041124"],
+        ["Mediterranean Nachos", "$7.50", "v", "140179"],
+        ["Mixed Field Greens w/ Apples & Berries", "$7.00", "v", "041137"],
+        ["Seafood Cobb Salad", "$8.00", "o", "041210"],
+        ["Tuna Salad", "$8.00", "o", "041166"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Asian Quinoa Salad", "$2.50", "g", "977285"],
+        ["California Pasta Salad", "$2.50", "g", "977193"],
+        ["Greek Tomato Salad", "$2.50", "o", "042151"],
+        ["Mediterranean Chopped Salad", "$2.50", "v", "041108"],
+        ["Sesame & Orange Noodle Salad", "$2.50", "g", "977204"],
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Granny Smith Apple", "$1.25", "g", "975507"],
+        ["Orange", "$1.25", "g", "970375"],
+        ["Boulder Canyon Totally Natural Kettle Chips", "$1.50", "g", "974244"],
+        ["French Onion SunChips", "$1.50", "v", "972427"],
+        ["Garden Salsa SunChips", "$1.50", "v", "975032"],
+        ["Harvest Cheddar SunChips", "$1.50", "v", "971830"],
+        ["Poore Brothers Jalape&ntildeo; Kettle Chips", "$1.50", "g", "974242"]
+      ]
+    ],
+
+    ["Pastries",
+      [
+        "One Swipe Combo",
+        "Coffee Drink + Pastry"
+      ],
+
+      [
+        "Pastries",
+        "",
+        ["Apple Turnover", "$2.75", "v", "979582"],
+        ["Assorted Bagels", "$2.75", "v", "212043"],
+        ["Banana Walnut Muffin", "$2.50", "v", "979592"],
+        ["Blueberry Muffin", "$2.50", "v", "979591"],
+        ["Bran Muffin", "$2.50", "v", "979594"],
+        ["Butter Croissant", "$3.50", "v", "979601"],
+        ["Cheese Croissant", "$3.50", "v", "979586"],
+        ["Cherry Turnover", "$2.75", "v", "979683"],
+        ["Chocolate Chip Cookie", "$2.00", "v", "979578"],
+        ["Chocolate Croissant", "$3.50", "v", "979589"],
+        ["Chocolate White Chip Cookie", "$2.00", "v", "979580"],
+        ["Cinnamon Roll", "$3.50", "v", "979599"],
+        ["German Chocolate Cupcake", "$3.75", "v", "979664"],
+        ["Large Maple Bar", "$2.00", "v", "979679"],
+        ["Lemon Poppy Seed Bundt Cake", "$2.75", "v", "979663"],
+        ["Mocha Chocolate Chip Muffin", "$2.50", "v", "979556"],
+        ["Oatmeal Raisin Cookie", "$2.00", "v", "979577"],
+        ["Palmier / Crispy", "$2.75", "v", "979492"],
+        ["Pretzel Croissant", "$3.50", "v", "979585"],
+        ["Pumpkin Muffin", "$2.50", "v", "979596"],
+        ["Pumpkin Scones", "$2.75", "v", "979667"],
+        ["Raspberry Danish", "$3.50", "v", "979598"],
+        ["Red Velvet Cupcake", "$3.75", "v", "979573"],
+        ["Sticky Chocolate Pecan Muffin", "$2.75", "v", "979660"],
+        ["Strawberry Cream Cheese Croissant", "$3.50", "v", "979584"],
+        ["Vanilla Bean Cupcake", "$3.75", "v", "979571"],
+        ["Vegan Chocolate Chip & Walnut Cookie", "$2.00", "g", "979581"],
+        ["Whole Wheat Croissant", "$3.50", "v", "979587"]
+      ]
+    ],
+
+    ["Drinks",
+      [
+        "Fresh Fruit Smoothies",
+        "One Swipe or $5.00 each",
+        ["Strawberry Watermelon Lemonade", "$5.00", "v", "233162"],
+        ["Strawberry Sensation", "$5.00", "v", "233152"],
+        ["Strawberry Orange", "$5.00", "v", "233153"],
+        ["Red Raspberry", "$5.00", "v", "233178"],
+        ["Very Raspberry", "$5.00", "v", "233182"],
+        ["Caribbean Island", "$5.00", "v", "233183"],
+        ["Mango Madness", "$5.00", "v", "233160"],
+        ["Bruin Fresh", "$5.00", "v", "233184"],
+        ["Orange Peach Dreamsicle", "$5.00", "v", "233206"],
+        ["Alooooha", "$5.00", "v", "233187"],
+        ["Pina Brisa", "$5.00", "v", "233164"],
+        ["Perfectly Peach", "$5.00", "v", "233166"],
+        ["Green Lemonade", "$5.00", "v", "233007"],
+        ["Chocolate Banana Protein", "$5.00", "v", "233161"]
+      ]
+    ]
+  ],
+
+
+
+
+
+  "Rendezvous" :
+  [
+    ["Breakfast West",
+      [
+        "Rendezvous West (1 Swipe)",
+        "Entree + Side + Drink"
+      ],
+
+      [
+        "Entrees",
+        "",
+        ["(MON) Machaca Breakfast Burrito", "$7.00", "o", "071128"],
+        ["(MON & WED) Sausage, Egg, & Tator Tot Burrito", "$5.00", "o", "061071"],
+        ["(TUE THU & SAT) Bacon, Egg, & Tator Tot Burrito", "$5.00", "o", "061069"],
+        ["(THU & SUN) Chorizo & Egg Burrito", "$5.00", "o", "083016"],
+        ["(FRI) Ham, Egg, & Cheese Burrito", "$5.00", "o", "061084"],
+        ["Egg & Cheese Burrito", "$4.50", "v", "061114"],
+        ["Vegetable & Egg Breakfast Burrito", "$4.50", "v", "061056"],
+        ["(TUE & THU) English Muffin Sandwich w/ Bacon", "$5.00", "o", "061085"],
+        ["(TUE) English Muffin Sandwich w/ Canadian Bacon", "$5.00", "o", "061088"],
+        ["(THU) English Muffin Sandwich w/ Pork Sausage", "$5.00", "o", "061086"],
+        ["(TUE & THU) Vegetarian English Muffin Sandwich", "$4.50", "v", "061087"],
+        ["(MON WED & FRI) Bagel Sandwich w/ Bacon", "$5.00", "o", "061043"],
+        ["(MON WED & FRI) Bagel Sandwich w/ Egg & Cheese", "$4.50", "v", "061007"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Tator Tots", "$1.50", "g", "161012"],
+        ["Banana", "$1.25", "g", "970032"],
+        ["Gala Apple", "$1.25", "g", "970010"],
+        ["Orange", "$1.25", "g", "973322"]
+      ]
+    ],
+
+    ["Breakfast East",
+      [
+        "Rendezvous East (1 Swipe)",
+        "Entree + Side + Drink"
+      ],
+
+      [
+        "Sweets & Treats Combo (1 Swipe)",
+        "[\"Sweets & Treats\" or Pastry] + Side + Drink"
+      ],
+
+      [
+        "Entrees",
+        "",
+        ["Chicken Potstickers", "$5.00", "o", "115000"],
+        ["Pork Potstickers", "$5.00", "o", "083019"],
+        ["Vegetable Potstickers", "$5.00", "v", "140129"],
+        ["BBQ Pork Bao Bun", "$6.00", "o", "087017"],
+        ["Vegetable Bao Bun", "$6.00", "o", "140140"]
+      ],
+
+      [
+        "Sweets & Treats",
+        "",
+        ["Steel-Cut Oatmeal Cup", "$2.50", "g", "031017"],
+        ["Bagel w/ Cream Cheese", "$2.75", "v", "061063"],
+        ["Fruit Cup", "$4.00", "g", "201010"],
+        ["Yogurt Parfait", "$5.00", "v", "048007"],
+        ["Cold Cereal", "$2.50", "v", "035005"]
+      ],
+
+      [
+        "Pastries",
+        "",
+        ["Banana Walnut Muffin", "$2.50", "v", "979592"],
+        ["Blueberry Muffin", "$2.50", "v", "979591"],
+        ["Butter Croissant", "$3.50", "v", "979601"],
+        ["Cheese Croissant", "$3.50", "v", "979586"],
+        ["Chocolate Croissant", "$3.50", "v", "979589"],
+        ["Cinnamon Roll", "$3.50", "v", "979599"],
+        ["Low Fat Blueberry Bran Muffin", "$2.50", "v", "979593"],
+        ["Mocha Chocolate Chip Muffin", "$2.50", "v", "979556"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Banana", "$1.25", "g", "970032"],
+        ["Gala Apple", "$1.25", "g", "970010"],
+        ["Orange", "$1.25", "g", "973322"]
+      ]
+    ],
+
+    ["West Entrees",
+      [
+        "One Swipe Combo",
+        "[Entree, or Daily Special] + Drink"
+      ],
+
+      [
+        "Entrees",
+        "Tacos & Quesadillas include Refried Beans & Rice, Burritos include fresh Tortilla Chips",
+        ["Beef Taco Salad", "$8.00", "o", "071111"],
+        ["Chicken Taco Salad", "$7.75", "o", "112165"],
+        ["Pork Al Pastor Taco Salad", "$8.00", "o", "081164"],
+        ["Pork Carnitas Taco Salad", "$8.00", "o", "081160"],
+        ["Shredded Beef Taco Salad", "$8.00", "o", "071173"],
+        ["Vegetarian Taco Salad", "$7.00", "v", "042027"],
+        ["Beef Tacos", "$8.00", "o", "071112"],
+        ["Chicken Tacos", "$7.75", "o", "112171"],
+        ["Fish Tacos", "$8.00", "o", "121195"],
+        ["Pork Carnitas Tacos", "$8.00", "o", "081082"],
+        ["Pork Tacos Al Pastor Style", "$8.00", "o", "081090"],
+        ["Shredded Beef Tacos", "$8.00", "o", "071176"],
+        ["Bean & Cheese Burrito", "$6.25", "v", "140122"],
+        ["Beef Burrito", "$8.00", "o", "071113"],
+        ["Chicken Burrito", "$7.75", "o", "112167"],
+        ["Fish Burrito", "$8.00", "o", "121169"],
+        ["Pork Al Pastor Burrito", "$8.00", "o", "081166"],
+        ["Pork Carnitas Burrito", "$8.00", "o", "081158"],
+        ["Shredded Beef Burrito", "$8.00", "o", "071171"],
+        ["Vegetable Burrito", "$7.00", "v", "140127"],
+        ["Beef Burrito Bowl", "$8.00", "o", "071124"],
+        ["Chicken Burrito Bowl", "$7.75", "o", "112180"],
+        ["Fish Burrito Bowl", "$8.00", "o", "121196"],
+        ["Pork Al Pastor Burrito Bowl", "$8.00", "o", "081167"],
+        ["Pork Carnitas Burrito Bowl", "$8.00", "o", "081162"],
+        ["Shredded Beef Burrito Bowl", "$8.00", "o", "071177"],
+        ["Vegetarian Burrito Bowl", "$7.00", "v", "140018"],
+        ["Beef Quesadilla", "$8.00", "o", "075142"],
+        ["Cheese Quesadilla", "$6.25", "v", "131046"],
+        ["Chicken Quesadilla", "$7.75", "o", "075141"],
+        ["Shredded Beef Quesadilla", "$8.00", "o", "075154"],
+        ["Spinach & Mushroom Quesadilla", "$6.25", "v", "140035"],
+        ["Vegan Cheese Quesadilla", "$6.25", "g", "140446"],
+        ["Vegan Spinach Quesadilla", "$6.25", "g", "140447"],
+        ["Beef Nachos", "$8.00", "o", "071114"],
+        ["Beef Nachos w/ Cheese Sauce", "$8.00", "o", "071117"],
+        ["Chicken Nachos", "$7.75", "o", "112168"],
+        ["Guacamole & Chips", "$5.50", "g", "140425"],
+        ["Shredded Beef Nachos", "$8.00", "o", "071174"],
+        ["Vegetarian Nachos", "$7.25", "v", "140116"]
+      ],
+
+      [
+        "Daily Specials",
+        "Tacos & Quesadillas include Refried Beans & Rice, Burritos include fresh Tortilla Chips",
+        ["(MON) Chipotle Chicken Burrito", "$7.75", "o", "112047"],
+        ["(MON) Vegan BBQ Chicken Quesadilla", "$7.75", "g", "140704"],
+        ["(MON) Vegetarian BBQ Chicken Quesadilla", "$7.75", "v", "140558"],
+        ["(TUE) Potato Enchiladas", "$7.25", "v", "140559"],
+        ["(TUE) Three Taco Combination", "$8.00", "o", "142002"],
+        ["(WED) BBQ Chicken Quesadilla", "$7.75", "o", "111013"],
+        ["(WED) Vegan BBQ Chicken Quesadilla", "$7.75", "g", "140704"],
+        ["(WED) Vegetarian BBQ Chicken Quesadilla", "$7.75", "v", "140558"],
+        ["(THU) California Beef Burrito", "$8.00", "o", "071110"],
+        ["(THU) California Veggie Burrito", "$7.00", "v", "140044"],
+        ["(FRI) Chicken Enchiladas", "$7.75", "o", "111274"],
+        ["(FRI) Potato Enchiladas", "$7.25", "v", "140559"],
+        ["(SAT) Beef Birria", "$8.00", "o", "071135"],
+        ["(SAT) Vegan BBQ Chicken Quesadilla", "$7.75", "g", "140704"],
+        ["(SAT) Vegetarian BBQ Chicken Quesadilla", "$7.75", "v", "140558"],
+        ["(SUN) Beef Sopes", "$8.00", "o", "071129"],
+        ["(SUN) Chicken Sopes", "$7.75", "o", "111244"],
+        ["(SUN) Potato Picadillo Sopes", "$7.25", "v", "140537"],
+        ["(SUN) Shredded Beef Sopes", "$8.00", "o", "071130"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Brown Calrose Rice", "$2.00", "g", "163069"],
+        ["Mexican Rice", "$2.00", "g", "163016"],
+        ["Black Beans", "$2.00", "g", "977410"],
+        ["Refried Beans", "$2.00", "g", "977411"],
+        ["Tortilla Chips", "$1.50", "g", "160017"]
+      ]
+    ],
+
+    ["East Entrees",
+      [
+        "Entree Combo (1 Swipe)",
+        "2 Entrees + 2 Sides + Drink"
+      ],
+
+      [
+        "Salad Combo (1 Swipe)",
+        "Salad + Drink"
+      ],
+
+      [
+        "Entrees",
+        "",
+        ["Beef & Broccoli", "$7.00", "o", "071094"],
+        ["Orange Chicken", "$7.00", "o", "112172"],
+        ["Vegetable Stir-Fry", "$7.00", "g", "140413"],
+        ["Baby Bok Choy & Tofu", "$7.00", "g", "140183"],
+        ["Eggplant & Tofu w/ Spicy Garlic", "$7.00", "g", "140340"],
+        ["Kung Pao Chicken", "$7.00", "o", "400418"],
+        ["Sweet & Sour Pork", "$7.00", "o", "085001"],
+        ["Chicken w/ Chinese Mushrooms", "$7.00", "o", "111716"],
+        ["Sweet & Spicy Sesame Wings", "$7.00", "o", "112900"]
+      ],
+
+      [
+        "Salads",
+        "Available Monday through Friday.",
+        ["Chinese Chicken Salad", "$8.00", "o", "041034"],
+        ["Steak Salad", "$8.00", "o", "079208"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Brown Calrose Rice", "$2.00", "g", "163069"],
+        ["Chow Mein Noodles", "$2.25", "g", "165053"],
+        ["Sticky Rice", "$1.50", "g", "400035"],
+        ["Young Chow Vegetable Fried Rice", "$2.00", "v", "140414"]
+      ]
+    ],
+
+    ["East Daily Specials",
+      [
+        "One Swipe Combo",
+        "[Daily Specials, or Noodle Bowl] + Drink"
+      ],
+
+      [
+        "Daily Specials",
+        "",
+        ["(MON) Pork Tonkatsu", "$8.00", "o", "081083"],
+        ["(MON) Vegetarian Chicken Teriyaki Bento Box", "$7.75", "v", "142001"],
+        ["(TUE) Chicken Teriyaki Bento Box w/ California Rolls", "$7.75", "o", "142000"],
+        ["(TUE) Chicken Teriyaki Bento Box w/ BLT & Avocado Rolls", "$7.75", "o", "142003"],
+        ["(TUE) Vegetarian Chicken Teriyaki Bento Box", "$7.75", "v", "142001"],
+        ["(WED) BBQ Korean Pork Spare Ribs", "$8.00", "o", "081136"],
+        ["(WED) Korean Vegetable Bowl", "$7.25", "g", "140727"],
+        ["(THU) Teriyaki Chicken Bowl", "$8.00", "o", "111272"],
+        ["(THU) Vegan Teriyaki Chicken Bowl", "$7.75", "g", "140556"],
+        ["(FRI) Shrimp Sushi Bowl", "$8.00", "o", "123084"],
+        ["(FRI) Vegetable Sushi Bowl", "$7.25", "v", "140557"],
+        ["(SAT) Pad Thai", "$7.25", "o", "165139"],
+        ["(SAT) Shrimp Pad Thai", "$8.00", "o", "123075"],
+        ["(SUN) Teriyaki Beef Bowl", "$8.00", "o", "071103"],
+        ["(SUN) Vegan Teriyaki Chicken Bowl", "$7.75", "g", "140556"]
+      ],
+
+      [
+        "Noodle Bowls",
+        "",
+        ["(MON) Tan Tan Ramen Noodle Soup", "$7.25", "o", "027100"],
+        ["(MON) Vegetable Ramen Soup", "$6.50", "v", "027097"],
+        ["(TUE) Mandoo Ramen", "$7.25", "o", "027091"],
+        ["(TUE) Vegetarian Miso Ramen Soup", "$6.50", "v", "127121"],
+        ["(WED) Mapo Tofu Ramen", "$6.50", "o", "027089"],
+        ["(WED) Vegetable Ramen Soup", "$6.50", "v", "027097"],
+        ["(THU) Beef Pho", "$7.25", "o", "027099"],
+        ["(THU) Vegetable Ramen Soup", "$6.50", "v", "027097"],
+        ["(FRI) Ramen Daeji Bulgogi", "$7.25", "o", "027094"],
+        ["(FRI) Vegetarian Miso Ramen Soup", "$6.50", "v", "127121"]
+      ]
+    ],
+
+    ["Weekend Brunch West",
+      [
+        "Brunch (West) Special (1 Swipe or $6.00)",
+        "Entree + Drink"
+      ],
+
+      [
+        "Build Your Own Breakfast (1 Swipe or $6.00)",
+        "BYO Entree + BYO Side + BYO Meat + Drink"
+      ],
+
+      [
+        "Entrees",
+        "",
+        ["Huevos Rancheros", "", "v", "061048"]
+      ],
+
+      [
+        "BYO Entrees",
+        "",
+        ["(SUN) French Toast Breakfast", "", "v", "217079"],
+        ["(SAT) Pancake Breakfast", "", "v", "217078"]
+      ],
+
+      [
+        "BYO Sides",
+        "",
+        ["Scrambled Eggs", "", "v", "061034"],
+        ["Hash Brown Patty", "", "g", "161003"]
+      ],
+
+      [
+        "BYO Meat",
+        "",
+        ["Bacon", "", "o", "089001"],
+        ["Sausage", "", "o", "089014"]
+      ]
+    ],
+
+    ["Weekend Brunch East",
+      [
+        "Dim Sum Box (1 Swipe or $7.00)",
+        "Bao Bun + [Soup, or Porridge] + Up To 4 Sides + Drink"
+      ],
+
+      [
+        "Bao Bun",
+        "",
+        ["BBQ Pork Bao Bun", "", "o", "087017"],
+        ["Vegetable Bao Bun", "", "o", "140140"]
+      ],
+
+      [
+        "Soup & Porridge",
+        "",
+        ["Egg Drop Soup", "", "o", "027003"],
+        ["Hot & Sour Soup", "", "o", "027080"],
+        ["Rainbow Congee Rice Porridge", "", "o", "081081"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Chicken Potsticker", "", "o", "973034"],
+        ["Pork Potsticker", "", "o", "971448"],
+        ["Vegetable Potsticker", "", "o", "974821"],
+        ["Vegetable Egg Roll", "", "o", "140030"]
+      ]
+    ],
+
+    ["Boba & More",
+      [
+        "Boba Combo (1 Swipe)",
+        "Two 16-oz Boba Drinks, or One 32-oz Boba Drink"
+      ],
+
+      [
+        "Dessert Combo (1 Swipe)",
+        "One Dessert"
+      ],
+
+      [
+        "Boba (16-oz)",
+        "",
+        ["Cookies and Cream Delight Boba", "$3.75", "v", "236051"],
+        ["Green Milk Tea Boba", "$3.75", "v", "236049"],
+        ["Horchata Boba", "$3.75", "v", "236060"],
+        ["Lemonade", "$3.75", "g", "233213"],
+        ["Milk Tea Boba", "$3.75", "v", "236048"],
+        ["Taro Boba Drink", "$3.75", "v", "236061"],
+        ["Thai Tea Boba", "$3.75", "v", "236046"],
+        ["Vietnamese Coffee Boba", "$3.75", "v", "236047"],
+        ["Watermelon Water", "$3.75", "g", "233214"]
+      ],
+
+      [
+        "Boba (32-oz)",
+        "Available during Brunch, Lunch, & Dinner Service.",
+        ["Cookies and Cream Delight Boba", "$5.75", "v", "236051"],
+        ["Green Milk Tea Boba", "$5.75", "v", "236049"],
+        ["Horchata Boba", "$5.75", "v", "236060"],
+        ["Lemonade", "$5.75", "g", "233213"],
+        ["Milk Tea Boba", "$5.75", "v", "236048"],
+        ["Taro Boba Drink", "$5.75", "v", "236061"],
+        ["Thai Tea Boba", "$5.75", "v", "236046"],
+        ["Vietnamese Coffee Boba", "$5.75", "v", "236047"],
+        ["Watermelon Water", "$5.75", "g", "233214"]
+      ],
+
+      [
+        "Desserts",
+        "Available 9 p.m. to Midnight.",
+        ["Churros", "$5.00", "v", "219012"],
+        ["Dessert Nachos w/ Ice Cream & Mango Sauce", "$5.00", "o", "189208"],
+        ["Green Tea Waffle w/ Ice Cream", "$6.00", "o", "189214"]
+      ]
+    ]
+  ],
+
+
+
+
+
+  "De Neve Late Night" :
+  [
+    ["Entrees",
+      [
+        "One Swipe Combo",
+        "Entree + Side + Fountain Drink"
+      ],
+
+      [
+        "Entrees",
+        "1-lb & 12-oz orders can be bought for 2 meal plan swipes.",
+        ["Classic Burger", "$7.25", "o", "073076"],
+        ["Classic Cheeseburger", "$7.50", "o", "073075"],
+        ["Chili Cheddar Burger", "$8.00", "o", "073077"],
+        ["Veggie Burger", "$7.25", "v", "140434"],
+        ["Portobello \"Burger\"", "$7.25", "v", "140466"],
+        ["Chicken Tenders, 1/2-lb.", "$7.50", "o", "111140"],
+        ["Chicken Tenders, 1-lb.", "$11.00", "o", "111139"],
+        ["Vegan Chick'n Fingers, 1/2-lb.", "$7.50", "g", "140444"],
+        ["Vegan Chick'n Fingers, 1-lb.", "$11.00", "g", "140455"],
+        ["Chili Cheese Fries", "$4.75", "o", "161110"],
+        ["Chili Cheese Curly Fries", "$4.75", "o", "161116"],
+        ["Onion Rings (12 oz.)", "$7.25", "o", "167003"],
+        ["Onion Rings (6 oz.)", "$4.75", "o", "167004"],
+        ["Mozzarella Sticks", "$7.75", "v", "131038"]
+      ],
+
+      [
+        "Sides & Beverages",
+        "",
+        ["Curly Fries", "$2.00", "g", "400118"],
+        ["French Fries", "$2.00", "g", "400115"],
+        ["Fountain Beverage", "$1.25", "o", "232000"]
+      ]
+    ],
+
+    ["Shakes",
+      [
+        "One Swipe Combo",
+        "One Ice Cream Shake"
+      ],
+
+      [
+        "Ice Cream Shakes",
+        "All shakes include one additional topping",
+        ["Chocolate Shake", "$4.25", "o", "233198"],
+        ["Neopolitan Shake", "$4.25", "o", "233200"],
+        ["Peppermint Shake", "$4.25", "v", "233202"],
+        ["Strawberry Shake", "$4.25", "o", "233199"],
+        ["Vanilla Shake", "$4.25", "o", "233197"]
+      ],
+
+      [
+        "Additional Toppings",
+        "",
+        ["M&M's Minis", "", "v", "974999"],
+        ["Oreo Cookie Pieces", "", "g", "970775"],
+        ["Reese's Pieces", "", "o", "189074"]
+      ]
+    ],
+
+    ["Pizza & Wings",
+      [
+        "Pizza Combo (2 Swipes)",
+        "3 Topping Pizza + Soda Six-Pack"
+      ],
+
+      [
+        "One Swipe Wings Combo",
+        "Half order of chicken wings (1/2 lb.)"
+      ],
+
+      [
+        "Two Swipe Wings Combo",
+        "Full order of chicken wings (2 lb.)"
+      ],
+
+      [
+        "MyPizza",
+        "",
+        ["Large Pizza", "$10.00", "o", "999008"],
+        ["Soda Six-Pack", "$5.00", "o", "999009"]
+      ],
+
+      [
+        "Wings",
+        "",
+        ["BBQ Chicken Wings", "$11.00", "o", "111199"],
+        ["BBQ Chicken Wings 1/2 Order", "$7.50", "o", "111266"],
+        ["Buffalo Chicken Wings", "$11.00", "o", "111048"],
+        ["Buffalo Chicken Wings 1/2 Order", "$7.50", "o", "111265"],
+        ["Carne Asada Fries", "$8.00", "o", "161117"],
+        ["Chipotle Chicken Wings", "$11.00", "o", "111246"],
+        ["Chipotle Chicken Wings 1/2 Order", "$7.50", "o", "111267"],
+        ["Lemon Pepper Chicken Wings", "$11.00", "o", "111330"],
+        ["Lemon Pepper Chicken Wings 1/2 Order", "$7.50", "o", "111334"],
+        ["Plain Chicken Wings 1/2 Order", "$7.50", "o", "111188"],
+        ["Plain Chicken Wings Full Order", "$11.00", "o", "111189"]
+      ]
+    ]
+  ],
+
+
+
+
+
+  "De Neve Grab n' Go" :
+  [
+    ["Breakfast",
+      [
+        "Breakfast Combo (1 Swipe)",
+        "[Bagel, Yogurt, Oatmeal Cup, or Cereal Cup] + Fruit + [Bottled Water, Brewed Coffee, Tea, Milk, or Juice Carton"
+      ],
+
+      [
+        "Coffee & Pastry Combo (1 Swipe)",
+        "[Brewed Coffee, Hot Tea, Latte, Cappuccino, Espresso, Bottled Water, Hot Chocolate, or Hot Vanilla] + [Bagel, Pasty, or Muffin]"
+      ],
+
+      [
+        "Cereal & Yogurt",
+        "",
+        ["Cold Cereal", "$2.50", "v", "035005"],
+        ["Quaker Instant Oatmeal Cups", "$2.50", "o", "031032"]
+      ],
+
+      [
+        "Muffins & Pastries",
+        "",
+        ["Assorted Bagels", "$2.75", "v", "212043"],
+        ["Banana Walnut Muffin", "$2.50", "v", "979592"],
+        ["Blueberry Muffin", "$2.50", "v", "979591"],
+        ["Butter Croissant", "$3.50", "v", "979601"],
+        ["Chocolate Croissant", "$3.50", "v", "979589"],
+        ["Strawberry Cream Cheese Croissant", "$3.50", "v", "979584"]
       ],
 
       [
         "Coffee & Tea",
         "",
-        ["Italian Brewed Roast Coffee", "$1.95", "g", "234012"],
-        ["Cappuccino (Hot Only)", "$3.75", "v", "234014"],
-        ["Cafe Latte", "$3.75", "v", "234015"],
-        ["Mocha Latte", "$4.50", "v", "234016"],
-        ["Vanilla Latte", "$4.50", "v", "234017"],
-        ["Caramel Latte", "$4.50", "v", "234018"],
-        ["Cafe Mocha", "$3.75", "v", "234019"],
-        ["Cafe Vanilla", "$3.75", "g", "234020"],
-        ["Cafe Caramel", "$3.75", "v", "234021"],
-        ["Flavored Coffee (Chocolate, Vanilla, Hazelnut, Caramel, Creme de Banana)", "$2.50", "g", "234022"],
-        ["Americano", "$2.75", "g", "234023"],
-        ["Hot Chocolate", "$3.25", "v", "234026"],
-        ["Hot Vanilla", "$3.25", "v", "234027"],
-        ["Brewed Tea (Hot Only)", "$2.45", "g", "234028"],
-        ["Caramella Salato Latte", "$4.50", "v", "234029"],
-        ["Milano Mint Latte", "$4.50", "v", "234055"],
-        ["White Chocolate Latte", "$4.50", "v", "234056"],
-        ["Cafe White Chocolate", "$3.75", "v", "234057"],
-        ["Italian Brewed Espresso (Hot Only)", "$1.75", "g", "234013"],
-        ["Macchiato", "$1.75", "v", "234024"],
-        ["Mochaccino (Hot Only)", "$3.75", "v", "234025"]
+        ["Assorted Tazo Brewed Tea", "$2.25", "o", "233210"],
+        ["Cafe Latte", "$3.75", "v", "234035"],
+        ["Coffee", "$1.75", "g", "234000"],
+        ["Decaffeinated Coffee", "$1.75", "g", "234010"]
       ],
 
       [
-        "Italian Sodas",
+        "Fruit",
         "",
-        ["Blackberry Cream", "$4.00", "v", "232015"],
-        ["Blackberry", "$4.00", "g", "232016"],
-        ["Blood Orange Cream", "$4.00", "v", "232017"],
-        ["Blood Orange", "$4.00", "g", "232018"],
-        ["Grapefruit Cream", "$4.00", "v", "232029"],
-        ["Grapefruit", "$4.00", "g", "232030"],
-        ["Green Apple Cream", "$4.00", "v", "232031"],
-        ["Green Apple", "$4.00", "g", "232032"],
-        ["Lemon Cream", "$4.00", "v", "232019"],
-        ["Lemon", "$4.00", "g", "232020"],
-        ["Pomegranate Cream", "$4.00", "v", "232021"],
-        ["Pomegranate", "$4.00", "g", "232022"],
-        ["Strawberry Cream", "$4.00", "v", "232023"],
-        ["Strawberry", "$4.00", "g", "232024"]
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Orange", "$1.25", "g", "970375"]
       ],
 
       [
-        "Bottled & Premium Beverages",
+        "Beverages",
         "",
-        ["Fountain Beverage", "$1.75", "o", "232000"],
-        ["Coca-Cola", "$1.93", "o", "970978"],
-        ["Coke Zero", "$1.93", "o", "970979"],
-        ["DASANI Purified Water", "$1.85", "o", "976538"],
-        ["Dr Pepper", "$1.93", "o", "970983"],
-        ["$ Gold Peak Iced Green Tea", "$2.25", "o", "970262"],
-        ["$ Gold Peak Lemon Iced Tea", "$2.25", "o", "973956"],
-        ["$ Gold Peak Lemonade Iced Tea", "$2.25", "o", "971825"],
-        ["$ Gold Peak Sweet Tea", "$2.25", "o", "973955"],
-        ["$ Gold Peak Unsweetened Iced Tea", "$2.25", "o", "973957"],
-        ["$ Illy Issimo Cappuccino Bottled Coffee Drink", "$2.50", "o", "976536"],
-        ["$ Illy Issimo Mochaccino Coffee Drink", "$2.25", "o", "976543"],
-        ["$ Izze Sparkling Apple", "$2.25", "o", "973919"],
-        ["$ Izze Sparkling Blackberry", "$2.50", "o", "973916"],
-        ["$ Izze Sparkling Blueberry", "$2.50", "o", "973920"],
-        ["$ Izze Sparkling Clementine", "$2.50", "o", "973918"],
-        ["$ Izze Sparkling Ginger", "$2.50", "o", "973921"],
-        ["$ Izze Sparkling Grapefruit", "$2.50", "o", "973922"],
-        ["$ Izze Sparkling Peach", "$2.50", "o", "973923"],
-        ["$ Izze Sparkling Pomegranate", "$2.50", "o", "973924"],
-        ["Mello Yello", "$1.93", "o", "974342"],
-        ["$ Minute Maid 100% Apple Juice", "$2.25", "o", "970927"],
-        ["$ Minute Maid 100% Orange Juice", "$2.25", "o", "970926"],
-        ["$ Minute Maid Cranberry Grape", "$2.25", "o", "970928"],
-        ["Minute Maid Lemonade", "$1.93", "o", "970585"],
-        ["$ Minute Maid Pineapple Orange", "$2.25", "o", "970924"],
-        ["$ Minute Maid Tropical Blend", "$2.25", "o", "970929"],
-        ["$ Orangina", "$2.50", "o", "973914"],
-        ["$ San Pellegrino Limonata", "$2.50", "o", "973927"],
+        ["Apple Juice", "$1.00", "g", "233017"],
+        ["Chocolate Milk", "$1.00", "v", "233005"],
+        ["Fat-Free Milk", "$1.00", "v", "233013"],
+        ["Low-Fat Milk", "$1.00", "v", "233012"],
+        ["Orange Juice", "$1.00", "g", "233006"],
+        ["Vanilla Soy Milk", "$1.50", "g", "233015"],
+        ["Coca-Cola", "$2.00", "o", "970978"],
+        ["Coke Zero", "$2.00", "o", "970979"],
+        ["DASANI Purified Water", "$1.95", "o", "976538"],
+        ["Diet Coke", "$2.00", "o", "970908"],
+        ["Fanta Orange", "$2.00", "o", "970986"],
+        ["Minute Maid 100% Apple Juice", "$2.25", "o", "970927"],
+        ["Minute Maid 100% Orange Juice", "$2.25", "o", "970926"],
+        ["Minute Maid Lemonade", "$2.00", "o", "970585"],
+        ["Minute Maid Pineapple Orange", "$2.25", "o", "970924"],
+        ["Minute Maid Tropical Blend", "$2.25", "o", "970929"],
+        ["POWERADE Grape", "$2.25", "o", "976523"],
         ["San Pellegrino Sparkling Natural Mineral Water", "$2.50", "o", "973913"],
-        ["Sprite", "$1.93", "o", "970903"],
-        ["$ Starbucks Mocha Frappuccino Bottled Coffee Drink", "$2.50", "o", "976534"],
-        ["$ Starbucks Vanilla Frappuccino Bottled Coffee Drink", "$2.50", "o", "976535"]
+        ["Sprite", "$2.00", "o", "970903"],
+        ["Vitamin Water Orange Orange", "$2.25", "o", "970292"]
       ]
     ],
 
-    ["Dolci",
+    ["Lunch",
       [
-        "Dolci",
-        "",
-        ["Gelato & Sorbet", "$4.50", "g", "184009"],
-        ["Affogato Italiano", "$6.00", "v", "185023"],
-        ["Bacca Parfait", "$4.75", "v", "048018"],
-        ["Fresh Fruit Cup", "$4.00", "g", "201019"]
+        "Lunch-On-The-Go (1 Swipe)",
+        "[Sandwich, or Entree Salad] + Side + Bottled Water"
       ],
 
       [
-        "Daily Pastry Selection",
+        "Lunch Combo (1 Swipe)",
+        "[Sandwich, or Entree Salad] + Side + [Bottled Water, Milk, or Juice Carton]"
+      ],
+
+      [
+        "Sandwiches",
         "",
-        ["Apple Turnover", "$2.75", "v", "979582"],
-        ["Banana Walnut Muffin", "$2.50", "v", "979592"],
-        ["Blueberry Muffin", "$2.50", "v", "979591"],
-        ["Cherry Marzipan Crumble Coffee Cake", "$2.75", "v", "979550"],
-        ["Chocolate Chip Cookie", "$2.00", "v", "979578"],
-        ["Chocolate Chip Scone", "$2.75", "v", "979421"],
-        ["Lemon Poppyseed Scone", "$2.75", "v", "979557"],
-        ["Maple Pecan Danish", "$2.75", "v", "979558"],
-        ["Mocha Chocolate Chip Muffin", "$2.50", "v", "979556"],
-        ["Oatmeal Raisin Cookie", "$2.00", "v", "979577"],
-        ["Pignolis", "$2.00", "v", "979554"],
-        ["Pizza Bagel", "$2.75", "o", "141048"]
+        ["Caprese Sandwich", "$7.50", "v", "138030"],
+        ["Ham & Swiss Sandwich", "$7.50", "o", "085054"],
+        ["Peanut Butter & Strawberry Preserves Sandwich", "$4.50", "v", "140773"],
+        ["Roast Beef & Cheddar Sandwich", "$7.75", "o", "077112"],
+        ["Turkey & Provolone Sandwich", "$10.00", "o", "117049"]
+      ],
+
+      [
+        "Entree Salads",
+        "",
+        ["Caesar Salad", "$6.00", "o", "041126"],
+        ["Chicken Caesar Salad", "$7.00", "o", "041111"],
+        ["Chinese Chicken Salad", "$7.00", "o", "041110"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["California Pasta Salad", "$2.50", "g", "977193"],
+        ["Country Potato Salad", "$2.50", "v", "977240"],
+        ["Boulder Canyon Hickory BBQ Kettle Chips", "$1.25", "g", "973859"],
+        ["Boulder Canyon Totally Natural Kettle Chips", "$1.50", "g", "974244"],
+        ["French Onion SunChips", "$1.50", "v", "972427"],
+        ["Garden Salsa SunChips", "$1.50", "v", "975032"],
+        ["Harvest Cheddar SunChips", "$1.50", "v", "971830"],
+        ["Original SunChips", "$1.25", "g", "160037"],
+        ["Poore Brothers Jalape&ntildeo; Kettle Chips", "$1.50", "g", "974242"],
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Orange", "$1.25", "g", "970375"]
+      ],
+
+      [
+        "Beverages",
+        "",
+        ["Apple Juice", "$1.00", "g", "233017"],
+        ["Chocolate Milk", "$1.00", "v", "233005"],
+        ["Fat-Free Milk", "$1.00", "v", "233013"],
+        ["Low-Fat Milk", "$1.00", "v", "233012"],
+        ["Orange Juice", "$1.00", "g", "233006"],
+        ["Vanilla Soy Milk", "$1.50", "g", "233015"],
+        ["Coca-Cola", "$2.00", "o", "970978"],
+        ["Coke Zero", "$2.00", "o", "970979"],
+        ["DASANI Purified Water", "$1.95", "o", "976538"],
+        ["Diet Coke", "$2.00", "o", "970908"],
+        ["Fanta Orange", "$2.00", "o", "970986"],
+        ["Minute Maid 100% Apple Juice", "$2.25", "o", "970927"],
+        ["Minute Maid 100% Orange Juice", "$2.25", "o", "970926"],
+        ["Minute Maid Lemonade", "$2.00", "o", "970585"],
+        ["Minute Maid Pineapple Orange", "$2.25", "o", "970924"],
+        ["Minute Maid Tropical Blend", "$2.25", "o", "970929"],
+        ["POWERADE Grape", "$2.25", "o", "976523"],
+        ["San Pellegrino Sparkling Natural Mineral Water", "$2.50", "o", "973913"],
+        ["Sprite", "$2.00", "o", "970903"],
+        ["Vitamin Water Orange Orange", "$2.25", "o", "970292"]
       ]
     ]
   ]
