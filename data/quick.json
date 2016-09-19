@@ -544,6 +544,148 @@
 
   "De Neve Grab n' Go" :
   [
+    ["Breakfast",
+      [
+        "Breakfast Combo (1 Swipe)",
+        "[Bagel, Yogurt, Oatmeal Cup, or Cereal Cup] + Fruit + [Bottled Water, Brewed Coffee, Tea, Milk, or Juice Carton"
+      ],
 
+      [
+        "Coffee & Pastry Combo (1 Swipe)",
+        "[Brewed Coffee, Hot Tea, Latte, Cappuccino, Espresso, Bottled Water, Hot Chocolate, or Hot Vanilla] + [Bagel, Pasty, or Muffin]"
+      ],
+
+      [
+        "Cereal & Yogurt",
+        "",
+        ["Cold Cereal", "$2.50", "v", "035005"],
+        ["Quaker Instant Oatmeal Cups", "$2.50", "o", "031032"]
+      ],
+
+      [
+        "Muffins & Pastries",
+        "",
+        ["Assorted Bagels", "$2.75", "v", "212043"],
+        ["Banana Walnut Muffin", "$2.50", "v", "979592"],
+        ["Blueberry Muffin", "$2.50", "v", "979591"],
+        ["Butter Croissant", "$3.50", "v", "979601"],
+        ["Chocolate Croissant", "$3.50", "v", "979589"],
+        ["Strawberry Cream Cheese Croissant", "$3.50", "v", "979584"]
+      ],
+
+      [
+        "Coffee & Tea",
+        "",
+        ["Assorted Tazo Brewed Tea", "$2.25", "o", "233210"],
+        ["Cafe Latte", "$3.75", "v", "234035"],
+        ["Coffee", "$1.75", "g", "234000"],
+        ["Decaffeinated Coffee", "$1.75", "g", "234010"]
+      ],
+
+      [
+        "Fruit",
+        "",
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Orange", "$1.25", "g", "970375"]
+      ],
+
+      [
+        "Beverages",
+        "",
+        ["Apple Juice", "$1.00", "g", "233017"],
+        ["Chocolate Milk", "$1.00", "v", "233005"],
+        ["Fat-Free Milk", "$1.00", "v", "233013"],
+        ["Low-Fat Milk", "$1.00", "v", "233012"],
+        ["Orange Juice", "$1.00", "g", "233006"],
+        ["Vanilla Soy Milk", "$1.50", "g", "233015"],
+        ["Coca-Cola", "$2.00", "o", "970978"],
+        ["Coke Zero", "$2.00", "o", "970979"],
+        ["DASANI Purified Water", "$1.95", "o", "976538"],
+        ["Diet Coke", "$2.00", "o", "970908"],
+        ["Fanta Orange", "$2.00", "o", "970986"],
+        ["Minute Maid 100% Apple Juice", "$2.25", "o", "970927"],
+        ["Minute Maid 100% Orange Juice", "$2.25", "o", "970926"],
+        ["Minute Maid Lemonade", "$2.00", "o", "970585"],
+        ["Minute Maid Pineapple Orange", "$2.25", "o", "970924"],
+        ["Minute Maid Tropical Blend", "$2.25", "o", "970929"],
+        ["POWERADE Grape", "$2.25", "o", "976523"],
+        ["San Pellegrino Sparkling Natural Mineral Water", "$2.50", "o", "973913"],
+        ["Sprite", "$2.00", "o", "970903"],
+        ["Vitamin Water Orange Orange", "$2.25", "o", "970292"]
+      ]
+    ],
+
+    ["Lunch",
+      [
+        "Lunch-On-The-Go (1 Swipe)",
+        "[Sandwich, or Entree Salad] + Side + Bottled Water"
+      ],
+
+      [
+        "Lunch Combo (1 Swipe)",
+        "[Sandwich, or Entree Salad] + Side + [Bottled Water, Milk, or Juice Carton]"
+      ],
+
+      [
+        "Sandwiches",
+        "",
+        ["Caprese Sandwich", "$7.50", "v", "138030"],
+        ["Ham & Swiss Sandwich", "$7.50", "o", "085054"],
+        ["Peanut Butter & Strawberry Preserves Sandwich", "$4.50", "v", "140773"],
+        ["Roast Beef & Cheddar Sandwich", "$7.75", "o", "077112"],
+        ["Turkey & Provolone Sandwich", "$10.00", "o", "117049"]
+      ],
+
+      [
+        "Entree Salads",
+        "",
+        ["Caesar Salad", "$6.00", "o", "041126"],
+        ["Chicken Caesar Salad", "$7.00", "o", "041111"],
+        ["Chinese Chicken Salad", "$7.00", "o", "041110"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["California Pasta Salad", "$2.50", "g", "977193"],
+        ["Country Potato Salad", "$2.50", "v", "977240"],
+        ["Boulder Canyon Hickory BBQ Kettle Chips", "$1.25", "g", "973859"],
+        ["Boulder Canyon Totally Natural Kettle Chips", "$1.50", "g", "974244"],
+        ["French Onion SunChips", "$1.50", "v", "972427"],
+        ["Garden Salsa SunChips", "$1.50", "v", "975032"],
+        ["Harvest Cheddar SunChips", "$1.50", "v", "971830"],
+        ["Original SunChips", "$1.25", "g", "160037"],
+        ["Poore Brothers Jalape&ntildeo; Kettle Chips", "$1.50", "g", "974242"],
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Orange", "$1.25", "g", "970375"]
+      ],
+
+      [
+        "Beverages",
+        "",
+        ["Apple Juice", "$1.00", "g", "233017"],
+        ["Chocolate Milk", "$1.00", "v", "233005"],
+        ["Fat-Free Milk", "$1.00", "v", "233013"],
+        ["Low-Fat Milk", "$1.00", "v", "233012"],
+        ["Orange Juice", "$1.00", "g", "233006"],
+        ["Vanilla Soy Milk", "$1.50", "g", "233015"],
+        ["Coca-Cola", "$2.00", "o", "970978"],
+        ["Coke Zero", "$2.00", "o", "970979"],
+        ["DASANI Purified Water", "$1.95", "o", "976538"],
+        ["Diet Coke", "$2.00", "o", "970908"],
+        ["Fanta Orange", "$2.00", "o", "970986"],
+        ["Minute Maid 100% Apple Juice", "$2.25", "o", "970927"],
+        ["Minute Maid 100% Orange Juice", "$2.25", "o", "970926"],
+        ["Minute Maid Lemonade", "$2.00", "o", "970585"],
+        ["Minute Maid Pineapple Orange", "$2.25", "o", "970924"],
+        ["Minute Maid Tropical Blend", "$2.25", "o", "970929"],
+        ["POWERADE Grape", "$2.25", "o", "976523"],
+        ["San Pellegrino Sparkling Natural Mineral Water", "$2.50", "o", "973913"],
+        ["Sprite", "$2.00", "o", "970903"],
+        ["Vitamin Water Orange Orange", "$2.25", "o", "970292"]
+      ]
+    ]
   ]
 }
