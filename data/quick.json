@@ -463,7 +463,7 @@
       ]
     ],
 
-    ["Breakfast East"
+    ["Breakfast East",
       [
         "Rendezvous East (1 Swipe)",
         "Entree + Side + Drink"
@@ -472,7 +472,7 @@
       [
         "Sweets & Treats Combo (1 Swipe)",
         "[\"Sweets & Treats\" or Pastry] + Side + Drink"
-      ]
+      ],
 
       [
         "Entrees",
@@ -631,8 +631,8 @@
         "Salads",
         "Available Monday through Friday.",
         ["Chinese Chicken Salad", "$8.00", "o", "041034"],
-        ["Steak Salad", "$8.00", "o", "079208"],
-      ]
+        ["Steak Salad", "$8.00", "o", "079208"]
+      ],
 
       [
         "Sides",
@@ -725,7 +725,7 @@
       ]
     ],
 
-    ["Weekend Brunch East"
+    ["Weekend Brunch East",
       [
         "Dim Sum Box (1 Swipe or $7.00)",
         "Bao Bun + [Soup, or Porridge] + Up To 4 Sides + Drink"
