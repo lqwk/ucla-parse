@@ -429,7 +429,380 @@
 
   "Rendezvous" :
   [
+    ["Breakfast East",
+      [
+        "Rendezvous West (1 Swipe)",
+        "Entree + Side + Drink"
+      ],
 
+      [
+        "Entrees",
+        "",
+        ["(MON) Machaca Breakfast Burrito", "$7.00", "o", "071128"],
+        ["(MON & WED) Sausage, Egg, & Tator Tot Burrito", "$5.00", "o", "061071"],
+        ["(TUE THU & SAT) Bacon, Egg, & Tator Tot Burrito", "$5.00", "o", "061069"],
+        ["(THU & SUN) Chorizo & Egg Burrito", "$5.00", "o", "083016"],
+        ["(FRI) Ham, Egg, & Cheese Burrito", "$5.00", "o", "061084"],
+        ["Egg & Cheese Burrito", "$4.50", "v", "061114"],
+        ["Vegetable & Egg Breakfast Burrito", "$4.50", "v", "061056"],
+        ["(TUE & THU) English Muffin Sandwich w/ Bacon", "$5.00", "o", "061085"],
+        ["(TUE) English Muffin Sandwich w/ Canadian Bacon", "$5.00", "o", "061088"],
+        ["(THU) English Muffin Sandwich w/ Pork Sausage", "$5.00", "o", "061086"],
+        ["(TUE & THU) Vegetarian English Muffin Sandwich", "$4.50", "v", "061087"],
+        ["(MON WED & FRI) Bagel Sandwich w/ Bacon", "$5.00", "o", "061043"],
+        ["(MON WED & FRI) Bagel Sandwich w/ Egg & Cheese", "$4.50", "v", "061007"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Tator Tots", "$1.50", "g", "161012"],
+        ["Banana", "$1.25", "g", "970032"],
+        ["Gala Apple", "$1.25", "g", "970010"],
+        ["Orange", "$1.25", "g", "973322"]
+      ]
+    ],
+
+    ["Breakfast East"
+      [
+        "Rendezvous East (1 Swipe)",
+        "Entree + Side + Drink"
+      ],
+
+      [
+        "Sweets & Treats Combo (1 Swipe)",
+        "[\"Sweets & Treats\" or Pastry] + Side + Drink"
+      ]
+
+      [
+        "Entrees",
+        "",
+        ["Chicken Potstickers", "$5.00", "o", "115000"],
+        ["Pork Potstickers", "$5.00", "o", "083019"],
+        ["Vegetable Potstickers", "$5.00", "v", "140129"],
+        ["BBQ Pork Bao Bun", "$6.00", "o", "087017"],
+        ["Vegetable Bao Bun", "$6.00", "o", "140140"]
+      ],
+
+      [
+        "Sweets & Treats",
+        "",
+        ["Steel-Cut Oatmeal Cup", "$2.50", "g", "031017"],
+        ["Bagel w/ Cream Cheese", "$2.75", "v", "061063"],
+        ["Fruit Cup", "$4.00", "g", "201010"],
+        ["Yogurt Parfait", "$5.00", "v", "048007"],
+        ["Cold Cereal", "$2.50", "v", "035005"]
+      ],
+
+      [
+        "Pastries",
+        "",
+        ["Banana Walnut Muffin", "$2.50", "v", "979592"],
+        ["Blueberry Muffin", "$2.50", "v", "979591"],
+        ["Butter Croissant", "$3.50", "v", "979601"],
+        ["Cheese Croissant", "$3.50", "v", "979586"],
+        ["Chocolate Croissant", "$3.50", "v", "979589"],
+        ["Cinnamon Roll", "$3.50", "v", "979599"],
+        ["Low Fat Blueberry Bran Muffin", "$2.50", "v", "979593"],
+        ["Mocha Chocolate Chip Muffin", "$2.50", "v", "979556"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Banana", "$1.25", "g", "970032"],
+        ["Gala Apple", "$1.25", "g", "970010"],
+        ["Orange", "$1.25", "g", "973322"]
+      ]
+    ],
+
+    ["West",
+      [
+        "One Swipe Combo",
+        "[Entree, or Daily Special] + Drink"
+      ],
+
+      [
+        "Entrees",
+        "Tacos & Quesadillas include Refried Beans & Rice, Burritos include fresh Tortilla Chips",
+        ["Beef Taco Salad", "$8.00", "o", "071111"],
+        ["Chicken Taco Salad", "$7.75", "o", "112165"],
+        ["Pork Al Pastor Taco Salad", "$8.00", "o", "081164"],
+        ["Pork Carnitas Taco Salad", "$8.00", "o", "081160"],
+        ["Shredded Beef Taco Salad", "$8.00", "o", "071173"],
+        ["Vegetarian Taco Salad", "$7.00", "v", "042027"],
+        ["Beef Tacos", "$8.00", "o", "071112"],
+        ["Chicken Tacos", "$7.75", "o", "112171"],
+        ["Fish Tacos", "$8.00", "o", "121195"],
+        ["Pork Carnitas Tacos", "$8.00", "o", "081082"],
+        ["Pork Tacos Al Pastor Style", "$8.00", "o", "081090"],
+        ["Shredded Beef Tacos", "$8.00", "o", "071176"],
+        ["Bean & Cheese Burrito", "$6.25", "v", "140122"],
+        ["Beef Burrito", "$8.00", "o", "071113"],
+        ["Chicken Burrito", "$7.75", "o", "112167"],
+        ["Fish Burrito", "$8.00", "o", "121169"],
+        ["Pork Al Pastor Burrito", "$8.00", "o", "081166"],
+        ["Pork Carnitas Burrito", "$8.00", "o", "081158"],
+        ["Shredded Beef Burrito", "$8.00", "o", "071171"],
+        ["Vegetable Burrito", "$7.00", "v", "140127"],
+        ["Beef Burrito Bowl", "$8.00", "o", "071124"],
+        ["Chicken Burrito Bowl", "$7.75", "o", "112180"],
+        ["Fish Burrito Bowl", "$8.00", "o", "121196"],
+        ["Pork Al Pastor Burrito Bowl", "$8.00", "o", "081167"],
+        ["Pork Carnitas Burrito Bowl", "$8.00", "o", "081162"],
+        ["Shredded Beef Burrito Bowl", "$8.00", "o", "071177"],
+        ["Vegetarian Burrito Bowl", "$7.00", "v", "140018"],
+        ["Beef Quesadilla", "$8.00", "o", "075142"],
+        ["Cheese Quesadilla", "$6.25", "v", "131046"],
+        ["Chicken Quesadilla", "$7.75", "o", "075141"],
+        ["Shredded Beef Quesadilla", "$8.00", "o", "075154"],
+        ["Spinach & Mushroom Quesadilla", "$6.25", "v", "140035"],
+        ["Vegan Cheese Quesadilla", "$6.25", "g", "140446"],
+        ["Vegan Spinach Quesadilla", "$6.25", "g", "140447"],
+        ["Beef Nachos", "$8.00", "o", "071114"],
+        ["Beef Nachos w/ Cheese Sauce", "$8.00", "o", "071117"],
+        ["Chicken Nachos", "$7.75", "o", "112168"],
+        ["Guacamole & Chips", "$5.50", "g", "140425"],
+        ["Shredded Beef Nachos", "$8.00", "o", "071174"],
+        ["Vegetarian Nachos", "$7.25", "v", "140116"]
+      ],
+
+      [
+        "Daily Specials",
+        "Tacos & Quesadillas include Refried Beans & Rice, Burritos include fresh Tortilla Chips",
+        ["(MON) Chipotle Chicken Burrito", "$7.75", "o", "112047"],
+        ["(MON) Vegan BBQ Chicken Quesadilla", "$7.75", "g", "140704"],
+        ["(MON) Vegetarian BBQ Chicken Quesadilla", "$7.75", "v", "140558"],
+        ["(TUE) Potato Enchiladas", "$7.25", "v", "140559"],
+        ["(TUE) Three Taco Combination", "$8.00", "o", "142002"],
+        ["(WED) BBQ Chicken Quesadilla", "$7.75", "o", "111013"],
+        ["(WED) Vegan BBQ Chicken Quesadilla", "$7.75", "g", "140704"],
+        ["(WED) Vegetarian BBQ Chicken Quesadilla", "$7.75", "v", "140558"],
+        ["(THU) California Beef Burrito", "$8.00", "o", "071110"],
+        ["(THU) California Veggie Burrito", "$7.00", "v", "140044"],
+        ["(FRI) Chicken Enchiladas", "$7.75", "o", "111274"],
+        ["(FRI) Potato Enchiladas", "$7.25", "v", "140559"],
+        ["(SAT) Beef Birria", "$8.00", "o", "071135"],
+        ["(SAT) Vegan BBQ Chicken Quesadilla", "$7.75", "g", "140704"],
+        ["(SAT) Vegetarian BBQ Chicken Quesadilla", "$7.75", "v", "140558"],
+        ["(SUN) Beef Sopes", "$8.00", "o", "071129"],
+        ["(SUN) Chicken Sopes", "$7.75", "o", "111244"],
+        ["(SUN) Potato Picadillo Sopes", "$7.25", "v", "140537"],
+        ["(SUN) Shredded Beef Sopes", "$8.00", "o", "071130"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Brown Calrose Rice", "$2.00", "g", "163069"],
+        ["Mexican Rice", "$2.00", "g", "163016"],
+        ["Black Beans", "$2.00", "g", "977410"],
+        ["Refried Beans", "$2.00", "g", "977411"],
+        ["Tortilla Chips", "$1.50", "g", "160017"]
+      ]
+    ],
+
+    ["East Entrees",
+      [
+        "Entree Combo (1 Swipe)",
+        "2 Entrees + 2 Sides + Drink"
+      ],
+
+      [
+        "Salad Combo (1 Swipe)",
+        "Salad + Drink"
+      ],
+
+      [
+        "Entrees",
+        "",
+        ["Beef & Broccoli", "$7.00", "o", "071094"],
+        ["Orange Chicken", "$7.00", "o", "112172"],
+        ["Vegetable Stir-Fry", "$7.00", "g", "140413"],
+        ["Baby Bok Choy & Tofu", "$7.00", "g", "140183"],
+        ["Eggplant & Tofu w/ Spicy Garlic", "$7.00", "g", "140340"],
+        ["Kung Pao Chicken", "$7.00", "o", "400418"],
+        ["Sweet & Sour Pork", "$7.00", "o", "085001"],
+        ["Chicken w/ Chinese Mushrooms", "$7.00", "o", "111716"],
+        ["Sweet & Spicy Sesame Wings", "$7.00", "o", "112900"]
+      ],
+
+      [
+        "Salads",
+        "Available Monday through Friday.",
+        ["Chinese Chicken Salad", "$8.00", "o", "041034"],
+        ["Steak Salad", "$8.00", "o", "079208"],
+      ]
+
+      [
+        "Sides",
+        "",
+        ["Brown Calrose Rice", "$2.00", "g", "163069"],
+        ["Chow Mein Noodles", "$2.25", "g", "165053"],
+        ["Sticky Rice", "$1.50", "g", "400035"],
+        ["Young Chow Vegetable Fried Rice", "$2.00", "v", "140414"]
+      ]
+    ],
+
+    ["East Daily Specials",
+      [
+        "One Swipe Combo",
+        "[Daily Specials, or Noodle Bowl] + Drink"
+      ],
+
+      [
+        "Daily Specials",
+        "",
+        ["(MON) Pork Tonkatsu", "$8.00", "o", "081083"],
+        ["(MON) Vegetarian Chicken Teriyaki Bento Box", "$7.75", "v", "142001"],
+        ["(TUE) Chicken Teriyaki Bento Box w/ California Rolls", "$7.75", "o", "142000"],
+        ["(TUE) Chicken Teriyaki Bento Box w/ BLT & Avocado Rolls", "$7.75", "o", "142003"],
+        ["(TUE) Vegetarian Chicken Teriyaki Bento Box", "$7.75", "v", "142001"],
+        ["(WED) BBQ Korean Pork Spare Ribs", "$8.00", "o", "081136"],
+        ["(WED) Korean Vegetable Bowl", "$7.25", "g", "140727"],
+        ["(THU) Teriyaki Chicken Bowl", "$8.00", "o", "111272"],
+        ["(THU) Vegan Teriyaki Chicken Bowl", "$7.75", "g", "140556"],
+        ["(FRI) Shrimp Sushi Bowl", "$8.00", "o", "123084"],
+        ["(FRI) Vegetable Sushi Bowl", "$7.25", "v", "140557"],
+        ["(SAT) Pad Thai", "$7.25", "o", "165139"],
+        ["(SAT) Shrimp Pad Thai", "$8.00", "o", "123075"],
+        ["(SUN) Teriyaki Beef Bowl", "$8.00", "o", "071103"],
+        ["(SUN) Vegan Teriyaki Chicken Bowl", "$7.75", "g", "140556"]
+      ],
+
+      [
+        "Noodle Bowls",
+        "",
+        ["(MON) Tan Tan Ramen Noodle Soup", "$7.25", "o", "027100"],
+        ["(MON) Vegetable Ramen Soup", "$6.50", "v", "027097"],
+        ["(TUE) Mandoo Ramen", "$7.25", "o", "027091"],
+        ["(TUE) Vegetarian Miso Ramen Soup", "$6.50", "v", "127121"],
+        ["(WED) Mapo Tofu Ramen", "$6.50", "o", "027089"],
+        ["(WED) Vegetable Ramen Soup", "$6.50", "v", "027097"],
+        ["(THU) Beef Pho", "$7.25", "o", "027099"],
+        ["(THU) Vegetable Ramen Soup", "$6.50", "v", "027097"],
+        ["(FRI) Ramen Daeji Bulgogi", "$7.25", "o", "027094"],
+        ["(FRI) Vegetarian Miso Ramen Soup", "$6.50", "v", "127121"]
+      ]
+    ],
+
+    ["Weekend Brunch West",
+      [
+        "Brunch (West) Special (1 Swipe or $6.00)",
+        "Entree + Drink"
+      ],
+
+      [
+        "Build Your Own Breakfast (1 Swipe or $6.00)",
+        "BYO Entree + BYO Side + BYO Meat + Drink"
+      ],
+
+      [
+        "Entrees",
+        "",
+        ["Huevos Rancheros", "$6.00", "v", "061048"]
+      ],
+
+      [
+        "BYO Entrees",
+        "",
+        ["(SUN) French Toast Breakfast", "$6.00", "v", "217079"],
+        ["(SAT) Pancake Breakfast", "$6.00", "v", "217078"]
+      ],
+
+      [
+        "BYO Sides",
+        "",
+        ["Scrambled Eggs", "", "v", "061034"],
+        ["Hash Brown Patty", "", "g", "161003"]
+      ],
+
+      [
+        "BYO Meat",
+        "",
+        ["Bacon", "", "o", "089001"],
+        ["Sausage", "", "o", "089014"]
+      ]
+    ],
+
+    ["Weekend Brunch East"
+      [
+        "Dim Sum Box (1 Swipe or $7.00)",
+        "Bao Bun + [Soup, or Porridge] + Up To 4 Sides + Drink"
+      ],
+
+      [
+        "Bao Bun",
+        "",
+        ["BBQ Pork Bao Bun", "", "o", "087017"],
+        ["Vegetable Bao Bun", "", "o", "140140"]
+      ],
+
+      [
+        "Soup & Porridge",
+        "",
+        ["Egg Drop Soup", "", "o", "027003"],
+        ["Hot & Sour Soup", "", "o", "027080"],
+        ["Rainbow Congee Rice Porridge", "", "o", "081081"]
+      ],
+
+      [
+        "Sides",
+        "",
+        ["Chicken Potsticker", "", "o", "973034"],
+        ["Pork Potsticker", "", "o", "971448"],
+        ["Vegetable Potsticker", "", "o", "974821"],
+        ["Vegetable Egg Roll", "", "o", "140030"]
+      ]
+    ],
+
+    ["Boba & More",
+      [
+        "Boba Combo (1 Swipe)",
+        "Two 16-oz Boba Drinks, or One 32-oz Boba Drink"
+      ],
+
+      [
+        "Dessert Combo (1 Swipe)",
+        "One Dessert"
+      ],
+
+      [
+        "Boba (16-oz)",
+        "",
+        ["Cookies and Cream Delight Boba", "$3.75", "v", "236051"],
+        ["Green Milk Tea Boba", "$3.75", "v", "236049"],
+        ["Horchata Boba", "$3.75", "v", "236060"],
+        ["Lemonade", "$3.75", "g", "233213"],
+        ["Milk Tea Boba", "$3.75", "v", "236048"],
+        ["Taro Boba Drink", "$3.75", "v", "236061"],
+        ["Thai Tea Boba", "$3.75", "v", "236046"],
+        ["Vietnamese Coffee Boba", "$3.75", "v", "236047"],
+        ["Watermelon Water", "$3.75", "g", "233214"]
+      ],
+
+      [
+        "Boba (32-oz)",
+        "Available during Brunch, Lunch, & Dinner Service.",
+        ["Cookies and Cream Delight Boba", "$5.75", "v", "236051"],
+        ["Green Milk Tea Boba", "$5.75", "v", "236049"],
+        ["Horchata Boba", "$5.75", "v", "236060"],
+        ["Lemonade", "$5.75", "g", "233213"],
+        ["Milk Tea Boba", "$5.75", "v", "236048"],
+        ["Taro Boba Drink", "$5.75", "v", "236061"],
+        ["Thai Tea Boba", "$5.75", "v", "236046"],
+        ["Vietnamese Coffee Boba", "$5.75", "v", "236047"],
+        ["Watermelon Water", "$5.75", "g", "233214"]
+      ],
+
+      [
+        "Desserts",
+        "Available 9 p.m. to Midnight.",
+        ["Churros", "$5.00", "v", "219012"],
+        ["Dessert Nachos w/ Ice Cream & Mango Sauce", "$5.00", "o", "189208"],
+        ["Green Tea Waffle w/ Ice Cream", "$6.00", "o", "189214"]
+      ]
+    ]
   ],
 
 
