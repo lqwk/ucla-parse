@@ -87,28 +87,7 @@
       ]
     ],
 
-    ["Sides",
-      [
-        "Sides",
-        "",
-        ["Caesar (Parmesan & Croutons)", "$2.50", "o", "041126"],
-        ["Caprese (Tomato & Fresh Mozzarella Salad)", "$3.50", "o", "041038"],
-        ["Piccola Tagliata (Antipasto Chopped Salad with Salami)", "$2.50", "o", "041118"],
-        ["Vegan Piccola Tagliata (Antipasto Chopped Salad)", "$2.50", "o", "041132"],
-        ["Vegetarian Piccola Tagliata (Antipasto Chopped Side Salad)", "$2.50", "o", "041141"],
-        ["Boulder Canyon Hickory BBQ Kettle Chips", "$1.50", "g", "973859"],
-        ["Boulder Canyon Malt Vinegar Kettle Chips", "$1.50", "g", "973860"],
-        ["Boulder Canyon Totally Natural Kettle Chips", "$1.50", "g", "160018"],
-        ["Focaccia Bread", "$1.00", "v", "979563"],
-        ["Sea Salt & Cracked Pepper Kettle Chips", "$1.50", "g", "160029"],
-        ["Banana", "$1.25", "g", "970032"],
-        ["Fuji Apple", "$1.25", "g", "971325"],
-        ["Granny Smith Apple", "$1.25", "g", "975507"],
-        ["Orange", "$1.25", "g", "970375"]
-      ]
-    ],
-
-    ["Dolci",
+    ["Sweets",
       [
         "Dolci",
         "",
@@ -136,6 +115,27 @@
         ["Pignolis", "$2.00", "v", "979554"],
         ["Pizza Bagel", "$2.75", "o", "141048"],
         ["Vegan Cappucino Cookies", "$3.50", "g", "979555"]
+      ]
+    ],
+
+    ["Sides",
+      [
+        "Sides",
+        "",
+        ["Caesar (Parmesan & Croutons)", "$2.50", "o", "041126"],
+        ["Caprese (Tomato & Fresh Mozzarella Salad)", "$3.50", "o", "041038"],
+        ["Piccola Tagliata (Antipasto Chopped Salad with Salami)", "$2.50", "o", "041118"],
+        ["Vegan Piccola Tagliata (Antipasto Chopped Salad)", "$2.50", "o", "041132"],
+        ["Vegetarian Piccola Tagliata (Antipasto Chopped Side Salad)", "$2.50", "o", "041141"],
+        ["Boulder Canyon Hickory BBQ Kettle Chips", "$1.50", "g", "973859"],
+        ["Boulder Canyon Malt Vinegar Kettle Chips", "$1.50", "g", "973860"],
+        ["Boulder Canyon Totally Natural Kettle Chips", "$1.50", "g", "160018"],
+        ["Focaccia Bread", "$1.00", "v", "979563"],
+        ["Sea Salt & Cracked Pepper Kettle Chips", "$1.50", "g", "160029"],
+        ["Banana", "$1.25", "g", "970032"],
+        ["Fuji Apple", "$1.25", "g", "971325"],
+        ["Granny Smith Apple", "$1.25", "g", "975507"],
+        ["Orange", "$1.25", "g", "970375"]
       ]
     ]
   ],
@@ -429,7 +429,7 @@
 
   "Rendezvous" :
   [
-    ["Breakfast East",
+    ["Breakfast West",
       [
         "Rendezvous West (1 Swipe)",
         "Entree + Side + Drink"
@@ -516,7 +516,7 @@
       ]
     ],
 
-    ["West",
+    ["West Entrees",
       [
         "One Swipe Combo",
         "[Entree, or Daily Special] + Drink"
@@ -700,14 +700,14 @@
       [
         "Entrees",
         "",
-        ["Huevos Rancheros", "$6.00", "v", "061048"]
+        ["Huevos Rancheros", "", "v", "061048"]
       ],
 
       [
         "BYO Entrees",
         "",
-        ["(SUN) French Toast Breakfast", "$6.00", "v", "217079"],
-        ["(SAT) Pancake Breakfast", "$6.00", "v", "217078"]
+        ["(SUN) French Toast Breakfast", "", "v", "217079"],
+        ["(SAT) Pancake Breakfast", "", "v", "217078"]
       ],
 
       [
