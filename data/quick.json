@@ -140,6 +140,10 @@
     ]
   ],
 
+
+
+
+
   "Bruin Cafe" :
   [
     ["Breakfast",
@@ -417,5 +421,129 @@
         ["Chocolate Banana Protein", "$5.00", "v", "233161"]
       ]
     ]
+  ],
+
+
+
+
+
+  "Rendezvous" :
+  [
+
+  ],
+
+
+
+
+
+  "De Neve Late Night" :
+  [
+    ["Entrees",
+      [
+        "One Swipe Combo",
+        "Entree + Side + Fountain Drink"
+      ],
+
+      [
+        "Entrees",
+        "1-lb & 12-oz orders can be bought for 2 meal plan swipes.",
+        ["Classic Burger", "$7.25", "o", "073076"],
+        ["Classic Cheeseburger", "$7.50", "o", "073075"],
+        ["Chili Cheddar Burger", "$8.00", "o", "073077"],
+        ["Veggie Burger", "$7.25", "v", "140434"],
+        ["Portobello \"Burger\"", "$7.25", "v", "140466"],
+        ["Chicken Tenders, 1/2-lb.", "$7.50", "o", "111140"],
+        ["Chicken Tenders, 1-lb.", "$11.00", "o", "111139"],
+        ["Vegan Chick'n Fingers, 1/2-lb.", "$7.50", "g", "140444"],
+        ["Vegan Chick'n Fingers, 1-lb.", "$11.00", "g", "140455"],
+        ["Chili Cheese Fries", "$4.75", "o", "161110"],
+        ["Chili Cheese Curly Fries", "$4.75", "o", "161116"],
+        ["Onion Rings (12 oz.)", "$7.25", "o", "167003"],
+        ["Onion Rings (6 oz.)", "$4.75", "o", "167004"],
+        ["Mozzarella Sticks", "$7.75", "v", "131038"]
+      ],
+
+      [
+        "Sides & Beverages",
+        "",
+        ["Curly Fries", "$2.00", "g", "400118"],
+        ["French Fries", "$2.00", "g", "400115"],
+        ["Fountain Beverage", "$1.25", "o", "232000"]
+      ]
+    ],
+
+    ["Shakes",
+      [
+        "One Swipe Combo",
+        "One Ice Cream Shake"
+      ],
+
+      [
+        "Ice Cream Shakes",
+        "All shakes include one additional topping",
+        ["Chocolate Shake", "$4.25", "o", "233198"],
+        ["Neopolitan Shake", "$4.25", "o", "233200"],
+        ["Peppermint Shake", "$4.25", "v", "233202"],
+        ["Strawberry Shake", "$4.25", "o", "233199"],
+        ["Vanilla Shake", "$4.25", "o", "233197"]
+      ],
+
+      [
+        "Additional Toppings",
+        "",
+        ["M&M's Minis", "", "v", "974999"],
+        ["Oreo Cookie Pieces", "", "g", "970775"],
+        ["Reese's Pieces", "", "o", "189074"]
+      ]
+    ],
+
+    ["Pizza & Wings",
+      [
+        "Pizza Combo (2 Swipes)",
+        "3 Topping Pizza + Soda Six-Pack"
+      ],
+
+      [
+        "One Swipe Wings Combo",
+        "Half order of chicken wings (1/2 lb.)"
+      ],
+
+      [
+        "Two Swipe Wings Combo",
+        "Full order of chicken wings (2 lb.)"
+      ],
+
+      [
+        "MyPizza",
+        "",
+        ["Large Pizza", "$10.00", "o", "999008"],
+        ["Soda Six-Pack", "$5.00", "o", "999009"]
+      ],
+
+      [
+        "Wings",
+        "",
+        ["BBQ Chicken Wings", "$11.00", "o", "111199"],
+        ["BBQ Chicken Wings 1/2 Order", "$7.50", "o", "111266"],
+        ["Buffalo Chicken Wings", "$11.00", "o", "111048"],
+        ["Buffalo Chicken Wings 1/2 Order", "$7.50", "o", "111265"],
+        ["Carne Asada Fries", "$8.00", "o", "161117"],
+        ["Chipotle Chicken Wings", "$11.00", "o", "111246"],
+        ["Chipotle Chicken Wings 1/2 Order", "$7.50", "o", "111267"],
+        ["Lemon Pepper Chicken Wings", "$11.00", "o", "111330"],
+        ["Lemon Pepper Chicken Wings 1/2 Order", "$7.50", "o", "111334"],
+        ["Plain Chicken Wings 1/2 Order", "$7.50", "o", "111188"],
+        ["Plain Chicken Wings Full Order", "$11.00", "o", "111189"]
+      ]
+    ]
+  ],
+
+
+
+
+
+  "De Neve Grab n' Go" :
+  [
+
   ]
 }
