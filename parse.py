@@ -70,10 +70,8 @@ class MenuParser:
     count = 0
     for td in tds:
       tclass = td.get('class')
-      if tclass != None and len(tclass) != 0 and tclass[0] == 'menulocheader':
-        count = count + 1
-      else:
-        break
+      if tclass and tclass[0] == 'menulocheader':
+        count += 1
 
     return count
 
@@ -90,6 +88,7 @@ class MenuParser:
 
     data = []
 
+    # TODO: FIX
     if containerCount == 3:
       for i in range(0, 3):
         data.append([])
@@ -105,23 +104,33 @@ class MenuParser:
         if count > 2:
           count = 0
 
+
     elif containerCount == 4:
       for i in range(0, 4):
         data.append([])
-      count = 0
+      cnt, flag = 0, True
       for td in tds:
-        if count == 0:
-          data[0].append(td)
-        elif count == 1:
-          data[1].append(td)
-        elif count == 2:
-          data[2].append(td)
-        elif count == 3:
-          data[3].append(td)
-        count = count + 1
-        if count > 3:
-          count = 0
+        # print(td)
+        tdclass = td.get('class')
+        if tdclass and tdclass[0] == 'menulocheader':
+          data[cnt].append(td)
+          cnt += 1
+          flag = True
+          continue
+        if cnt <= 2:
+          if flag:
+            data[0].append(td)
+          else:
+            data[1].append(td)
+          flag = not flag
+        elif cnt <= 4:
+          if flag:
+            data[2].append(td)
+          else:
+            data[3].append(td)
+          flag = not flag
 
+    # TODO: FIX
     elif containerCount == 2:
       for i in range(0, 2):
         data.append([])
@@ -135,6 +144,7 @@ class MenuParser:
         if count > 1:
           count = 0
 
+    # TODO: FIX
     elif containerCount == 1:
       data.append([])
       for td in tds:
@@ -161,86 +171,110 @@ class MenuParser:
     tds = soup.findAll('td', { "class": lambda x:
       x and (x == "menugridcell" or x == "menugridcell_last" or x == "menulocheader") })
 
+    # print(tds)
+    # print(len(tds))
+    # for td in tds:
+    #   print(td)
+    #   print()
+
     data = self.separateRestaurants(tds)
     if data == None:
       return None
+
+    # for d in data:
+    #   print(d)
+    #   print()
+    #   print()
 
     restaurants = []
     for index, values in enumerate(data):
       restaurant = { kRestaurantName: "", kRestaurantKitchens: [] }
       for d in values:
+        # print(d)
+        # print()
+
         # separate the "restaurant name" from the "kitchens"
-        for child in d.children:
-          if type(child) is bs4.element.Tag:
-            childclass = child.get('class')
-            if (childclass != None and len(childclass) != 0 and childclass[0] == 'menuloclink'):
-              line = child.text.replace(u'\xa0', u'')
-              line = line.replace('*', '')
-              # print()
-              # print('RESTAURANT: ' + line)
-              restaurant[kRestaurantName] = line
-            else:
-              # separate the kitchen name from the entrees
-              kitchen = { kKitchenName: "", kKitchenItems: [] }
-              for item in child:
-                # print(item)
-                # print()
-                if type(item) is bs4.element.Tag:
-                  itemclass = item.get('class')
-                  if itemclass != None and len(itemclass) != 0 and ('category' in itemclass[0]):
-                    line = item.text.replace(u'\xa0', u'')
-                    line = line.replace('*', '')
+        if d.name == 'td':
+          dclass = d.get('class')
+          if (dclass and dclass[0] == 'menulocheader'):
+            for child in d.children:
+              if child.name == 'a':
+                childclass = child.get('class')
+                if (childclass and childclass[0] == 'menuloclink'):
+                  line = child.text.replace(u'\xa0', u'')
+                  line = line.replace('*', '')
+                  # print()
+                  # print('RESTAURANT: ' + line)
+                  restaurant[kRestaurantName] = line
+          elif (dclass and (dclass[0] == 'menugridcell' or dclass[0] == 'menugridcell_last')):
+            # print(d)
+            # print()
+
+            # separate the kitchen name from the entrees
+            kitchen = { kKitchenName: "", kKitchenItems: [] }
+            for ul in d:
+              if ul.name == 'ul':
+                for li in ul:
+                  if li.name == 'li':
+                    # print(li)
                     # print()
-                    # print('Kitchen: ' + line)
-                    kitchen[kKitchenName] = line
-                  elif itemclass != None and len(itemclass) != 0 and ('level' in itemclass[0]):
-                    # determine whether is 'vegetarian' or 'vegan'
-                    itemType = "o"
-                    img = item.find('img')
-                    if img != None:
-                      line = img.get('alt')
-                      if "Vegetarian" in line:
-                        itemType = 'v'
-                      elif "Vegan" in line:
-                        itemType = 'g'
-                    # get the entree name
-                    line = item.text.replace(u'\xa0', u'')
-                    line = line.replace('*', '')
-                    if line.startswith(("w/", "&")):
-                      continue
-                    entree = None
-                    # determine if we should fetch nutrition data
-                    if shouldGetNutrition:
-                      # get the link to nutrition data & the nutrition data
-                      nutrition = {}
-                      nutritionURL = item.find('a').get('href')
-                      nutritionURL = re.findall(r'RecipeNumber=\d+', nutritionURL)
-                      if nutritionURL != None and len(nutritionURL) != 0:
-                        nutritionURL = nutritionURL[0]
-                        nutritionURL = nutritionURL[-6:]
-                      if nutritionURL != None and len(nutritionURL) == 6:
-                        # print(nutritionURL)
-                        nutritionPath = './nutrition/' + nutritionURL
-                        if os.path.exists(nutritionPath) and os.path.isfile(nutritionPath):
-                          file = open(nutritionPath, 'r')
-                          nutritionJSON = file.read()
-                          file.close()
-                          nutrition = json.loads(nutritionJSON)
-                        else:
-                          parser = NutritionParser(nutritionURL)
-                          nutritionJSON = parser.downloadNutritionData(True)
-                          nutrition = json.loads(nutritionJSON)
-                      entree = { kEntreeName: line, kNutritionData: nutrition, kType: itemType}
-                    else:
-                      entree = line
-                    # print(entree)
-                    kitchen[kKitchenItems].append(entree)
-              # print(kitchen)
-              if kitchen[kKitchenName] != "" and len(kitchen[kKitchenItems]) != 0:
-                restaurant[kRestaurantKitchens].append(kitchen)
+                    liclass = li.get('class')
+                    if liclass and 'category' in liclass[0]:
+                      line = li.text.replace(u'\xa0', u'')
+                      line = line.replace('*', '')
+                      # print()
+                      # print('KITCHEN: ' + line)
+                      kitchen[kKitchenName] = line
+                    elif liclass and 'level' in liclass[0]:
+                      # determine whether is 'vegetarian' or 'vegan'
+                      itemType = "o"
+                      img = li.find('img')
+                      if img:
+                        tp = img.get('alt')
+                        if "Vegetarian" in tp:
+                          itemType = "v"
+                        elif "Vegan" in tp:
+                          itemType = "g"
+                      # get the entree name
+                      line = li.text.replace(u'\xa0', u'')
+                      line = line.replace('*', '')
+                      if line.startswith(("w/", "&")):
+                        continue
+                      entree = None
+                      # determine if we should fetch nutrition data
+                      if shouldGetNutrition:
+                        # get the link to nutrition data & the nutrition data
+                        nutrition = {}
+                        nutritionURL = li.find('a').get('href')
+                        nutritionURL = re.findall(r'RecipeNumber=\d+', nutritionURL)
+                        if nutritionURL != None and len(nutritionURL) != 0:
+                          nutritionURL = nutritionURL[0]
+                          nutritionURL = nutritionURL[-6:]
+                        if nutritionURL != None and len(nutritionURL) == 6:
+                          # print(nutritionURL)
+                          nutritionPath = './nutrition/' + nutritionURL
+                          if os.path.exists(nutritionPath) and os.path.isfile(nutritionPath):
+                            file = open(nutritionPath, 'r')
+                            nutritionJSON = file.read()
+                            file.close()
+                            nutrition = json.loads(nutritionJSON)
+                          else:
+                            parser = NutritionParser(nutritionURL)
+                            nutritionJSON = parser.downloadNutritionData(True)
+                            nutrition = json.loads(nutritionJSON)
+                        entree = { kEntreeName: line, kNutritionData: nutrition, kType: itemType}
+                      else:
+                        entree = line
+                      # print(entree)
+                      kitchen[kKitchenItems].append(entree)
+            print(kitchen)
+            if kitchen[kKitchenName] != "" and len(kitchen[kKitchenItems]) != 0:
+              restaurant[kRestaurantKitchens].append(kitchen)
+      print(restaurant)
       if restaurant[kRestaurantName] != "" and len(restaurant[kRestaurantKitchens]) != 0:
         restaurants.append(restaurant)
-    # print(restaurants)
+
+    # print(json.dumps(restaurants,indent=2))
 
     return restaurants
 
