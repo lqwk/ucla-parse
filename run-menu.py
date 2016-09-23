@@ -1,3 +1,6 @@
+# MUST USE FULL PATH FOR CRON JOBS TO WORK
+# /home/qingweilan/public_html/cgi-bin
+
 import json
 import datetime
 from parse import Meal
