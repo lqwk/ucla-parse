@@ -1,3 +1,6 @@
+# MUST USE FULL PATH FOR CRON JOBS TO WORK
+# /home/qingweilan/public_html/cgi-bin
+
 import os
 import bs4
 import json
