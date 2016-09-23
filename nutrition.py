@@ -205,9 +205,10 @@ class NutritionParser:
         filetime = datetime.datetime.fromtimestamp(statinfo.st_mtime)
         servertime = datetime.datetime.now()
         td = servertime - filetime
-        diffdays = td.days
+        diffseconds = td.seconds
+        hourseconds = 72000
         # if the time difference is greater than 4 days, re-download
-        if diffdays >= 4:
+        if diffseconds >= hourseconds:
           return self.downloadNutritionDataForURL(url, shouldSave, filename)
       else:
         return self.downloadNutritionDataForURL(url, shouldSave, filename)
