@@ -194,9 +194,9 @@ class NutritionParser:
     If not, then it downloads the nutrition data from the UCLA site.
     """
 
-    base = "http://menu.ha.ucla.edu/foodpro/recipedetail.asp?RecipeNumber="
+    base = "http://menu.dining.ucla.edu/Recipes/"
 
-    url = base + self.recipe
+    url = base + self.recipe + "/1"
     filename = None
 
     if shouldSave:
